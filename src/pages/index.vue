@@ -40,7 +40,7 @@ const chainStore = useBlockchain()
 <template>
   <div class="">
     <div class="flex md:!flex-row flex-col items-center justify-center mb-6 mt-14 gap-2">
-      <div class="w-16 rounded-full">
+      <div class="hidden w-16 rounded-full">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 150.000000 132.000000"
           preserveAspectRatio="xMidYMid meet">
@@ -61,8 +61,11 @@ const chainStore = useBlockchain()
           </g>
         </svg>
       </div>
-      <h1 class="text-primary dark:invert text-3xl md:!text-6xl font-bold">
-        {{ $t('pages.title') }}
+      <h1 class="text-white text-3xl md:!text-6xl font-bold">
+        <!-- {{ $t('pages.title') }} -->
+        MW NODE
+        <span class="mr-5"></span>
+        Blockchain Explorer
       </h1>
     </div>
     <div class="text-center text-base">
@@ -115,8 +118,20 @@ const chainStore = useBlockchain()
   </div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
  .logo path{
   fill: #171d30;
 }
-</style>@/components/ad/ad
+</style>@/components/ad/ad -->
+
+<style lang="scss" scoped>
+.logo path{
+  fill: #171d30;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 84px;
+}
+</style>
