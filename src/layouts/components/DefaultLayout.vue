@@ -79,7 +79,7 @@ dayjs()
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }"
     > -->
     <div
-      class="fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-100 border-r border-gray-100 dark:border-gray-700"
+      class="hidden fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-100 border-r border-gray-100 dark:border-gray-700"
     >
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
         <RouterLink to="/" class="flex items-center">
