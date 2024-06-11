@@ -1,0 +1,90 @@
+@import './variable.scss';
+
+// home ellipse
+.ellipse-home {
+    top: -16px;
+    left: -46px;
+}
+
+// button mw (gradient border)
+.btn-mw {
+    &--border {
+      padding: 1px !important;
+      background: transparent;
+      &:hover {
+        background-image: linear-gradient(90deg, #EF4136 , #FBB040);
+
+        .btn-mw--content {
+              background: #292934;
+            // background: rgba($color: #fff, $alpha: 0.1);
+        }
+      }
+
+      &.active, &:has(.btn-mw--content.active) {
+        background: $primary;
+        .btn-mw--content {
+            background: $primary;
+            color: white;
+        }
+      }
+    }
+
+    &--content {
+      border: 0px;
+      padding: 8px 16px;
+      margin: 1px;
+      background: transparent;
+    }
+}
+
+// background
+.bg {
+    &-white-5 {
+        background-color: rgba($color: #fff, $alpha: 0.05);
+    }
+    &-mw-base {
+        background-color: #0B0F1D;
+    }
+    &-mw-box {
+        background-color: #171b28;
+    }
+}   
+.default-layout {
+    background-image: url('../../assets/images/mw-background-2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:has(.mw-dashboard) {
+        background-image: url('../../assets/images/mw-background-1.svg');
+    }
+}
+
+// border
+.border-white-10 {
+    border-color: rgba($color: #fff, $alpha: 0.1);
+}
+
+// border-radius
+.rounded {
+    &-32 {
+        border-radius: 32px;
+    }
+}
+
+
+// gap
+.gap {
+    &-30 {
+        gap: 30px;
+    }
+}
+
+.lg {
+    @media (min-width: 1024px) {
+        &\:gap {
+            &-30 {
+                gap: 30px;
+            }
+        }
+    }
+}
