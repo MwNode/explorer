@@ -287,7 +287,7 @@ function mapDelegators(messages: any[]) {
               </div>
               <label
                 for="delegate"
-                class="btn btn-primary btn-sm w-full"
+                class="btn btn-mw-primary btn-sm w-full"
                 @click="
                   dialog.open('delegate', {
                     validator_address: v.operator_address,
@@ -490,7 +490,7 @@ function mapDelegators(messages: any[]) {
           <div class="">
             <label
               for="withdraw_commission"
-              class="btn btn-primary w-full"
+              class="btn btn-mw-primary w-full"
               @click="
                 dialog.open('withdraw_commission', {
                   validator_address: v.operator_address,

@@ -38,8 +38,8 @@ const chainStore = useBlockchain()
 
 </script>
 <template>
-  <div class="mw-dashboard">
-    <div class="flex md:!flex-row flex-col items-center justify-center mb-6 mt-14 gap-2">
+  <div class="">
+    <div class="flex md:!flex-row flex-col items-center justify-center mb-4 md:mb-6 mt-7 md:mt-14 gap-2">
       <div class="hidden w-16 rounded-full">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 150.000000 132.000000"
@@ -61,27 +61,19 @@ const chainStore = useBlockchain()
           </g>
         </svg>
       </div>
-      <h1 class="text-white text-3xl md:!text-56 font-bold relative">
+      <h1 class="text-white text-3xl font-bold leading-normal flex flex-col md:!flex-row items-center">
         <!-- {{ $t('pages.title') }} -->
-        MW NODE
-        <span class="mr-5"></span>
-        Blockchain Explorer
-        <div class="ellipse-home absolute">
-          <svg width="333" height="98" viewBox="0 0 333 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M330.98 29.3368C331.647 34.9754 328.056 41.0974 320.364 47.3803C312.715 53.6276 301.245 59.8328 286.761 65.6322C257.808 77.2254 217.028 87.1114 171.292 92.517C125.556 97.9226 83.5955 97.816 52.7369 93.2921C37.3002 91.0291 24.6998 87.6688 15.8054 83.3768C6.86026 79.0604 1.94144 73.9441 1.27499 68.3055C0.608553 62.6669 4.19911 56.545 11.8915 50.2621C19.5402 44.0148 31.01 37.8096 45.4938 32.0102C74.4475 20.417 115.227 10.5309 160.963 5.12532C206.699 -0.280292 248.66 -0.173629 279.518 4.35022C294.955 6.61324 307.555 9.97352 316.45 14.2655C325.395 18.582 330.314 23.6982 330.98 29.3368Z" stroke="url(#paint0_linear_28_92)" stroke-width="2"/>
-            <defs>
-            <linearGradient id="paint0_linear_28_92" x1="124.939" y1="-27.3679" x2="140.415" y2="70.131" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FF0000"/>
-            <stop offset="0.59" stop-color="#FFC700"/>
-            <stop offset="0.99" stop-color="#FBB040" stop-opacity="0"/>
-            </linearGradient>
-            </defs>
-          </svg>
+        <div class="relative">
+          <span>MW NODE</span>
+          <div class="ellipse-home absolute">
+            <img src="../assets/images/svg/ellipse-6.svg" />
+          </div>
         </div>
+        <span class="md:ml-5">Blockchain Explorer</span>
       </h1>
     </div>
     <div class="text-center text-base">
-      <p class="mb-1">
+      <p class="mb-1 text-base md:text-lg leading-normal">
         {{ $t('pages.slogan') }}
       </p>
     </div>
@@ -92,23 +84,23 @@ const chainStore = useBlockchain()
       <progress class="progress progress-info w-80 h-1"></progress>
     </div>
 
-    <div v-if="featured.length>0" class="text-center text-base mt-6 text-primary">
+    <!-- <div v-if="featured.length>0" class="text-center text-base mt-6 text-primary">
       <h2 class="mb-6"> Featured Blockchains 🔥 </h2>
-    </div>
+    </div> -->
 
-    <div v-if="featured.length>0"
-      class="grid grid-cols-1 gap-4 lg:gap-30 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
+    <!-- <div v-if="featured.length>0"
+      class="grid grid-cols-1 gap-4 lg:gap-20 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
     >
-    <ChainSummary
+      <ChainSummary
         v-for="(chain, index) in featured"
         :key="index"
         :name="chain.chainName"
       />
-    </div>
+    </div> -->
 
     <AdBanner id="home-banner-ad" unit="banner" width="970px" height="90px" />
 
-    <div class="text-center text-base mt-6 text-primary">
+    <!-- <div class="text-center text-base mt-6 text-primary">
       <h2 class="mb-6">{{ $t('pages.description') }}</h2>
     </div>
 
@@ -116,10 +108,10 @@ const chainStore = useBlockchain()
       <Icon icon="mdi:magnify" class="text-2xl text-gray-400 ml-3"/>
       <input :placeholder="$t('pages.search_placeholder')" class="px-4 h-10 bg-transparent flex-1 outline-none text-base" v-model="keywords" />
       <div class="px-4 text-base hidden md:!block">{{ chains.length }}/{{ dashboard.length }}</div>
-    </div>
+    </div> -->
 
     <div
-      class="grid grid-cols-1 gap-4 lg:gap-30 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
+      class="grid grid-cols-1 gap-4 lg:gap-20 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
     >
       <ChainSummary
         v-for="(chain, index) in chains"
@@ -137,13 +129,23 @@ const chainStore = useBlockchain()
 </style>@/components/ad/ad -->
 
 <style lang="scss" scoped>
-.logo path{
-  fill: #171d30;
+// .logo path{
+//   fill: #171d30;
+// }
+
+// home ellipse
+.ellipse-home {
+  top: -12px;
+  left: -18px;
+  width: 120%;
+  @media (min-width: 768px) {
+    top: -16px;
+    left: -46px;
+  }
 }
 
 h1 {
   font-family: 'Open Sans';
-  font-size: 56px;
 
   @media (min-width: 768px) {
     font-size: 56px !important;

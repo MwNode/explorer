@@ -1,24 +1,22 @@
 @import './variable.scss';
 
-// home ellipse
-.ellipse-home {
-    top: -16px;
-    left: -46px;
-}
 
 // button mw (gradient border)
 .btn-mw {
     &--border {
-      padding: 1px !important;
-      background: transparent;
-      &:hover {
-        background-image: linear-gradient(90deg, #EF4136 , #FBB040);
+        border-width: 1px;
+        &:hover {
+            background-image: linear-gradient(90deg, $red , $orange);
+            // background-image: linear-gradient(to right, var(--tw-gradient-stops));
+            // --tw-gradient-from: var(--red) var(--tw-gradient-from-position);
+            // --tw-gradient-to: var(--orange) var(--tw-gradient-to-position);
+            // --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 
-        .btn-mw--content {
-              background: #292934;
-            // background: rgba($color: #fff, $alpha: 0.1);
+            .btn-mw--content {
+                background: #292934;
+                // background: rgba($color: #fff, $alpha: 0.1);
+            }
         }
-      }
 
       &.active, &:has(.btn-mw--content.active) {
         background: $primary;
@@ -32,23 +30,94 @@
     &--content {
       border: 0px;
       padding: 8px 16px;
-      margin: 1px;
+    //   margin: 1px;
       background: transparent;
     }
+
+    &-primary.btn {
+        border-color: $primary;
+        background-color: $primary;
+        color: white;
+        outline-color: white;
+
+        &:hover {
+            border-color: rgba($color: $primary, $alpha: 0.8);
+            background-color: rgba($color: $primary, $alpha: 0.8);
+        }
+    }
+}
+// button mw importabt
+.\! {
+    &btn-mw {
+        &-primary.btn {
+            border-color: $primary;
+            background-color: $primary;
+            color: white;
+            outline-color: white;
+    
+            &:hover {
+                --tw-border-opacity: 0.8;
+                --tw-bg-opacity: 0.8;
+            }
+        }
+    }
+}
+// button - custom border, custom background
+.btn {
+    &.border {
+        &-white-5 {
+            border-color: var(--white-5);
+        }
+        &-white-10 {
+            border-color: var(--white-10);
+        }
+    }
+
+    &.bg {
+        &-white-5 {
+            background-color: var(--white-5);
+        }
+        &-white-10 {
+            background-color: var(--white-10);
+        }
+        &-white-30 {
+            background-color: var(--white-30);
+        }
+    }
+    &.hover {
+        &\: {
+            &bg-orange:hover {
+                background-color: $orange;
+            }
+        }
+    } 
 }
 
 // background
 .bg {
     &-white-5 {
-        background-color: rgba($color: #fff, $alpha: 0.05);
+        background-color: var(--white-5);
+    }
+    &-white-10 {
+        background-color: var(--white-10);
+    }
+    &-white-30 {
+        background-color: var(--white-30);
     }
     &-mw-base {
-        background-color: #0B0F1D;
+        background-color: $background-dark;
     }
     &-mw-box {
         background-color: #171b28;
     }
-}   
+}
+.hover {
+    &\: {
+        &bg-orange:hover {
+            background-color: $orange;
+        }
+    }
+} 
 .default-layout {
     background-image: url('../../assets/images/mw-background-2.svg');
     background-repeat: no-repeat;
@@ -59,9 +128,20 @@
     }
 }
 
+
 // border
 .border-white-10 {
-    border-color: rgba($color: #fff, $alpha: 0.1);
+    border-color: var(--white-10);
+}
+.\! {
+    &border {
+        &-white-5 {
+            border-color: var(--white-5) !important;
+        }
+        &-white-10 {
+            border-color: var(--white-10) !important;
+        }
+    }
 }
 
 // border-radius
@@ -71,19 +151,80 @@
     }
 }
 
-
 // gap
 .gap {
+    &-20 {
+        gap: 20px;
+    }
     &-30 {
         gap: 30px;
     }
 }
 
+
+// link
+.link {
+    &-primary {
+        color: $primary;
+    }
+}
+
+
+// responsive
 .lg {
     @media (min-width: 1024px) {
-        &\:gap {
-            &-30 {
-                gap: 30px;
+        &\: {
+            &gap {
+                &-20 {
+                    gap: 20px;
+                }
+                &-30 {
+                    gap: 30px;
+                }
+            }
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+        } 
+    }
+}
+
+.md {
+    @media (min-width: 768px) {
+        &\: {
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
             }
         }
     }

@@ -2,17 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/mw-favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ping Dashboard - Cosmos Blockchain Explorer And Web Wallet</title>
-    <meta name="description" content="Ping Dashboard is a block explorer/web wallet for blockchains built on Cosmos SDK, Cosmoshub, Osmosis, Juno, Evmos, Injective, Canto and 70+ blockchains listed on ping.pub" />
-    <link rel="stylesheet" type="text/css" href="/loader.css" />    
+    <title>MW Dashboard - Cosmos Blockchain Explorer And Web Wallet</title>
+    <meta name="description" content="MW Dashboard is a block explorer/web wallet for blockchains built on Cosmos SDK, Cosmoshub, Osmosis, Juno, Evmos, Injective, Canto and 70+ blockchains listed on ping.pub" />
+    <link rel="stylesheet" type="text/css" href="/loader.css" />
+    <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" language="javascript">
+            $('#app').bind('resize', function(){
+                console.log('resized');
+            });
+    </script>
   </head>
   <body>
     <div id="app">
       <div id="loading-bg">
         <div class="loading-logo">
-          <img src="/logo.svg" alt="Logo" />
+          <!-- <img src="/logo.svg" alt="Logo" /> -->
+          <img src="/mw-logo-dark.svg" alt="Logo" />
         </div>
         <div class="pre-loading">
           <div class="effect-1 effects"></div>

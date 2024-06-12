@@ -120,7 +120,7 @@ function confirm() {
         </div>
         <!-- foot -->
         <div class="mt-6">
-          <button class="w-full btn btn-primary" @click="confirm">
+          <button class="w-full btn btn-mw-primary" @click="confirm">
             Confirm
           </button>
         </div>

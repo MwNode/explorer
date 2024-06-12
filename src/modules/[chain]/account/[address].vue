@@ -166,13 +166,13 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
         <div class="flex justify-end mb-4 pr-5">
             <label
               for="send"
-              class="btn btn-primary btn-sm mr-2"
+              class="btn btn-mw-primary btn-sm mr-2"
               @click="dialog.open('send', {}, updateEvent)"
               >{{ $t('account.btn_send') }}</label
             >
             <label
               for="transfer"
-              class="btn btn-primary btn-sm"
+              class="btn btn-mw-primary btn-sm"
               @click="
                 dialog.open(
                   'transfer',
@@ -346,13 +346,13 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
         <div class="flex justify-end mb-4">
           <label
             for="delegate"
-            class="btn btn-primary btn-sm mr-2"
+            class="btn btn-mw-primary btn-sm mr-2"
             @click="dialog.open('delegate', {}, updateEvent)"
             >{{ $t('account.btn_delegate') }}</label
           >
           <label
             for="withdraw"
-            class="btn btn-primary btn-sm"
+            class="btn btn-mw-primary btn-sm"
             @click="dialog.open('withdraw', {}, updateEvent)"
             >{{ $t('account.btn_withdraw') }}</label
           >
@@ -396,7 +396,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
                 <div v-if="v.balance" class="flex justify-end">
                   <label
                     for="delegate"
-                    class="btn btn-primary btn-xs mr-2"
+                    class="btn btn-mw-primary btn-xs mr-2"
                     @click="
                       dialog.open(
                         'delegate',
@@ -410,7 +410,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
                   >
                   <label
                     for="redelegate"
-                    class="btn btn-primary btn-xs mr-2"
+                    class="btn btn-mw-primary btn-xs mr-2"
                     @click="
                       dialog.open(
                         'redelegate',
@@ -424,7 +424,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
                   >
                   <label
                     for="unbond"
-                    class="btn btn-primary btn-xs"
+                    class="btn btn-mw-primary btn-xs"
                     @click="
                       dialog.open(
                         'unbond',

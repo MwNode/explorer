@@ -1,12 +1,20 @@
+<script lang="ts" setup>
+import Logo from './Logo.vue';
+
+</script>
+
 <template>
   <!-- footer -->
   <footer
-    class="flex items-center h-12 mt-5 text-sm py-2 z-10 w-full"
+    class="flex items-center md:h-12 mt-5 text-sm pt-2 z-10 w-full pb-10 md:pb-2"
   >
-    <div class="flex flex-1">
+    <div class="flex flex-1 flex-col md:!flex-row justify-center md:!justify-between items-center">
+      <!-- <Logo /> -->
+      <img src="../../assets/mw-logo.svg" width="100px" class="md:hidden">
       &copy;&nbsp;
-      {{ new Date().getFullYear() }}&nbsp;
-      Made With&nbsp;
+      {{ new Date().getFullYear() }}&nbsp;. All rights reserved
+      
+      <!-- Made With&nbsp;
       <img src="../../assets/images/heart.svg" />&nbsp;
       By&nbsp;
       <a
@@ -15,7 +23,7 @@
         target="_blank"
         rel="noopener noreferrer"
         >MWdev.mwnode.com</a
-      >
+      > -->
     </div>
     <!-- <div
       class="hidden md:!block"

@@ -118,7 +118,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             <div class="">
               <label
                 for="vote"
-                class="btn btn-xs btn-primary rounded-sm"
+                class="btn btn-xs btn-mw-primary rounded-sm"
                 @click="
                   dialog.open('vote', {
                     proposal_id: item?.proposal_id,
@@ -212,7 +212,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             </div>
             <label
               for="vote"
-              class="btn btn-xs btn-primary rounded-sm"
+              class="btn btn-xs btn-mw-primary rounded-sm"
               @click="
                 dialog.open('vote', {
                   proposal_id: item?.proposal_id,

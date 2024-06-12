@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue';
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 
 // Components
 import newFooter from './NavFooter.vue';
@@ -8,6 +8,7 @@ import NavbarThemeSwitcher from './NavbarThemeSwitcher.vue';
 import NavbarSearch from './NavbarSearch.vue';
 import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
+import BackgroundEffect from './BackgroundEffect.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
@@ -20,6 +21,7 @@ import dayjs from 'dayjs';
 const dashboard = useDashboard();
 dashboard.initial();
 const blockchain = useBlockchain();
+console.log(blockchain);
 blockchain.randomSetupEndpoint();
 const baseStore = useBaseStore();
 
@@ -68,15 +70,69 @@ const behind = computed(() => {
   return blocktime.value.isBefore(current)
 });
 
+function setHeightBackground() {
+  const bodyH = document.getElementById('app')?.offsetHeight;
+  let height = '100%';
+  if (bodyH && bodyH > 0) {
+    height = bodyH?.toString() + 'px';
+  }
+
+  const elBackground = document.getElementById('mw-background-effect');
+  if (elBackground) {
+    elBackground.style.height = height;
+  }
+  // console.log('bodyH: ' + height);
+  return true;
+}
+
+onMounted(() => {
+  setHeightBackground();
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleLoad);
+  window.addEventListener("unload", handleUnload);
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+  window.removeEventListener("load", handleLoad);
+  window.removeEventListener("unload", handleUnload);
+  window.removeEventListener("resize", handleResize);
+})
+
+const handleScroll = () => {
+  // console.log('scroll');
+  setHeightBackground();
+}
+
+const handleLoad = () => {
+  console.log('load');
+  setHeightBackground();
+}
+
+const handleUnload = () => {
+  console.log('unload');
+  setHeightBackground();
+}
+
+const handleResize = () => {
+  console.log('resize');
+  setHeightBackground();
+}
+
+
 dayjs()
+
 
 </script>
 
 <template>
-  <div class="default-layout">
+  <div class="" @scroll="setHeightBackground">
+    <!-- background -->
+    <BackgroundEffect class="bg-mw-base h-dvh" />
     <!-- sidebar -->
     <div
-      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-white-5 border-r border-gray-100 dark:border-gray-700"
+      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base md:bg-white-5"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }"
     >
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
@@ -116,7 +172,7 @@ dayjs()
             @click="changeOpen(index)"
           />
           <div
-            class="collapse-title !py-0 px-4 flex items-center cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
+            class="collapse-title !py-0 px-4 flex items-center"
           >
             <Icon
               v-if="item?.icon?.icon"
@@ -133,7 +189,7 @@ dayjs()
               class="w-6 h-6 rounded-full mr-3"
             />
             <div
-              class="text-base capitalize flex-1 text-gray-700 dark:text-gray-200 whitespace-nowrap"
+              class="text-base capitalize flex-1 text-gray-200 whitespace-nowrap"
             >
               {{ item?.title }}
             </div>
@@ -146,10 +202,10 @@ dayjs()
             </div>
           </div>
           <div class="collapse-content">
-            <div v-for="(el, key) of item?.children" class="menu btn-mw--border w-full rounded-full !p-0">
+            <div v-for="(el, key) of item?.children" class="menu btn-mw--border w-full rounded-full my-1 border-transparent !p-0">
               <!-- class="hover:bg-gray-100 dark:hover:bg-[#373f59] cursor-pointer px-3 py-2 flex items-center" -->
               <RouterLink
-                v-if="isNavLink(el)"
+                v-if="isNavLink(el) && !['module.widget', 'module.state-sync', 'module.consensus', 'module.ibc'].includes(el.title)"
                 @click="sidebarShow = false"
                 class="btn-mw--content rounded-full cursor-pointer px-3 py-2 flex items-center"
                 :class="{
@@ -175,7 +231,7 @@ dayjs()
                 }"
                 />
                 <div
-                  class="text-base capitalize text-gray-500 dark:text-gray-300"
+                  class="text-gray-200 text-base capitalize"
                   :class="{
                     '!text-white': selected($route, el),
                   }"
@@ -208,7 +264,7 @@ dayjs()
             class="w-6 h-6 rounded-full mr-3 border border-blue-100"
           />
           <div
-            class="text-base capitalize flex-1 text-gray-700 dark:text-gray-200 whitespace-nowrap"
+            class="text-base capitalize flex-1 text-gray-200 whitespace-nowrap"
           >
             {{ item?.title }}
           </div>
@@ -222,12 +278,12 @@ dayjs()
         </RouterLink>
         <div
           v-if="isNavTitle(item)"
-          class="px-4 text-sm text-gray-400 pb-2 uppercase"
+          class="px-4 text-sm text-gray-400 md:text-gray-200 pb-2 uppercase"
         >
           {{ item?.heading }}
         </div>
       </div>
-      <div class="px-2">
+      <div class="px-2 hidden">
           <div class="px-4 text-sm pt-2 text-gray-400 pb-2 uppercase">
             Tools
           </div>
@@ -332,7 +388,7 @@ dayjs()
     <div class="xl:!ml-64 px-3 pt-4">
       <!-- header -->
       <div
-        class="flex items-center py-3 bg-base-100 mb-4 rounded px-4 sticky top-0 z-10"
+        class="flex items-center py-3 mb-4 rounded px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
       >
         <div
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
@@ -341,13 +397,13 @@ dayjs()
           <Icon icon="mdi-menu" />
         </div>
 
-        <ChainProfile />
+        <!-- <ChainProfile /> -->
 
         <div class="flex-1 w-0"></div>
 
         <!-- <NavSearchBar />-->
-        <NavBarI18n class="hidden md:!inline-block" />
-        <NavbarThemeSwitcher class="!inline-block" />
+        <!-- <NavBarI18n class="hidden md:!inline-block" /> -->
+        <!-- <NavbarThemeSwitcher class="!inline-block" /> -->
         <NavbarSearch class="!inline-block" />
         <NavBarWallet />
       </div>
@@ -377,7 +433,5 @@ dayjs()
 </template>
 
 <style lang="scss" scoped>
-.btn-mw--border.menu {
-  margin: 2px 0;
-}
+
 </style>

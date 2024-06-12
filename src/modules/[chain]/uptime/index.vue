@@ -192,7 +192,7 @@ function fetchAllKeyRotation() {
       <div class="flex items-center gap-x-4">
         <input type="text" v-model="keyword" placeholder="Keywords to filter validators"
           class="input input-sm w-full flex-1 border border-gray-200 dark:border-gray-600" />
-        <button v-if="chainStore.isConsumerChain" class="btn btn-sm btn-primary" @click="fetchAllKeyRotation">Load
+        <button v-if="chainStore.isConsumerChain" class="btn btn-sm btn-mw-primary" @click="fetchAllKeyRotation">Load
           Rotated Keys</button>
       </div>
 

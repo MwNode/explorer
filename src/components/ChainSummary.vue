@@ -29,13 +29,13 @@ const addFavor = (e: Event) => {
     :to="`/${name}`"
     class="cursor-pointer"
   >
-    <div class="border-white-10 btn-mw--border rounded-32 shadow">
-      <div class="btn-mw--content bg-white-5 flex justify-between items-end rounded-32">
-        <div class="flex flex-col">
-          <div class="w-8 h-8 rounded-full overflow-hidden">
+    <div class="rounded-3xl md:rounded-32 shadow btn-mw--border border-white-10">
+      <div class="btn-mw--content bg-white-5 flex justify-between items-end rounded-3xl md:rounded-32">
+        <div class="flex md:!flex-col flex-row content-center">
+          <div class="w-8 h-8 rounded-full overflow-hidden mr-3 md:ml-0">
             <img :src="conf.logo" />
           </div>
-          <div class="font-semibold mt-3 flex-1 truncate capitalize chain-name">
+          <div class="font-semibold mb-0 md:mt-3 flex-1 truncate capitalize chain-name text-lg leading-normal">
             {{ conf?.prettyName || props.name }}
           </div>
         </div>
@@ -61,11 +61,6 @@ const addFavor = (e: Event) => {
 </template>
 
 <style lang="scss" scoped>
-.chain-name {
-  font-size: 22px;
-  line-height: 1.5;
-}
-
 .btn-mw--content {
   padding: 20px 24px;
 }

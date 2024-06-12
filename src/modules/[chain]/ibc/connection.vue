@@ -55,7 +55,7 @@ function pageload(p: number) {
             <button class="join-item px-2">{{ $t('ibc.connection_id') }}:</button>
             <input v-model="ibcStore.connectionId" type=number class="input input-bordered w-40 join-item" min="0"
               :max="pageResponse.total || 0" :placeholder="`0~${pageResponse.total}`" />
-            <button class="join-item btn  btn-primary" @click="ibcStore.showConnection()">{{ $t('ibc.btn_apply') }}</button>
+            <button class="join-item btn  btn-mw-primary" @click="ibcStore.showConnection()">{{ $t('ibc.btn_apply') }}</button>
           </div>
         </div>
       </div>

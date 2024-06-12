@@ -36,13 +36,13 @@ const tipMsg = computed(() => {
 
 <template>
   <div class="dropdown dropdown-hover dropdown-end">
-    <label tabindex="0" class="btn btn-sm btn-primary m-1 lowercase truncate !inline-flex text-xs md:!text-sm">
+    <label tabindex="0" class="btn rounded-full normal-case text-white bg-white-30 hover:bg-orange border border-white-10 m-1 !px-6 py-2 truncate !inline-flex">
       <Icon icon="mdi:wallet" />
-      <span class="ml-1 hidden md:block">
-        {{ walletStore.shortAddress || 'Wallet' }}</span>
+      <span class="ml-1 hidden md:!block">
+        {{ walletStore.shortAddress || 'Connect Wallet' }}</span>
     </label>
     <div tabindex="0" class="dropdown-content menu shadow p-2 bg-base-100 rounded w-52 md:!w-64 overflow-auto">
-      <label v-if="!walletStore?.currentAddress" for="PingConnectWallet" class="btn btn-sm btn-primary">
+      <label v-if="!walletStore?.currentAddress" for="PingConnectWallet" class="btn btn-sm btn-mw-primary">
         <Icon icon="mdi:wallet" /><span class="ml-1 block">Connect Wallet</span>
       </label>
       <div class="px-2 mb-1 text-gray-500 dark:text-gray-400 font-semibold">

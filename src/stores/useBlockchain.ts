@@ -24,6 +24,7 @@ import {
 import { useBlockModule } from '@/modules/[chain]/block/block';
 import { DEFAULT } from '@/libs';
 import { hexToRgb, rgbToHsl } from '@/libs/utils';
+import { log } from 'console';
 
 export const useBlockchain = defineStore('blockchain', {
   state: () => {
@@ -106,6 +107,7 @@ export const useBlockchain = defineStore('blockchain', {
       const favNavItems: VerticalNavItems = [];
       Object.keys(this.dashboard.favoriteMap).forEach((name) => {
         const ch = this.dashboard.chains[name];
+        console.log('ch: ', ch);
         if (ch && this.dashboard.favoriteMap?.[name]) {
           favNavItems.push({
             title: ch.prettyName || ch.chainName || name,
@@ -118,23 +120,23 @@ export const useBlockchain = defineStore('blockchain', {
       // combine all together
       return [
         ...currNavItem,
-        { heading: 'Ecosystem' } as NavSectionTitle,
-        {
-          title: 'Favorite',
-          children: favNavItems,
-          badgeContent: favNavItems.length,
-          badgeClass: 'bg-primary',
-          i18n: true,
-          icon: { icon: 'mdi-star', size: '22' },
-        } as NavGroup,
-        {
-          title: 'All Blockchains',
-          to: { path: '/' },
-          badgeContent: this.dashboard.length,
-          badgeClass: 'bg-primary',
-          i18n: true,
-          icon: { icon: 'mdi-grid', size: '22' },
-        } as NavLink,
+        // { heading: 'Ecosystem' } as NavSectionTitle,
+        // {
+        //   title: 'Favorite',
+        //   children: favNavItems,
+        //   badgeContent: favNavItems.length,
+        //   badgeClass: 'bg-primary',
+        //   i18n: true,
+        //   icon: { icon: 'mdi-star', size: '22' },
+        // } as NavGroup,
+        // {
+        //   title: 'All Blockchains',
+        //   to: { path: '/' },
+        //   badgeContent: this.dashboard.length,
+        //   badgeClass: 'bg-primary',
+        //   i18n: true,
+        //   icon: { icon: 'mdi-grid', size: '22' },
+        // } as NavLink,
       ];
     },
   },
