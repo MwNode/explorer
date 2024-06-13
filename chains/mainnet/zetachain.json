@@ -6,13 +6,13 @@
     "min_tx_fee": 200,
     "sdk_version": "0.46.13",
     "addr_prefix": "zeta",
-    "logo": "/logos/zetachain.png",
+    "logo": "/logos/ZetaChain.png",
     "assets": [
       {
         "base": "azeta",
         "symbol": "ZETA",
         "exponent": 18,
-        "logo": "/logos/zetachain.png"
+        "logo": "/logos/ZetaChain.png"
       }
     ]
   }
