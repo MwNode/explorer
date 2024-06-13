@@ -1,0 +1,25 @@
+{
+    "chain_name": "cosmos",
+    "registry_name": "cosmoshub",
+    "api": [
+        {"provider": "kjnodes.com 🦄", "address": "https://cosmoshub.api.kjnodes.com"},
+        {"provider": "polkachu.com", "address": "https://cosmos-api.polkachu.com"}
+    ],
+    "rpc": [
+        {"provider": "kjnodes.com 🦄", "address": "https://cosmoshub.rpc.kjnodes.com"},
+        {"provider": "polkachu.com", "address": "https://cosmos-api.polkachu.com"}
+    ],
+    "sdk_version": "0.45.1",
+    "coin_type": "118",
+    "min_tx_fee": "800",
+    "addr_prefix": "cosmos",
+    "logo": "/logos/cosmos.svg",
+    "theme_color": "#8e31f1",
+    "assets": [{
+        "base": "uatom",
+        "symbol": "ATOM",
+        "exponent": "6",
+        "coingecko_id": "cosmos", 
+        "logo": "/logos/cosmos.svg"
+    }]
+}

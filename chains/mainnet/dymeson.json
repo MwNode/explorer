@@ -13,7 +13,7 @@
     "coin_type": "60",
     "min_tx_fee": "5000",
     "addr_prefix": "dym",
-    "logo": "/logos/Dymension.png",
+    "logo": "/logos/dymension.png",
     "keplr_features": ["ibc-transfer", "ibc-go", "eth-address-gen", "eth-key-sign"],
     "theme_color": "#c9a282",
     "assets": [{
@@ -21,6 +21,6 @@
         "symbol": "DYM",
         "exponent": "18",
         "coingecko_id": "dymension",
-        "logo": "/logos/Dymension.png"
+        "logo": "/logos/dymension.png"
     }]
 }
