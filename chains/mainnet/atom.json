@@ -13,13 +13,13 @@
     "coin_type": "118",
     "min_tx_fee": "800",
     "addr_prefix": "cosmos",
-    "logo": "/logos/cosmos.svg",
+    "logo": "/logos/atom.png",
     "theme_color": "#8e31f1",
     "assets": [{
         "base": "uatom",
         "symbol": "ATOM",
         "exponent": "6",
         "coingecko_id": "cosmos", 
-        "logo": "/logos/cosmos.svg"
+        "logo": "/logos/atom.png"
     }]
 }

@@ -1,6 +1,6 @@
 {
-    "chain_name": "cataclysm-1",
-    "registry_name": "cataclysm-1",
+    "chain_name": "Nibiru",
+    "registry_name": "Nibiru",
     "api": [
       {
         "address": "https://lcd.nibiru.fi",
