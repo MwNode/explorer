@@ -143,7 +143,7 @@ const result = ref({});
 </script>
 <template>
     <div>
-        <div class="bg-base-100 px-4 pt-3 pb-4 rounded mb-4 shadow">
+        <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
             <h2 class="card-title truncate w-full">
                 {{ $t('cosmwasm.contract_detail') }}
             </h2>
@@ -182,7 +182,7 @@ const result = ref({});
 
         </div>
 
-        <div class="bg-base-100 px-4 pt-3 pb-4 rounded mb-4 shadow">
+        <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
             <h2 class="card-title truncate w-full mt-4 mb-2">Transactions</h2>
             <table class="table">
                 <thead class=" bg-base-200">

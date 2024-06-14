@@ -26,6 +26,7 @@ const chains = computed(() => {
     return Object.values(dashboard.chains);
   }
 });
+console.log('chains', chains);
 
 const featured = computed(() => {
   const names = ["cosmos", "osmosis", "akash", "celestia", "evmos", "injective", "dydx", "noble"];
@@ -72,8 +73,8 @@ const chainStore = useBlockchain()
         <span class="md:ml-5">Blockchain Explorer</span>
       </h1>
     </div>
-    <div class="text-center text-base">
-      <p class="mb-1 text-base md:text-lg leading-normal">
+    <div class="text-center text-white">
+      <p class="mb-1 md:text-lg leading-normal">
         {{ $t('pages.slogan') }}
       </p>
     </div>
@@ -119,6 +120,7 @@ const chainStore = useBlockchain()
         :name="chain.chainName"
       />
     </div>
+    <!-- <index /> -->
   </div>
 </template>
 

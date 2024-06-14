@@ -188,7 +188,7 @@ function fetchAllKeyRotation() {
         <a class="tab text-gray-400 capitalize">{{ $t('uptime.customize') }}</a>
       </RouterLink>
     </div>
-    <div class="bg-base-100 px-5 pt-5">
+    <div class="bg-white-10 px-5 pt-5">
       <div class="flex items-center gap-x-4">
         <input type="text" v-model="keyword" placeholder="Keywords to filter validators"
           class="input input-sm w-full flex-1 border border-gray-200 dark:border-gray-600" />

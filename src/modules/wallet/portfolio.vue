@@ -218,7 +218,7 @@ const currencySign = computed(() => {
 <template>
   <div class="overflow-x-auto w-full rounded-md">
 
-    <div class="flex flex-wrap justify-between bg-base-100 p-5">
+    <div class="flex flex-wrap justify-between bg-white-10 p-5">
       <div class="min-w-0">
         <h2 class="text-2xl font-bold leading-7 sm:!truncate sm:!text-3xl sm:!tracking-tight">
           Portfolio
@@ -247,7 +247,7 @@ const currencySign = computed(() => {
         </div>
       </div>
     </div>
-    <div class="bg-base-100">
+    <div class="bg-white-10">
       <div v-if="tokenList" class="grid grid-cols-1 md:grid-cols-3">
         <div>
           <DonutChart height="280" :series="Object.values(tokenValues)"

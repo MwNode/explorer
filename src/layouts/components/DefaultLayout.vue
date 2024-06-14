@@ -9,6 +9,7 @@ import NavbarSearch from './NavbarSearch.vue';
 import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
 import BackgroundEffect from './BackgroundEffect.vue';
+// import chainhome from './testChainIndex.vuex.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
@@ -388,7 +389,7 @@ dayjs()
     <div class="xl:!ml-64 px-3 pt-4">
       <!-- header -->
       <div
-        class="flex items-center py-3 mb-4 rounded px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
+        class="flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-50 shadow"
       >
         <div
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
@@ -425,6 +426,7 @@ dayjs()
             <Component :is="Component" />
           </Transition>
         </RouterView>
+        <!-- <chainhome /> -->
       </div>
 
       <newFooter />

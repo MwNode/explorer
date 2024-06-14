@@ -64,6 +64,7 @@
 }
 // button - custom border, custom background
 .btn {
+    border-radius: 999px !important;
     &.border {
         &-white-5 {
             border-color: var(--white-5);
@@ -83,6 +84,9 @@
         &-white-30 {
             background-color: var(--white-30);
         }
+    }
+    &:hover, &:active {
+        opacity: 0.8;
     }
     &.hover {
         &\: {
@@ -116,8 +120,32 @@
         &bg-orange:hover {
             background-color: $orange;
         }
+        &\!bg-primary {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-20:hover {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
+        }
     }
-} 
+}
+.focus {
+    &\: {
+        &bg-orange:focus {
+            background-color: $orange;
+        }
+        &\!bg-primary {
+            &:focus {
+                background-color: $primary !important;
+            }
+            &-20:focus {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
+        }
+    }
+}
+
 .default-layout {
     background-image: url('../../assets/images/mw-background-2.svg');
     background-repeat: no-repeat;
@@ -143,9 +171,15 @@
         }
     }
 }
+.border {
+    &-primary {
+        border-color: $primary;
+    }
+}
 
 // border-radius
 .rounded {
+    border-radius: 20px !important;
     &-32 {
         border-radius: 32px;
     }
@@ -164,6 +198,14 @@
 
 // link
 .link {
+    &-primary {
+        color: $primary;
+    }
+}
+
+
+// text
+.hover\:text {
     &-primary {
         color: $primary;
     }
@@ -212,6 +254,9 @@
                 }
                 &-mw-base {
                     background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
                 }
                 &-mw-base-80 {
                     background-color: rgba($color: $background-dark, $alpha: 0.8);

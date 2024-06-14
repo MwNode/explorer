@@ -33,7 +33,7 @@ const list = computed(() => {
 
             <div class="grid xl:!grid-cols-6 md:!grid-cols-4 grid-cols-1 gap-3">
             <RouterLink v-for="item in list"
-                class="flex flex-col justify-between rounded p-4 shadow bg-base-100"
+                class="flex flex-col justify-between rounded p-4 shadow bg-white-10"
                 :to="`/${chain}/block/${item.block.header.height}`">
                 <div class="flex justify-between">
                     <h3 class="text-md font-bold sm:!text-lg">

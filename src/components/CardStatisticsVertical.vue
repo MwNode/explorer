@@ -22,7 +22,7 @@ const isPositive = controlledComputed(
 </script>
 
 <template>
-  <div class="bg-base-100 shadow rounded p-4">
+  <div class="bg-white-10 shadow rounded-[20px] p-4">
     <div class="flex items-center justify-center">
       <div
         v-if="props.icon"
@@ -46,10 +46,10 @@ const isPositive = controlledComputed(
     </div>
 
     <div class="">
-      <h6 class="text-lg text-center font-semibold mt-2 mb-1">
+      <h6 class="text-white text-lg text-center font-semibold mt-2 mb-1">
         {{ props.stats || '-'}}
       </h6>
-      <p class="text-sm text-center">
+      <p class="text-white text-sm text-center">
         {{ props.title }}
       </p>
 

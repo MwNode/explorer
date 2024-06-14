@@ -10,7 +10,7 @@ import Logo from './Logo.vue';
   >
     <div class="flex flex-1 flex-col md:!flex-row justify-center md:!justify-between items-center">
       <!-- <Logo /> -->
-      <img src="../../assets/mw-logo.svg" width="100px" class="md:hidden">
+      <img class="logo md:hidden" src="../../assets/mw-logo.svg">
       &copy;&nbsp;
       {{ new Date().getFullYear() }}&nbsp;. All rights reserved
       
@@ -43,3 +43,10 @@ import Logo from './Logo.vue';
     </div> -->
   </footer>
 </template>
+
+<style lang="scss" scoped>
+footer img.logo {
+  max-width: 100px;
+  width: 100%;
+}
+</style>
