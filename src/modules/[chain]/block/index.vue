@@ -20,7 +20,7 @@ const list = computed(() => {
 <template>
     <div>
         <div class="tabs bg-transparent mb-4">
-            <a class="tab mr-10 uppercase" :class="{ 'tab-active': tab === 'blocks' }"
+            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === 'blocks' }"
                 @click="tab = 'blocks'">{{ $t('block.recent') }}</a>
             <RouterLink class="tab capitalize" 
                 :to="`/${chain}/block/${Number(base.latest?.block?.header.height||0) + 10000}`"

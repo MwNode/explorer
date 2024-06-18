@@ -294,6 +294,10 @@
     }
 }
 
+.dropdown.dropdown-hover:hover .dropdown-content {
+    min-width: 300px;
+    z-index: 90;
+}
 
 
 // RESPONSIVE

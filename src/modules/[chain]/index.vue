@@ -154,7 +154,7 @@ const amount = computed({
             <div class="dropdown dropdown-hover w-full">
               <label>
                 <div
-                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-lg">
+                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-lg mb-1">
                   <div>
                     <div class="font-semibold text-xl text-white ">
                       {{ ticker?.market?.name || '' }}
@@ -176,7 +176,7 @@ const amount = computed({
                   </div>
                 </div>
               </label>
-              <div class="dropdown-content mt-1 py-3 bg-slate-900 border border-primary rounded">
+              <div class="dropdown-content py-3 bg-slate-900 border border-primary rounded">
                 <div class="h-64 overflow-auto w-full shadow rounded">
                   <ul class="menu w-full rounded">
                     <li v-for="(item, index) in store.coinInfo.tickers" :key="index" @click="store.selectTicker(index)">
@@ -233,8 +233,8 @@ const amount = computed({
                 </div>
                 <label class="modal-backdrop" for="calculator">{{ $t('index.close') }}</label>
               </div>
-              <div :class="{'btn-mw-gradient--outside': store.trustColor === 'green'}">
-                <a class="my-5 !text-main btn grow" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
+              <div class="my-5 rounded-full w-full" :class="{'btn-mw-gradient--outside': store.trustColor === 'green'}">
+                <a class="text-primary hover:text-white rounded grow w-full btn" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
                   target="_blank">
                   {{ $t('index.buy') }} {{ coinInfo.symbol || '' }}
                 </a>
