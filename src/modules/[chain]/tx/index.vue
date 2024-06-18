@@ -36,7 +36,7 @@ function search() {
 
         <div v-show="tab === 'recent'" class="bg-white-5 rounded overflow-x-auto">
             <table class="table w-full table-compact text-white">
-                <thead class="bg-white-10">
+                <thead class="bg-white-10 text-white">
                     <tr>
                         <th style="position: relative; z-index: 2;">{{ $t('account.height') }}</th>
                         <th style="position: relative; z-index: 2;">{{ $t('account.hash') }}</th>

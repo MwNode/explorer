@@ -133,7 +133,7 @@ function color(v: string) {
         clientState.client_state?.['@type'] }}</span></h2>
       <div class="overflow-x-auto grid grid-cols-1 md:grid-cols-2 gap-4">
         <table class="table table-sm capitalize text-white">
-          <thead class="bg-white-10">
+          <thead class="bg-white-10 text-white">
             <tr>
               <td colspan="3">{{ $t('ibc.trust_parameters') }}</td>
             </tr>
@@ -170,7 +170,7 @@ function color(v: string) {
           </tbody>
         </table>
         <table class="table table-sm text-sm w-full capitalize text-white">
-          <thead class="bg-white-10">
+          <thead class="bg-white-10 text-white">
             <tr>
               <td colspan="2">{{ $t('ibc.upgrade_parameters') }}</td>
             </tr>

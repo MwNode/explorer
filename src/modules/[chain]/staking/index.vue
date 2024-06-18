@@ -306,7 +306,7 @@ loadAvatars();
         <div class="bg-white-10 px-4 pt-3 pb-4 rounded shadow">
             <div class="overflow-x-auto">
                 <table class="table staking-table w-full text-white">
-                    <thead class="bg-white-10">
+                    <thead class="bg-white-10 text-white">
                         <tr>
                             <th
                                 scope="col"

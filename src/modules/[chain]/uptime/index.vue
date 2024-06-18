@@ -229,7 +229,7 @@ function fetchAllKeyRotation() {
 
       <div :class="tab === '3' ? '' : 'hidden'" class="overflow-x-auto">
         <table class="table table-compact w-full mt-5 text-white">
-          <thead class="capitalize bg-white-10">
+          <thead class="capitalize bg-white-10 text-white">
             <tr>
               <td>{{ $t('account.validator') }}</td>
               <td class="text-right">{{ $t('module.uptime') }}</td>
