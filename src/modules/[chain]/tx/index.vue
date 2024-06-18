@@ -27,16 +27,16 @@ function search() {
 </script>
 <template>
     <div>
-        <div class="tabs tabs-boxed bg-transparent mb-4">
-            <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'recent' }"
+        <div class="tabs bg-transparent mb-4">
+            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === 'recent' }"
                 @click="tab = 'recent'">{{ $t('block.recent') }}</a>
-            <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'search' }"
+            <a class="tab capitalize" :class="{ 'tab-active': tab === 'search' }"
                 @click="tab = 'search'">Search</a>
         </div>
 
-        <div v-show="tab === 'recent'" class="bg-white-10 rounded overflow-x-auto">
-            <table class="table w-full table-compact">
-                <thead class="bg-base-200">
+        <div v-show="tab === 'recent'" class="bg-white-5 rounded overflow-x-auto">
+            <table class="table w-full table-compact text-white">
+                <thead class="bg-white-10">
                     <tr>
                         <th style="position: relative; z-index: 2;">{{ $t('account.height') }}</th>
                         <th style="position: relative; z-index: 2;">{{ $t('account.hash') }}</th>
@@ -74,7 +74,7 @@ function search() {
             </div>
         </div>
 
-        <div v-show="tab === 'search'" class="bg-white-10 rounded overflow-x-auto">
+        <div v-show="tab === 'search'" class="bg-white-5 rounded overflow-x-auto">
             <div class="p-4">
                 <div class="form-control">
                     <input v-model="hash" type="text" class="input input-bordered" placeholder="Search by Tx Hash" @blur="search"/>

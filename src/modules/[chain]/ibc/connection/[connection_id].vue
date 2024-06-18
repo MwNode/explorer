@@ -132,8 +132,8 @@ function color(v: string) {
       <h2 class="card-title mb-4 overflow-hidden">{{ $t('ibc.title_2') }}<span class="ml-2 text-sm">{{
         clientState.client_state?.['@type'] }}</span></h2>
       <div class="overflow-x-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        <table class="table table-sm capitalize">
-          <thead class="bg-base-200">
+        <table class="table table-sm capitalize text-white">
+          <thead class="bg-white-10">
             <tr>
               <td colspan="3">{{ $t('ibc.trust_parameters') }}</td>
             </tr>
@@ -169,8 +169,8 @@ function color(v: string) {
             </tr>
           </tbody>
         </table>
-        <table class="table table-sm text-sm w-full capitalize">
-          <thead class="bg-base-200">
+        <table class="table table-sm text-sm w-full capitalize text-white">
+          <thead class="bg-white-10">
             <tr>
               <td colspan="2">{{ $t('ibc.upgrade_parameters') }}</td>
             </tr>

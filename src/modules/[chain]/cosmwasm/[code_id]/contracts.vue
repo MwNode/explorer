@@ -55,8 +55,8 @@ function showInfo(address: string) {
         {{ $t('cosmwasm.contract_list_code') }}: {{ props.code_id }}
       </h2>
       <div class="overflow-x-auto">
-        <table class="table table-compact w-full mt-4">
-          <thead class="bg-base-200">
+        <table class="table table-compact w-full mt-4 text-white">
+          <thead class="bg-white-10">
             <tr>
               <th style="position: relative; z-index: 2">{{ $t('cosmwasm.contract_list') }}</th>
               <th>{{ $t('account.action') }}</th>

@@ -40,8 +40,8 @@ function pageload(p: number) {
     <div class="bg-white-10 px-4 pt-3 pb-4 rounded shadow">
       <div class="flex flex-wrap gap-4  items-center">
         <h2 class="card-title py-4">{{ $t('ibc.title') }}</h2>
-        <div class="tabs tabs-boxed">
-          <a class="tab" :class="{ 'tab-active': tab === 'registry' }" @click="tab = 'registry'">{{ $t('ibc.registry') }}</a>
+        <div class="tabs">
+          <a class="tab mr-10" :class="{ 'tab-active': tab === 'registry' }" @click="tab = 'registry'">{{ $t('ibc.registry') }}</a>
           <a class="tab" :class="{ 'tab-active': tab === 'favorite' }" @click="tab = 'favorite'">{{ $t('module.favorite') }}</a>
         </div>
       </div>

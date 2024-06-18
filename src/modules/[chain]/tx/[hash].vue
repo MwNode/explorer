@@ -34,14 +34,14 @@ const messages = computed(() => {
 </script>
 <template>
     <div>
-        <div class="tabs tabs-boxed bg-transparent mb-4">
-            <RouterLink class="tab text-gray-400 uppercase" 
+        <div class="tabs bg-transparent mb-4">
+            <RouterLink class="tab mr-10 capitalize" 
                 :to="`/${chain}/tx/?tab=recent`"
                 >{{ $t('block.recent') }}</RouterLink>
-            <RouterLink class="tab text-gray-400 uppercase" 
+            <RouterLink class="tab mr-10 capitalize" 
                 :to="`/${chain}/tx/?tab=search`"
                 >Search</RouterLink>
-            <a class="tab text-gray-400 uppercase tab-active">Transaction</a>
+            <a class="tab capitalize tab-active">Transaction</a>
         </div>
 
         <div v-if="tx.tx_response" class="bg-white-10 px-4 pt-3 pb-4 rounded shadow mb-4">

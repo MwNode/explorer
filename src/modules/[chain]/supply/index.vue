@@ -33,8 +33,8 @@ function pageload(p: number) {
 </script>
 <template>
     <div class="overflow-auto bg-white-10">
-        <table class="table table-compact">
-            <thead class=" bg-base-200">
+        <table class="table table-compact text-white">
+            <thead class="bg-white-10">
                 <tr>
                     <td>Token</td>
                     <td>Amount</td>

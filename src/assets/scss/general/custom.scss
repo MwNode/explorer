@@ -223,12 +223,30 @@
 .tab {
     padding-right: 0px;
     padding-left: 0px;
+    --tab-color: var(--gray-3);
+    font-weight: bold;
+
     &-active {
         background-color: transparent;
         border-bottom: 1px solid $primary !important;
         color: $primary;
     }
+
+    &:hover {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+        opacity: 0.8;
+    }
 }
+
+
+// table
+.table {
+    tr.hover:hover {
+        background-color: rgba($color: $background-dark, $alpha: 0.5);
+    }
+}
+
 
 
 // gap
@@ -254,6 +272,9 @@
 .text {
     &-primary {
         color: $primary;
+    }
+    &-orange {
+        color: $orange;
     }
     &-gray-3 {
         color: $gray-3;

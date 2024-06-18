@@ -179,14 +179,14 @@ function fetchAllKeyRotation() {
 
 <template>
   <div>
-    <div class="tabs tabs-boxed bg-transparent mb-4">
-      <a class="tab text-gray-400 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
-        $t('uptime.overall') }}</a>
-      <a class="tab text-gray-400 capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{
+    <div class="tabs bg-transparent mb-4">
+      <!-- <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
+        $t('uptime.overall') }}</a> -->
+      <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{
         $t('module.blocks') }}</a>
-      <RouterLink :to="`/${chain}/uptime/customize`">
-        <a class="tab text-gray-400 capitalize">{{ $t('uptime.customize') }}</a>
-      </RouterLink>
+      <!-- <RouterLink :to="`/${chain}/uptime/customize`">
+        <a class="tab capitalize">{{ $t('uptime.customize') }}</a>
+      </RouterLink> -->
     </div>
     <div class="bg-white-10 px-5 pt-5">
       <div class="flex items-center gap-x-4">
@@ -228,8 +228,8 @@ function fetchAllKeyRotation() {
       </div>
 
       <div :class="tab === '3' ? '' : 'hidden'" class="overflow-x-auto">
-        <table class="table table-compact w-full mt-5">
-          <thead class="capitalize bg-base-200">
+        <table class="table table-compact w-full mt-5 text-white">
+          <thead class="capitalize bg-white-10">
             <tr>
               <td>{{ $t('account.validator') }}</td>
               <td class="text-right">{{ $t('module.uptime') }}</td>
