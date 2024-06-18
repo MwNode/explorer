@@ -19,10 +19,10 @@ const list = computed(() => {
 </script>
 <template>
     <div>
-        <div class="tabs tabs-boxed bg-transparent mb-4">
-            <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'blocks' }"
+        <div class="tabs bg-transparent mb-4">
+            <a class="tab text-gray-3 uppercase" :class="{ 'tab-active': tab === 'blocks' }"
                 @click="tab = 'blocks'">{{ $t('block.recent') }}</a>
-            <RouterLink class="tab text-gray-400 uppercase" 
+            <RouterLink class="tab text-gray-3 uppercase" 
                 :to="`/${chain}/block/${Number(base.latest?.block?.header.height||0) + 10000}`"
                 >{{ $t('block.future') }}</RouterLink>
         </div>

@@ -9,7 +9,7 @@ import NavbarSearch from './NavbarSearch.vue';
 import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
 import BackgroundEffect from './BackgroundEffect.vue';
-// import chainhome from './testChainIndex.vuex.vue';
+import chainhome from './testChainIndex.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
@@ -140,7 +140,7 @@ dayjs()
         <RouterLink to="/" class="flex items-center">
           <Logo />
           <!-- <img class="w-10 h-10" src="../../assets/logo.svg" />
-          <h1 class="flex-1 ml-3 text-2xl font-semibold dark:text-white">
+          <h1 class="flex-1 ml-3 text-2xl font-semibold text-main">
             Ping.pub
           </h1> -->
         </RouterLink>
@@ -196,19 +196,19 @@ dayjs()
             </div>
             <div
               v-if="item?.badgeContent"
-              class="mr-6 badge badge-sm text-white border-none"
+              class="mr-6 badge badge-sm text-main border-none"
               :class="item?.badgeClass"
             >
               {{ item?.badgeContent }}
             </div>
           </div>
           <div class="collapse-content">
-            <div v-for="(el, key) of item?.children" class="menu btn-mw--border w-full rounded-full my-1 border-transparent !p-0">
+            <div v-for="(el, key) of item?.children" class="menu btn-mw-gradient-hover--outside w-full rounded-full my-1 border-transparent !p-0">
               <!-- class="hover:bg-gray-100 dark:hover:bg-[#373f59] cursor-pointer px-3 py-2 flex items-center" -->
               <RouterLink
                 v-if="isNavLink(el) && !['module.widget', 'module.state-sync', 'module.consensus', 'module.ibc'].includes(el.title)"
                 @click="sidebarShow = false"
-                class="btn-mw--content rounded-full cursor-pointer px-3 py-2 flex items-center"
+                class="btn-mw-gradient-hover--inside rounded-full cursor-pointer px-3 py-2 flex items-center"
                 :class="{
                   'active': selected($route, el),
                 }"
@@ -219,7 +219,7 @@ dayjs()
                   icon="mdi:chevron-right"
                   class="mr-2 ml-3"
                   :class="{
-                    'text-white':
+                    'text-main':
                       $route.path === el?.to?.path &&
                       item?.title !== 'Favorite',
                   }"
@@ -234,7 +234,7 @@ dayjs()
                 <div
                   class="text-gray-200 text-base capitalize"
                   :class="{
-                    '!text-white': selected($route, el),
+                    '!text-main': selected($route, el),
                   }"
                 >
                   {{ item?.title === 'Favorite' ? el?.title : $t(el?.title) }}
@@ -271,7 +271,7 @@ dayjs()
           </div>
           <div
             v-if="item?.badgeContent"
-            class="badge badge-sm text-white border-none" 
+            class="badge badge-sm text-main border-none" 
             :class="item?.badgeClass"
           >
             {{ item?.badgeContent }}
@@ -293,7 +293,7 @@ dayjs()
           >
             <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
             <div
-              class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
+              class="text-base capitalize flex-1 text-main"
             >
               Wallet Helper
             </div>
@@ -311,7 +311,7 @@ dayjs()
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-sm capitalize flex-1 text-main"
           >
             Osmosis
           </div>
@@ -326,7 +326,7 @@ dayjs()
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-sm capitalize flex-1 text-main"
           >
             Celestia
           </div>
@@ -341,7 +341,7 @@ dayjs()
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-sm capitalize flex-1 text-main"
           >
             Becole
           </div>
@@ -354,7 +354,7 @@ dayjs()
         >
           <Icon icon="mdi:twitter" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-base capitalize flex-1 text-main"
           >
             Twitter
           </div>
@@ -367,7 +367,7 @@ dayjs()
         >
           <Icon icon="mdi:discord" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-base capitalize flex-1 text-main"
           >
             Discord
           </div>
@@ -379,17 +379,17 @@ dayjs()
         >
           <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
+            class="text-base capitalize flex-1 text-main"
           >
             FAQ
           </div>
         </a>
       </div>
     </div>
-    <div class="xl:!ml-64 px-3 pt-4">
+    <div class="xl:!ml-64">
       <!-- header -->
       <div
-        class="flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-50 shadow"
+        class="header flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
       >
         <div
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
@@ -410,7 +410,7 @@ dayjs()
       </div>
 
       <!-- 👉 Pages -->
-      <div style="min-height: calc(100vh - 180px);">
+      <div class="px-3 py-4 body-container" style="min-height: calc(100vh - 180px);">
         <div v-if="behind" class="alert alert-error mb-4">
             <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -429,7 +429,7 @@ dayjs()
         <!-- <chainhome /> -->
       </div>
 
-      <newFooter />
+      <newFooter class="px-3" />
     </div>
   </div>
 </template>

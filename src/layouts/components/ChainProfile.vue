@@ -30,7 +30,7 @@ function changeEndpoint(item: Endpoint) {
             chainStore.chainName ||
             ''
           "
-          class="capitalize whitespace-nowrap text-base font-semibold text-gray-600 dark:text-gray-200 hidden md:!block"
+          class="capitalize whitespace-nowrap text-base font-semibold text-main hidden md:!block"
         >
           {{ 
             baseStore.latest?.block?.header?.height
@@ -39,7 +39,7 @@ function changeEndpoint(item: Endpoint) {
           }} <span class="text-error">{{ baseStore.connected ? '' : 'disconnected' }}</span>
         </div>
         <div
-          class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap hidden md:!block"
+          class="text-xs text-main whitespace-nowrap hidden md:!block"
         >
           {{ chainStore.connErr || chainStore.endpoint.address }}
         </div>
@@ -47,7 +47,7 @@ function changeEndpoint(item: Endpoint) {
     </label>
     <div
       tabindex="0"
-      class="dropdown-content -left-6 w-80 menu shadow bg-base-200 rounded-box overflow-auto"
+      class="dropdown-content -left-6 w-80 menu shadow mt-1 py-3 bg-slate-900 border border-primary rounded-box overflow-auto"
     >
       <!-- rest -->
       <div
@@ -58,13 +58,13 @@ function changeEndpoint(item: Endpoint) {
       </div>
       <div
         v-for="(item, index) in chainStore.current?.endpoints?.rest"
-        class="px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-[#384059] cursor-pointer"
+        class="px-4 py-2 w-full hover:bg-slate-800 cursor-pointer"
         :key="index"
         @click="changeEndpoint(item)"
       >
         <div class="flex flex-col">
           <div class="flex items-center justify-between w-full">
-            <div class="text-gray-500 dark:text-gray-200 capitalize">
+            <div class="text-main capitalize">
               {{ item.provider }}
             </div>
             <span

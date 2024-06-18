@@ -289,7 +289,7 @@ const result = ref({});
 
                             </div>
                             <div class="mt-4 mb-4 text-center">
-                                <button class="btn btn-mw-primary px-4 text-white" @click="queryContract()">
+                                <button class="btn btn-mw-primary px-4 text-main" @click="queryContract()">
                                     {{ $t('cosmwasm.query_contract') }}
                                 </button>
                             </div>

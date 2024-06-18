@@ -200,7 +200,7 @@ async function loadBalances(chainName: string, endpoint: string, address: string
             Accounts
           </h2>
           <div class="mt-1 flex flex-col sm:!mt-0 sm:!flex-row sm:!flex-wrap sm:!space-x-6">
-            <div class="mt-2 items-center text-sm text-gray-500 hidden md:!flex">
+            <div class="mt-2 items-center text-sm text-main hidden md:!flex">
               <svg class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
                 aria-hidden="true">
                 <path fill-rule="evenodd"
@@ -254,7 +254,7 @@ async function loadBalances(chainName: string, endpoint: string, address: string
             <div class=" max-w-md overflow-hidden"><div class="font-bold">{{ key }}</div></div>
             <div class="dropdown">
               <label tabindex="0" class=" cursor-pointer">{{ subaccounts.length }} addresses</label>
-              <ul tabindex="0" class=" -left-14 dropdown-content menu p-2 shadow bg-base-200 rounded-box z-50">
+              <ul tabindex="0" class=" -left-14 dropdown-content menu shadow rounded-box z-50 mt-1 py-3 border border-primary bg-slate-900">
                 <li v-for="x in subaccounts">
                 <a>
                   <img :src="x.account.logo" class="w-8 h-8 mr-2" />
@@ -356,7 +356,7 @@ async function loadBalances(chainName: string, endpoint: string, address: string
                 </div>
               </td>
               <td class="text-right">
-                <span class="btn !bg-yes !border-yes btn-xs text-white" @click="addAddress(acc)">
+                <span class="btn !bg-yes !border-yes btn-xs text-main" @click="addAddress(acc)">
                   <Icon icon="mdi:plus" />
                 </span>
               </td>

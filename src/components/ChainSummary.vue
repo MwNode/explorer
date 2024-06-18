@@ -29,8 +29,8 @@ const addFavor = (e: Event) => {
     :to="`/${name}`"
     class="cursor-pointer"
   >
-    <div class="text-white rounded-3xl md:rounded-32 shadow btn-mw--border border-white-10">
-      <div class="btn-mw--content bg-white-5 flex justify-between items-end rounded-3xl md:rounded-32">
+    <div class="text-main rounded-3xl md:rounded-32 shadow btn-mw-gradient-hover--outside border-white-10">
+      <div class="btn-mw-gradient-hover--inside bg-white-5 flex justify-between items-end rounded-3xl md:rounded-32">
         <div class="flex md:!flex-col flex-row content-center">
           <div class="rounded-full overflow-hidden mr-3 md:ml-0">
             <img class="chain-logo" :src="conf.logo" />
@@ -61,7 +61,7 @@ const addFavor = (e: Event) => {
 </template>
 
 <style lang="scss" scoped>
-.btn-mw--content {
+.btn-mw-gradient-hover--inside {
   padding: 20px 24px;
 }
 

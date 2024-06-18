@@ -36,7 +36,7 @@ const tipMsg = computed(() => {
 
 <template>
   <div class="dropdown dropdown-hover dropdown-end">
-    <label tabindex="0" class="btn rounded-full normal-case text-white bg-white-30 hover:!bg-primary focus:!bg-primary border border-white-10 m-1 !px-6 py-2 truncate !inline-flex">
+    <label tabindex="0" class="btn rounded-full normal-case text-main bg-white-30 hover:!bg-primary focus:!bg-primary border border-white-10 m-1 !px-6 py-2 truncate !inline-flex">
       <Icon icon="mdi:wallet" />
       <span class="ml-1 hidden md:!block">
         {{ walletStore.shortAddress || 'Connect Wallet' }}</span>
