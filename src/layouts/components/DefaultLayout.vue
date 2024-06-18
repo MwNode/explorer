@@ -17,7 +17,7 @@ import { useBaseStore, useBlockchain } from '../../stores';
 // import NavBarI18n from './NavBarI18n.vue';
 import NavBarWallet from './NavBarWallet.vue';
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '../types';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 const dashboard = useDashboard();
 dashboard.initial();
