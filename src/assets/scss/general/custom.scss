@@ -3,7 +3,7 @@
 
 // button mw (gradient border)
 .btn-mw {
-    &-gradient-hover--outside {
+    &--border {
         border-width: 1px;
         &:hover {
             background-image: linear-gradient(90deg, $red , $orange);
@@ -12,70 +12,37 @@
             // --tw-gradient-to: var(--orange) var(--tw-gradient-to-position);
             // --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 
-            .btn-mw-gradient-hover--inside {
+            .btn-mw--content {
                 background: #292934;
                 // background: rgba($color: #fff, $alpha: 0.1);
             }
         }
 
-      &.active, &:has(.btn-mw-gradient-hover--inside.active) {
+      &.active, &:has(.btn-mw--content.active) {
         background: $primary;
-        .btn-mw-gradient-hover--inside {
+        .btn-mw--content {
             background: $primary;
             color: white;
         }
       }
     }
 
-    &-gradient-hover--inside {
+    &--content {
       border: 0px;
       padding: 8px 16px;
     //   margin: 1px;
       background: transparent;
     }
 
-    &-gradient--outside {
-        border-width: 1px;
-        border-color: transparent;
-        background-image: linear-gradient(90deg, $red , $orange);
-
-        .btn-mw-gradient--inside {
-            border: 0px;
-            color: $primary;
-        }
-
-        &:hover {
-            .btn-mw-gradient--inside {
-                background-color: transparent;
-                color: white;
-            }
-        }
-    }
-
     &-primary.btn {
-        border: 1px solid $primary;
-        background-color: $primary;
-        background-image: linear-gradient(90deg, $red , $orange);
-        color: white;
-        outline-color: white;
-
-        &:hover {
-            // border-color: rgba($color: $primary, $alpha: 0.8);
-            // background-color: rgba($color: $primary, $alpha: 0.8);
-            border-color: transparent;
-            opacity: 0.8;
-        }
-    }
-
-    &-primary-outline.btn {
         border-color: $primary;
-        background-color: transparent;
+        background-color: $primary;
         color: white;
         outline-color: white;
 
         &:hover {
-            border-color: rgba($color: $primary, $alpha: 1);
-            background-color: rgba($color: $primary, $alpha: 1);
+            border-color: rgba($color: $primary, $alpha: 0.8);
+            background-color: rgba($color: $primary, $alpha: 0.8);
         }
     }
 }
@@ -83,16 +50,14 @@
 .\! {
     &btn-mw {
         &-primary.btn {
-            border: 1px solid $primary !important;
-            background-color: $primary !important;
-            background-image: linear-gradient(90deg, $red , $orange) !important;
-            color: white !important;
-            outline-color: white !important;
-
+            border-color: $primary;
+            background-color: $primary;
+            color: white;
+            outline-color: white;
+    
             &:hover {
-                // border-color: rgba($color: $primary, $alpha: 0.8);
-                // background-color: rgba($color: $primary, $alpha: 0.8);
-                border-color: transparent !important;
+                --tw-border-opacity: 0.8;
+                --tw-bg-opacity: 0.8;
             }
         }
     }
@@ -120,9 +85,9 @@
             background-color: var(--white-30);
         }
     }
-    // &:hover, &:active {
-    //     opacity: 0.8;
-    // }
+    &:hover, &:active {
+        opacity: 0.8;
+    }
     &.hover {
         &\: {
             &bg-orange:hover {
@@ -150,16 +115,18 @@
         background-color: #171b28;
     }
 }
-.hover\: {
-    &bg-orange:hover {
-        background-color: $orange;
-    }
-    &\!bg-primary {
-        &:hover {
-            background-color: $primary !important;
+.hover {
+    &\: {
+        &bg-orange:hover {
+            background-color: $orange;
         }
-        &-20:hover {
-            background-color: rgba($color: $primary, $alpha: 0.2) !important;
+        &\!bg-primary {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-20:hover {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
         }
     }
 }
@@ -218,19 +185,6 @@
     }
 }
 
-
-//tab
-.tab {
-    padding-right: 0px;
-    padding-left: 0px;
-    &-active {
-        background-color: transparent;
-        border-bottom: 1px solid $primary !important;
-        color: $primary;
-    }
-}
-
-
 // gap
 .gap {
     &-20 {
@@ -251,22 +205,6 @@
 
 
 // text
-.text {
-    &-primary {
-        color: $primary;
-    }
-    &-gray-3 {
-        color: $gray-3;
-    }
-}
-.\!text {
-    &-primary {
-        color: $primary !important;
-    }
-    &-gray-3 {
-        color: $gray-3 !important;
-    }
-}
 .hover\:text {
     &-primary {
         color: $primary;
@@ -274,8 +212,7 @@
 }
 
 
-
-// RESPONSIVE
+// responsive
 .lg {
     @media (min-width: 1024px) {
         &\: {

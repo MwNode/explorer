@@ -27,10 +27,10 @@ function search() {
 </script>
 <template>
     <div>
-        <div class="tabs bg-transparent mb-4">
-            <a class="tab text-gray-3 uppercase" :class="{ 'tab-active': tab === 'recent' }"
+        <div class="tabs tabs-boxed bg-transparent mb-4">
+            <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'recent' }"
                 @click="tab = 'recent'">{{ $t('block.recent') }}</a>
-            <a class="tab text-gray-3 uppercase" :class="{ 'tab-active': tab === 'search' }"
+            <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'search' }"
                 @click="tab = 'search'">Search</a>
         </div>
 

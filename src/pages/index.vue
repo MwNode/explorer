@@ -62,7 +62,7 @@ const chainStore = useBlockchain()
           </g>
         </svg>
       </div>
-      <h1 class="text-main text-3xl font-bold leading-normal flex flex-col md:!flex-row items-center">
+      <h1 class="text-white text-3xl font-bold leading-normal flex flex-col md:!flex-row items-center">
         <!-- {{ $t('pages.title') }} -->
         <div class="relative">
           <span>MW NODE</span>
@@ -73,7 +73,7 @@ const chainStore = useBlockchain()
         <span class="md:ml-5">Blockchain Explorer</span>
       </h1>
     </div>
-    <div class="text-center text-main">
+    <div class="text-center text-white">
       <p class="mb-1 md:text-lg leading-normal">
         {{ $t('pages.slogan') }}
       </p>
