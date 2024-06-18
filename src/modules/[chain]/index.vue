@@ -233,13 +233,13 @@ const amount = computed({
                 </div>
                 <label class="modal-backdrop" for="calculator">{{ $t('index.close') }}</label>
               </div>
-              <div class="my-5 btn btn-mw-gradient--outside rounded-full">
-
+              <div :class="{'btn-mw-gradient--outside': store.trustColor === 'green'}">
+                <a class="my-5 !text-main btn grow" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
+                  target="_blank">
+                  {{ $t('index.buy') }} {{ coinInfo.symbol || '' }}
+                </a>
               </div>
-              <a class=" !text-primary hover:text-white btn grow rounded-full" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
-                target="_blank">
-                {{ $t('index.buy') }} {{ coinInfo.symbol || '' }}
-              </a>
+              
             </div>
           </div>
         </div>
