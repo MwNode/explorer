@@ -10,9 +10,9 @@ import type {
   NavLink,
   NavSectionTitle,
   VerticalNavItems,
-} from '@/layouts/types';
+} from '../layouts/types';
 import { useRouter } from 'vue-router';
-import { CosmosRestClient } from '@/libs/client';
+import { CosmosRestClient } from '../libs/client';
 import {
   useBankStore,
   useBaseStore,
@@ -21,9 +21,9 @@ import {
   useStakingStore,
   useWalletStore,
 } from '.';
-import { useBlockModule } from '@/modules/[chain]/block/block';
-import { DEFAULT } from '@/libs';
-import { hexToRgb, rgbToHsl } from '@/libs/utils';
+import { useBlockModule } from '../modules/[chain]/block/block';
+import { DEFAULT } from '../libs';
+import { hexToRgb, rgbToHsl } from '../libs/utils';
 // import { log } from 'console';
 
 export const useBlockchain = defineStore('blockchain', {

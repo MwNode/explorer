@@ -4,20 +4,20 @@ import { computed, ref, onMounted, onUnmounted } from 'vue';
 
 // Components
 import newFooter from './NavFooter.vue';
-import NavbarThemeSwitcher from './NavbarThemeSwitcher.vue';
+// import NavbarThemeSwitcher from './NavbarThemeSwitcher.vue';
 import NavbarSearch from './NavbarSearch.vue';
-import ChainProfile from './ChainProfile.vue';
+// import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
 import BackgroundEffect from './BackgroundEffect.vue';
-import chainhome from './testChainIndex.vue';
+// import chainhome from './testChainIndex.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
 
-import NavBarI18n from './NavBarI18n.vue';
+// import NavBarI18n from './NavBarI18n.vue';
 import NavBarWallet from './NavBarWallet.vue';
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '../types';
-import dayjs from 'dayjs';
+import * as dayjs from 'dayjs';
 
 const dashboard = useDashboard();
 dashboard.initial();
@@ -410,7 +410,7 @@ dayjs()
       </div>
 
       <!-- 👉 Pages -->
-      <div class="px-3 py-4 body-container" style="min-height: calc(100vh - 180px);">
+      <div class="px-3 py-4 body-container" style="min-height: calc(100vh - 164px);">
         <div v-if="behind" class="alert alert-error mb-4">
             <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
