@@ -24,7 +24,7 @@ import {
 import { useBlockModule } from '@/modules/[chain]/block/block';
 import { DEFAULT } from '@/libs';
 import { hexToRgb, rgbToHsl } from '@/libs/utils';
-import { log } from 'console';
+// import { log } from 'console';
 
 export const useBlockchain = defineStore('blockchain', {
   state: () => {
@@ -107,7 +107,7 @@ export const useBlockchain = defineStore('blockchain', {
       const favNavItems: VerticalNavItems = [];
       Object.keys(this.dashboard.favoriteMap).forEach((name) => {
         const ch = this.dashboard.chains[name];
-        console.log('ch: ', ch);
+        // console.log('ch: ', ch);
         if (ch && this.dashboard.favoriteMap?.[name]) {
           favNavItems.push({
             title: ch.prettyName || ch.chainName || name,

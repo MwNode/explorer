@@ -144,7 +144,7 @@ const amount = computed({
 
           <div class="my-4 flex flex-wrap items-center">
             <a v-for="(item, index) of comLinks" :key="index" :href="item.href"
-              class="link link-primary px-2 py-1 rounded-full no-underlineflex hover:underline items-center">
+              class="link link-primary px-2 py-1 rounded-full no-underline flex hover:underline items-center">
               <Icon :icon="item?.icon" />
               <span class="text-white ml-1 text-sm uppercase">{{ item?.name }}</span>
             </a>
@@ -154,7 +154,7 @@ const amount = computed({
             <div class="dropdown dropdown-hover w-full">
               <label>
                 <div
-                  class="bg-gray-100 dark:bg-[#384059] flex items-center justify-between px-4 py-2 cursor-pointer rounded">
+                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-lg">
                   <div>
                     <div class="font-semibold text-xl text-white ">
                       {{ ticker?.market?.name || '' }}
@@ -176,23 +176,23 @@ const amount = computed({
                   </div>
                 </div>
               </label>
-              <div class="dropdown-content pt-1">
+              <div class="dropdown-content mt-1 py-3 bg-slate-900 border border-primary rounded">
                 <div class="h-64 overflow-auto w-full shadow rounded">
-                  <ul class="menu w-full bg-gray-100 rounded dark:bg-[#384059]">
+                  <ul class="menu w-full rounded">
                     <li v-for="(item, index) in store.coinInfo.tickers" :key="index" @click="store.selectTicker(index)">
-                      <div class="flex items-center justify-between hover:bg-base-100">
+                      <div class="flex items-center justify-between hover:bg-slate-800">
                         <div class="flex-1">
                           <div class="text-main text-sm" :class="trustColor(item.trust_score)">
                             {{ item?.market?.name }}
                           </div>
-                          <div class="text-sm text-gray-500 dark:text-gray-400">
+                          <div class="text-sm text-main">
                             {{ shortName(item?.base, item?.coin_id) }}/{{
                               shortName(item?.target, item?.target_coin_id)
                             }}
                           </div>
                         </div>
 
-                        <div class="text-gray-500 text-base text-main">
+                        <div class="text-base text-main">
                            ${{ item?.converted_last?.usd }}
                         </div>
                       </div>
@@ -202,8 +202,8 @@ const amount = computed({
               </div>
             </div>
 
-            <div class="flex">
-              <label class="btn btn-mw-primary !px-1 my-5 mr-2" for="calculator">
+            <div class="flex items-center">
+              <label class="btn btn-mw-primary !px-1 mr-2 w-12 h-12" for="calculator">
                 <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="4" y="2" width="16" height="20" rx="2"></rect> <line x1="8" x2="16" y1="6" y2="6"></line> <line x1="16" x2="16" y1="14" y2="18"></line> <path d="M16 10h.01"></path> <path d="M12 10h.01"></path> <path d="M8 10h.01"></path> <path d="M12 14h.01"></path> <path d="M8 14h.01"></path> <path d="M12 18h.01"></path> <path d="M8 18h.01"></path> </g></svg>
               </label>
               <!-- Put this part before </body> tag -->
@@ -233,7 +233,10 @@ const amount = computed({
                 </div>
                 <label class="modal-backdrop" for="calculator">{{ $t('index.close') }}</label>
               </div>
-              <a class="my-5 !text-white btn grow" :class="{'!btn-success': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
+              <div class="my-5 btn btn-mw-gradient--outside rounded-full">
+
+              </div>
+              <a class=" !text-primary hover:text-white btn grow rounded-full" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
                 target="_blank">
                 {{ $t('index.buy') }} {{ coinInfo.symbol || '' }}
               </a>
@@ -251,7 +254,7 @@ const amount = computed({
       </div>
       <div class="mx-4 flex flex-wrap items-center">
         <div v-for="tag in coinInfo.categories"
-          class="mr-2 mb-4 text-xs bg-gray-100 dark:bg-[#384059] px-3 rounded-full py-1">
+          class="mr-2 mb-4 text-xs text-main bg-white-10 px-3 rounded-full py-1">
           {{ tag }}
         </div>
       </div>
@@ -285,8 +288,8 @@ const amount = computed({
           :to="`/${chain}/account/${walletStore.currentAddress}`">{{ $t('index.more') }}</RouterLink>
       </div>
       <div class="grid grid-cols-1 md:!grid-cols-4 auto-cols-auto gap-4 px-4 pb-6">
-        <div class="bg-gray-100 dark:bg-[#373f59] rounded-sm px-4 py-3">
-          <div class="text-sm mb-1">{{ $t('account.balance') }}</div>
+        <div class="px-4 py-3">
+          <div class="text-sm mb-1 text-gray-3">{{ $t('account.balance') }}</div>
           <div class="text-lg font-semibold text-main">
             {{ format.formatToken(walletStore.balanceOfStakingToken) }}
           </div>
@@ -294,8 +297,8 @@ const amount = computed({
             ${{ format.tokenValue(walletStore.balanceOfStakingToken) }}
           </div>
         </div>
-        <div class="bg-gray-100 dark:bg-[#373f59] rounded-sm px-4 py-3">
-          <div class="text-sm mb-1">{{ $t('module.staking') }}</div>
+        <div class="px-4 py-3">
+          <div class="text-sm mb-1 text-gray-3">{{ $t('module.staking') }}</div>
           <div class="text-lg font-semibold text-main">
             {{ format.formatToken(walletStore.stakingAmount) }}
           </div>
@@ -303,8 +306,8 @@ const amount = computed({
             ${{ format.tokenValue(walletStore.stakingAmount) }}
           </div>
         </div>
-        <div class="bg-gray-100 dark:bg-[#373f59] rounded-sm px-4 py-3">
-          <div class="text-sm mb-1">{{ $t('index.reward') }}</div>
+        <div class="px-4 py-3">
+          <div class="text-sm mb-1 text-gray-3">{{ $t('index.reward') }}</div>
           <div class="text-lg font-semibold text-main">
             {{ format.formatToken(walletStore.rewardAmount) }}
           </div>
@@ -312,8 +315,8 @@ const amount = computed({
             ${{ format.tokenValue(walletStore.rewardAmount) }}
           </div>
         </div>
-        <div class="bg-gray-100 dark:bg-[#373f59] rounded-sm px-4 py-3">
-          <div class="text-sm mb-1">{{ $t('index.unbonding') }}</div>
+        <div class="px-4 py-3">
+          <div class="text-sm mb-1 text-gray-3">{{ $t('index.unbonding') }}</div>
           <div class="text-lg font-semibold text-main">
             {{ format.formatToken(walletStore.unbondingAmount) }}
           </div>
@@ -374,10 +377,10 @@ const amount = computed({
 
       <div class="grid grid-cols-3 gap-4 px-4 pb-6 mt-4">
         <label for="PingTokenConvert" class="btn btn-mw-primary text-white">{{ $t('index.btn_swap') }}</label>
-        <label for="send" class="btn !bg-yes !border-yes text-white" @click="dialog.open('send', {}, updateState)">{{ $t('account.btn_send') }}</label>
-        <label for="delegate" class="btn !bg-info !border-info text-white"
+        <label for="send" class="btn btn-mw-primary-outline text-primary hover:text-white" @click="dialog.open('send', {}, updateState)">{{ $t('account.btn_send') }}</label>
+        <label for="delegate" class="btn btn-mw-primary-outline text-primary hover:text-white"
           @click="dialog.open('delegate', {}, updateState)">{{ $t('account.btn_delegate') }}</label>
-        <RouterLink to="/wallet/receive" class="btn !bg-info !border-info text-white hidden">{{ $t('index.receive') }}</RouterLink>
+        <RouterLink to="/wallet/receive" class="btn btn-mw-primary-outline text-primary hover:text-white hidden">{{ $t('index.receive') }}</RouterLink>
       </div>
       <Teleport to="body">
         <ping-token-convert :chain-name="blockchain?.current?.prettyName" :endpoint="blockchain?.endpoint?.address"

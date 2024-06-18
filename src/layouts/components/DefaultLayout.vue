@@ -9,7 +9,7 @@ import NavbarSearch from './NavbarSearch.vue';
 import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
 import BackgroundEffect from './BackgroundEffect.vue';
-// import chainhome from './testChainIndex.vuex.vue';
+// import chainhome from './testChainIndex.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
@@ -203,12 +203,12 @@ dayjs()
             </div>
           </div>
           <div class="collapse-content">
-            <div v-for="(el, key) of item?.children" class="menu btn-mw--border w-full rounded-full my-1 border-transparent !p-0">
+            <div v-for="(el, key) of item?.children" class="menu btn-mw-gradient-hover--outside w-full rounded-full my-1 border-transparent !p-0">
               <!-- class="hover:bg-gray-100 dark:hover:bg-[#373f59] cursor-pointer px-3 py-2 flex items-center" -->
               <RouterLink
                 v-if="isNavLink(el) && !['module.widget', 'module.state-sync', 'module.consensus', 'module.ibc'].includes(el.title)"
                 @click="sidebarShow = false"
-                class="btn-mw--content rounded-full cursor-pointer px-3 py-2 flex items-center"
+                class="btn-mw-gradient-hover--inside rounded-full cursor-pointer px-3 py-2 flex items-center"
                 :class="{
                   'active': selected($route, el),
                 }"
@@ -386,10 +386,10 @@ dayjs()
         </a>
       </div>
     </div>
-    <div class="xl:!ml-64 px-3 pt-4">
+    <div class="xl:!ml-64">
       <!-- header -->
       <div
-        class="flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-50 shadow"
+        class="flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
       >
         <div
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
@@ -410,7 +410,7 @@ dayjs()
       </div>
 
       <!-- 👉 Pages -->
-      <div style="min-height: calc(100vh - 180px);">
+      <div class="px-3 pt-4" style="min-height: calc(100vh - 164px);">
         <div v-if="behind" class="alert alert-error mb-4">
             <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -429,7 +429,7 @@ dayjs()
         <!-- <chainhome /> -->
       </div>
 
-      <newFooter />
+      <newFooter class="px-3 pt-4" />
     </div>
   </div>
 </template>
