@@ -234,7 +234,7 @@ const amount = computed({
                 <label class="modal-backdrop" for="calculator">{{ $t('index.close') }}</label>
               </div>
               <div class="my-5 rounded-full w-full" :class="{'btn-mw-gradient--outside': store.trustColor === 'green'}">
-                <a class="text-primary hover:text-white rounded grow w-full btn" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
+                <a class="text-primary hover:text-white rounded-full grow w-full btn" :class="{'btn-mw-gradient--inside': store.trustColor === 'green', '!btn-warning': store.trustColor === 'yellow'}" :href="ticker.trade_url"
                   target="_blank">
                   {{ $t('index.buy') }} {{ coinInfo.symbol || '' }}
                 </a>
