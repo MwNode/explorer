@@ -184,7 +184,7 @@ function callFunction(title: string, method: string, arg: Argument) {
 </script>
 <template>
     <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
-        <div role="tablist" class="tabs">
+        <div role="tablist" class="tabs tabs-boxed">
           <a role="tab" class="tab tooltip tooltip-right tooltip-success" data-tip="Powered By WELLDONE Studio">
             <div class="w-8 rounded">
               <img src="../assets/images/welldone-logo.svg"  alt="Powered By WELLDONE Studio"/>

@@ -277,21 +277,21 @@ loadAvatars();
 
     <div>
         <div class="flex items-center justify-between py-1">
-            <div class="tabs bg-transparent">
+            <div class="tabs tabs-boxed bg-transparent">
                 <a
-                    class="tab text-gray-3"
+                    class="tab text-gray-400"
                     :class="{ 'tab-active': tab === 'featured' }"
                     @click="tab = 'featured'"
                     >{{ $t('staking.popular') }}</a
                 >
                 <a
-                    class="tab text-gray-3"
+                    class="tab text-gray-400"
                     :class="{ 'tab-active': tab === 'active' }"
                     @click="tab = 'active'"
                     >{{ $t('staking.active') }}</a
                 >
                 <a
-                    class="tab text-gray-3"
+                    class="tab text-gray-400"
                     :class="{ 'tab-active': tab === 'inactive' }"
                     @click="tab = 'inactive'"
                     >{{ $t('staking.inactive') }}</a
@@ -326,7 +326,7 @@ loadAvatars();
                         <tr
                             v-for="({v, rank, logo}, i) in list"
                             :key="v.operator_address"
-                            class="hover:bg-slate-800"
+                            class="hover:bg-gray-100 dark:hover:bg-[#384059]"
                         >
                             <!-- 👉 rank -->
                             <td>
@@ -443,7 +443,7 @@ loadAvatars();
                             <td class="text-center">
                                 <div
                                     v-if="v.jailed"
-                                    class="badge badge-error gap-2 text-main"
+                                    class="badge badge-error gap-2 text-white"
                                 >
                                 {{ $t('staking.jailed') }}
                                 </div>

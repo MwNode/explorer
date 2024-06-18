@@ -29,7 +29,6 @@
   z-index: -9999;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   &--item-top {
     width: 41.25vw;
     height: 45.76vw;

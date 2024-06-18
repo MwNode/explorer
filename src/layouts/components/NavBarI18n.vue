@@ -48,7 +48,7 @@ const handleLangChange = (lang: string) => {
         <label tabindex="0" class="btn btn-ghost btn-circle btn-sm mx-1">
             <Icon
                 icon="mdi-translate"
-                class="text-2xl text-main"
+                class="text-2xl text-gray-500 dark:text-gray-400"
             />
         </label>
         <ul
