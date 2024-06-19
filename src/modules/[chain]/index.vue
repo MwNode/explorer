@@ -91,7 +91,7 @@ const color = computed(() => {
     case change.value > 0:
       return 'text-green-600';
     case change.value === 0:
-      return 'text-grey-500';
+      return 'text-main';
     case change.value < 0:
       return 'text-red-600';
   }
@@ -248,11 +248,11 @@ const amount = computed({
           <PriceMarketChart />
         </div>
       </div>
-      <div class="h-[1px] w-full bg-gray-100 dark:bg-[#384059]"></div>
+      <div class="h-[1px] w-full bg-white-30"></div>
       <div class="text-white max-h-[250px] overflow-auto p-4 text-sm">
         <MdEditor :model-value="coinInfo.description?.en" previewOnly></MdEditor>
       </div>
-      <div class="mx-4 flex flex-wrap items-center">
+      <div class="mx-4 mt-2 flex flex-wrap items-center">
         <div v-for="tag in coinInfo.categories"
           class="mr-2 mb-4 text-xs text-main bg-white-10 px-3 rounded-full py-1">
           {{ tag }}

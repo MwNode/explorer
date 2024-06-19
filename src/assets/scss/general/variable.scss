@@ -5,7 +5,10 @@ $background-dark: #0B0F1D;
 $orange: #E75B1F;
 $red: #EF4136;
 
+$gray-1:#F8F8F8;
+$gray-2: #E1E1E1;
 $gray-3: #C1C1C1;
+$gray-4: #A1A1A1;
 
 :root, [data-theme=dark] {
     --primary: #E75B1F;
@@ -14,7 +17,10 @@ $gray-3: #C1C1C1;
     --white-5: rgba(255, 255, 255, 0.05);
     --white-10: rgba(255, 255, 255, 0.1);
     --white-30: rgba(255, 255, 255, 0.3);
+    --gray-1: #F8F8F8;
+    --gray-2: #E1E1E1;
     --gray-3: #C1C1C1;
+    --gray-4: #A1A1A1;
 }
 
 @function to-rgb($value) { @return rgb(red($value), green($value), blue($value)); }

@@ -270,14 +270,26 @@
 
 // text
 .text {
+    &-main {
+        color: white;
+    }
     &-primary {
         color: $primary;
     }
     &-orange {
         color: $orange;
     }
+    &-gray-1 {
+        color: $gray-1;
+    }
+    &-gray-2 {
+        color: $gray-2;
+    }
     &-gray-3 {
         color: $gray-3;
+    }
+    &-gray-4 {
+        color: $gray-4;
     }
 }
 .\!text {
@@ -297,6 +309,19 @@
 .dropdown.dropdown-hover:hover .dropdown-content {
     min-width: 300px;
     z-index: 90;
+}
+
+
+.modal {
+    background-color: var(--white-30);
+    .modal-box {
+        background-color: $background-dark;
+        border: 1px solid var(--white-10);
+        color: white;
+        .btn.btn-circle {
+            background-color: rgba($color: white, $alpha: 0.2);
+        }
+    }
 }
 
 
@@ -358,6 +383,10 @@
                 &-32 {
                     border-radius: 32px;
                 }
+            }
+
+            &btn-md {
+                
             }
         }
     }
