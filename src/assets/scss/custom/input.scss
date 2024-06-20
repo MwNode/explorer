@@ -4,11 +4,34 @@
     border-radius: 100px !important;
     background: var(--white-10);
     border: 1px solid var(--white-5);
-    .join-item.btn {
-        border-radius: 100px 0px 0px 100px !important;
+
+    // prefix
+    .join-item.btn, select {
         background: var(--white-30);
         border: 0;
-        border-right: 1px splid var(--white-5);
+        color: white;
+
+        &:first-child {
+            border-right: 1px splid var(--white-5);
+            border-radius: 100px 0px 0px 100px !important;
+        }
+
+        &:last-child {
+            border-left: 1px splid var(--white-5);
+            border-radius: 0px 100px 100px 0px !important;
+        }
+    }
+
+    input {
+        background: transparent;
+        border: 0;
         color: white;
     }
+}
+
+input:where(:not(.join)) {
+    border-radius: 100px !important;
+    background: var(--white-10);
+    border: 1px solid var(--white-5);
+    color: white;
 }

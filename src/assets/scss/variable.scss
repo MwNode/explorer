@@ -27,6 +27,7 @@ $gray-4: #A1A1A1;
     --gray-2: #E1E1E1;
     --gray-3: #C1C1C1;
     --gray-4: #A1A1A1;
+    --slate-800: rgb(30 41 59);
 }
 
 @function to-rgb($value) { @return rgb(red($value), green($value), blue($value)); }

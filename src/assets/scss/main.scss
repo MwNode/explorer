@@ -4,3 +4,13 @@
 @import './custom/apexchart.scss';
 @import './custom/button.scss';
 @import './custom/input.scss';
+
+option {
+    background-color: var(--slate-800);
+    color: white;
+
+    &[selected], &:focus, &:visited, &:focus-visible, &:focus-within, &:hover {
+        background-color: black;
+        color: red;
+    }
+}
