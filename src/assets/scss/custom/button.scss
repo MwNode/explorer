@@ -1,0 +1,144 @@
+@import '../variable.scss';
+
+// button mw (gradient border)
+.btn-mw {
+    &-gradient-hover--outside {
+        border-width: 1px;
+        &:hover {
+            background-image: linear-gradient(90deg, $red , $orange);
+            // background-image: linear-gradient(to right, var(--tw-gradient-stops));
+            // --tw-gradient-from: var(--red) var(--tw-gradient-from-position);
+            // --tw-gradient-to: var(--orange) var(--tw-gradient-to-position);
+            // --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+
+            .btn-mw-gradient-hover--inside {
+                background: #292934;
+                // background: rgba($color: #fff, $alpha: 0.1);
+            }
+        }
+
+      &.active, &:has(.btn-mw-gradient-hover--inside.active) {
+        background: $primary;
+        .btn-mw-gradient-hover--inside {
+            background: $primary;
+            color: white;
+        }
+      }
+    }
+
+    &-gradient-hover--inside {
+      border: 0px;
+      padding: 8px 16px;
+    //   margin: 1px;
+      background: transparent;
+    }
+
+    &-gradient--outside {
+        border-width: 1px;
+        border-color: transparent;
+        background-image: linear-gradient(90deg, $red , $orange);
+
+        .btn-mw-gradient--inside {
+            border: 0px;
+            color: $primary;
+        }
+
+        &:hover {
+            .btn-mw-gradient--inside {
+                background-color: transparent;
+                color: white;
+            }
+        }
+    }
+
+    &-primary.btn {
+        border: 1px solid $primary;
+        background-color: $primary;
+        background-image: linear-gradient(90deg, $red , $orange);
+        color: white;
+        outline-color: white;
+
+        &:hover {
+            // border-color: rgba($color: $primary, $alpha: 0.8);
+            // background-color: rgba($color: $primary, $alpha: 0.8);
+            border-color: transparent;
+            opacity: 0.8;
+        }
+    }
+
+    &-primary-outline.btn {
+        border-color: $primary;
+        background-color: transparent;
+        color: white;
+        outline-color: white;
+
+        &:hover {
+            border-color: rgba($color: $primary, $alpha: 1);
+            background-color: rgba($color: $primary, $alpha: 1);
+        }
+    }
+}
+// button mw importabt
+.\! {
+    &btn-mw {
+        &-primary.btn {
+            border: 1px solid $primary !important;
+            background-color: $primary !important;
+            background-image: linear-gradient(90deg, $red , $orange) !important;
+            color: white !important;
+            outline-color: white !important;
+
+            &:hover {
+                // border-color: rgba($color: $primary, $alpha: 0.8);
+                // background-color: rgba($color: $primary, $alpha: 0.8);
+                border-color: transparent !important;
+            }
+        }
+    }
+}
+// button - custom border, custom background
+.btn {
+    border-radius: 999px !important;
+    &.border {
+        &-white-5 {
+            border-color: var(--white-5);
+        }
+        &-white-10 {
+            border-color: var(--white-10);
+        }
+    }
+
+    &.bg {
+        &-white-5 {
+            background-color: var(--white-5);
+        }
+        &-white-10 {
+            background-color: var(--white-10);
+        }
+        &-white-30 {
+            background-color: var(--white-30);
+        }
+    }
+    // &:hover, &:active {
+    //     opacity: 0.8;
+    // }
+    &.hover {
+        &\: {
+            &bg-orange:hover {
+                background-color: $orange;
+            }
+        }
+    }
+    &-primary.btn {
+        border: 1px solid $primary;
+        background-color: $primary;
+        background-image: linear-gradient(90deg, $red , $orange);
+        color: white;
+        outline-color: white;
+
+        &:hover {
+            border-color: transparent;
+            opacity: 0.8;
+        }
+    }
+}

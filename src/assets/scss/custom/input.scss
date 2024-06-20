@@ -1,0 +1,14 @@
+@import '../variable.scss';
+
+.join {
+    border-radius: 100px !important;
+    background: var(--white-10);
+    border: 1px solid var(--white-5);
+    .join-item.btn {
+        border-radius: 100px 0px 0px 100px !important;
+        background: var(--white-30);
+        border: 0;
+        border-right: 1px splid var(--white-5);
+        color: white;
+    }
+}
