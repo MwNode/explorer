@@ -118,6 +118,7 @@
         color: white;
         thead tr {
             background-color: var(--white-10);
+            border-radius: 20px;
             th {
                 color: $gray-3;
             }
@@ -195,21 +196,22 @@
     z-index: 90;
 }
 .select {
-    background-color: var(--white-10);
+    background-color: var(--white-10) !important;
     border: 1px solid var(--white-5);
-    border-radius: 100px;
+    border-radius: 100px !important;
+    background-size: 5px 6px;
 }
 
 
 .modal, .modal:not(dialog:not(.modal-open)), .modal::backdrop {
     background-color: rgba($color: black, $alpha: 0.3);
-    .modal-box {
-        background-color: $background-dark;
-        border: 1px solid var(--white-10);
-        color: white;
-        .btn.btn-circle {
-            background-color: rgba($color: white, $alpha: 0.2);
-        }
+}
+.modal-box {
+    background-color: $background-dark;
+    border: 1px solid var(--white-10);
+    color: white;
+    .btn.btn-circle {
+        background-color: rgba($color: white, $alpha: 0.2);
     }
 }
 
