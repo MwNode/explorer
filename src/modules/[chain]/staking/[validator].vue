@@ -260,9 +260,9 @@ function mapDelegators(messages: any[]) {
       <div class="flex flex-col lg:!flex-row pt-2 pb-1">
         <div class="flex-1">
           <div class="flex">
-            <div class="avatar mr-4 relative w-24 rounded-lg overflow-hidden">
-              <div class="w-24 rounded-lg absolute opacity-10"></div>
-              <div class="w-24 rounded-lg">
+            <div class="avatar mr-4 relative w-24 rounded-[20px] overflow-hidden">
+              <div class="w-24 rounded-[20px] absolute opacity-10"></div>
+              <div class="w-24 rounded-[20px]">
                 <img
                   v-if="identity && avatars[identity] !== 'undefined'"
                   v-lazy="logo(identity)"
@@ -578,10 +578,12 @@ function mapDelegators(messages: any[]) {
       <div class="rounded overflow-auto">
         <table class="table validatore-table w-full">
           <thead>
-            <th class="text-left pl-4" style="position: relative; z-index: 2">
-              {{ $t('account.delegator') }}
-            </th>
-            <th class="text-left pl-4">{{ $t('account.delegation') }}</th>
+            <tr>
+              <th class="text-left pl-4" style="position: relative; z-index: 2">
+                {{ $t('account.delegator') }}
+              </th>
+              <th class="text-left pl-4">{{ $t('account.delegation') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="{balance, delegation} in delegations.delegation_responses">
@@ -604,12 +606,14 @@ function mapDelegators(messages: any[]) {
       <div class="rounded overflow-auto">
         <table class="table validatore-table w-full">
           <thead>
-            <th class="text-left pl-4" style="position: relative; z-index: 2">
-              {{ $t('account.height') }}
-            </th>
-            <th class="text-left pl-4">{{ $t('account.hash') }}</th>
-            <th class="text-left pl-4" width="40%">{{ $t('account.messages') }}</th>
-            <th class="text-left pl-4">{{ $t('account.time') }}</th>
+            <tr>
+              <th class="text-left pl-4" style="position: relative; z-index: 2">
+                {{ $t('account.height') }}
+              </th>
+              <th class="text-left pl-4">{{ $t('account.hash') }}</th>
+              <th class="text-left pl-4" width="40%">{{ $t('account.messages') }}</th>
+              <th class="text-left pl-4">{{ $t('account.time') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="(item, i) in txs.tx_responses">
@@ -665,9 +669,11 @@ function mapDelegators(messages: any[]) {
       <div class="rounded overflow-auto">
         <table class="table validatore-table w-full">
           <thead>
-            <th class="text-left pl-4">{{ $t('account.delegator') }}</th>
-            <th class="text-left pl-4">{{ $t('account.amount') }}</th>
-            <th class="text-left pl-4">{{ $t('account.height') }} / {{ $t('account.time') }}</th>
+            <tr>
+              <th class="text-left pl-4">{{ $t('account.delegator') }}</th>
+              <th class="text-left pl-4">{{ $t('account.amount') }}</th>
+              <th class="text-left pl-4">{{ $t('account.height') }} / {{ $t('account.time') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="(item, i) in events.tx_responses">

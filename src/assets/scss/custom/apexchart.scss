@@ -1,5 +1,8 @@
 @import '../variable.scss';
 
-.apexcharts-text tspan {
-    font-family: 'DM Sans';
+.apexcharts-text {
+    tspan, text {
+        font-family: 'DM Sans';
+        color: white;
+    } 
 }

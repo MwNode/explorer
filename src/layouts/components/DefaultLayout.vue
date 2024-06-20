@@ -133,7 +133,7 @@ dayjs()
     <BackgroundEffect class="bg-mw-base h-dvh" />
     <!-- sidebar -->
     <div
-      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base md:bg-white-5"
+      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base lg:bg-white-5"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }"
     >
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
@@ -248,7 +248,7 @@ dayjs()
           v-if="isNavLink(item)"
           :to="item?.to"
           @click="sidebarShow = false"
-          class="cursor-pointer rounded-lg px-4 flex items-center py-2 hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="cursor-pointer rounded-[20px] px-4 flex items-center py-2 hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon
             v-if="item?.icon?.icon"
@@ -289,7 +289,7 @@ dayjs()
             Tools
           </div>
           <RouterLink to="/wallet/suggest"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
           >
             <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
             <div
@@ -304,7 +304,7 @@ dayjs()
         <a
           href="https://osmosis.zone"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://ping.pub/logos/osmosis.jpg"
@@ -319,7 +319,7 @@ dayjs()
         <a
           href="https://celestia.org"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://ping.pub/logos/celestia.png"
@@ -334,7 +334,7 @@ dayjs()
         <a
           href="https://becole.com"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://becole.com/static/logo/logo_becole.png"
@@ -350,7 +350,7 @@ dayjs()
         <a
           href="https://twitter.com/ping_pub"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:twitter" class="text-xl mr-2" />
           <div
@@ -363,7 +363,7 @@ dayjs()
           v-if="showDiscord"
           href="https://discord.com/invite/CmjYVSr6GW"
           target="_blank"
-          class="py-2 px-4 flex items-center rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center rounded-[20px] cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:discord" class="text-xl mr-2" />
           <div
@@ -375,7 +375,7 @@ dayjs()
         <a
           href="https://github.com/ping-pub/explorer/discussions"
           target="_blank"
-          class="py-2 px-4 flex items-center rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center rounded-[20px] cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
           <div

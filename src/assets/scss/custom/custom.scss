@@ -15,8 +15,17 @@
     &-mw-base {
         background-color: $background-dark;
     }
+    &-mw-base-80 {
+        background-color: rgba($color: $background-dark, $alpha: 0.8);
+    }
     &-mw-box {
         background-color: #171b28;
+    }
+    &-error {
+        background-color: $danger;
+    }
+    &-delegate {
+        background-color: $delegate;
     }
 }
 .hover\: {
@@ -30,6 +39,15 @@
         &-20:hover {
             background-color: rgba($color: $primary, $alpha: 0.2) !important;
         }
+    }
+    &bg-white-5:hover  {
+        background-color: var(--white-5);
+    }
+    &bg-white-10:hover  {
+        background-color: var(--white-10);
+    }
+    &bg-white-30:hover  {
+        background-color: var(--white-30);
     }
 }
 .focus {
@@ -45,6 +63,11 @@
                 background-color: rgba($color: $primary, $alpha: 0.2) !important;
             }
         }
+    }
+}
+.badge {
+    &-error {
+        background-color: $danger;
     }
 }
 
@@ -110,17 +133,66 @@
 
 
 // table
-.table {
+.table, .table.table-compact, table.table-rows {
     tr.hover:hover {
         background-color: rgba($color: $background-dark, $alpha: 0.5);
     }
-    &.table-compact.table-pin-rows {
-        color: white;
-        thead tr {
+    color: white;
+    thead {
+        tr {
             background-color: var(--white-10);
-            border-radius: 20px;
+            border: 0;
             th {
                 color: $gray-3;
+                padding-top: 16px;
+                padding-bottom: 16px;
+
+                &:first-child {
+                    padding-left: 24px;
+                }
+
+                &:last-child {
+                    padding-right: 24px;
+                }
+            }
+        }
+        &:not(.rounded-none) tr th {
+            &:first-child {
+                border-top-left-radius: 20px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 20px;
+            }
+        }
+    }
+    tbody tr {
+        border-bottom-color: var(--white-10);
+        td {
+            &:first-child {
+                padding-left: 24px;
+            }
+
+            &:last-child {
+                padding-right: 24px;
+            }
+        }
+    }
+
+    &.staking-table, &.validatore-table {
+        thead tr {
+            border: 0;
+        }
+        th {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            &:last-child {
+                padding-right: 8px;
+            }
+        }
+        td {
+            &:last-child {
+                padding-right: 8px;
             }
         }
     }
@@ -158,7 +230,7 @@
     &-success, &-yes {
         color: $success;
     }
-    &-danger, &-no {
+    &-danger, &-no, &-error {
         color: $danger;
     }
     &-orange {
@@ -190,6 +262,9 @@
         color: $primary;
     }
 }
+.card-title {
+    color: white;
+}
 
 .dropdown.dropdown-hover:hover .dropdown-content {
     min-width: 300px;
@@ -197,9 +272,10 @@
 }
 .select {
     background-color: var(--white-10) !important;
-    border: 1px solid var(--white-5);
+    border: 1px solid var(--white-10);
     border-radius: 100px !important;
-    background-size: 5px 6px;
+    background-size: 5px 6px !important;
+    color: white;
 }
 
 
@@ -207,7 +283,7 @@
     background-color: rgba($color: black, $alpha: 0.3);
 }
 .modal-box {
-    background-color: $background-dark;
+    background-color: $background-dark !important;
     border: 1px solid var(--white-10);
     color: white;
     .btn.btn-circle {
@@ -217,29 +293,74 @@
 
 
 // RESPONSIVE
-.lg {
-    @media (min-width: 1024px) {
+.xl {
+    @media (min-width: 1280px) {
         &\: {
-            &gap {
-                &-20 {
-                    gap: 20px;
-                }
-                &-30 {
-                    gap: 30px;
-                }
-            }
             &bg {
                 &-white-5 {
                     background-color: var(--white-5);
                 }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
                 &-mw-base {
                     background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
                 }
                 &-mw-box {
                     background-color: #171b28;
                 }
             }
-        } 
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
+            }
+        }
+    }
+}
+.lg {
+    @media (min-width: 1024px) {
+        &\: {
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
+            }
+        }
     }
 }
 

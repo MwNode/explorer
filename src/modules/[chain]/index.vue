@@ -154,7 +154,7 @@ const amount = computed({
             <div class="dropdown dropdown-hover w-full">
               <label>
                 <div
-                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-lg mb-1">
+                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-[20px] mb-1">
                   <div>
                     <div class="font-semibold text-xl text-white ">
                       {{ ticker?.market?.name || '' }}
