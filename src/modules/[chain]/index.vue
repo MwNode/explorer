@@ -252,15 +252,15 @@ const amount = computed({
       <div class="text-white max-h-[250px] overflow-auto p-4 text-sm">
         <MdEditor :model-value="coinInfo.description?.en" previewOnly></MdEditor>
       </div>
-      <div class="mx-4 mt-2 flex flex-wrap items-center">
+      <div class="mx-4 mt-4 flex flex-wrap items-center">
         <div v-for="tag in coinInfo.categories"
-          class="mr-2 mb-4 text-xs text-main bg-white-10 px-3 rounded-full py-1">
+          class="mr-2 mb-2 md:mb-4 text-xs text-main bg-white-10 px-3 rounded-full py-1">
           {{ tag }}
         </div>
       </div>
     </div>
 
-    <div class="grid grid-cols-1 gap-4 md:!grid-cols-3 lg:!grid-cols-6 mt-4">
+    <div class="grid grid-cols-2 gap-4 md:!grid-cols-3 lg:!grid-cols-6 mt-4">
       <div v-for="(item, key) in store.stats" :key="key">
         <CardStatisticsVertical v-bind="item" />
       </div>
