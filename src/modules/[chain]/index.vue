@@ -287,7 +287,7 @@ const amount = computed({
           class="float-right text-sm cursor-pointert link link-primary no-underline font-medium"
           :to="`/${chain}/account/${walletStore.currentAddress}`">{{ $t('index.more') }}</RouterLink>
       </div>
-      <div class="grid grid-cols-1 md:!grid-cols-4 auto-cols-auto gap-4 px-4 pb-6">
+      <div class="grid grid-cols-2 md:!grid-cols-4 auto-cols-auto gap-4 px-4 pb-6">
         <div class="px-4 py-3">
           <div class="text-sm mb-1 text-gray-3">{{ $t('account.balance') }}</div>
           <div class="text-lg font-semibold text-main">

@@ -24,8 +24,11 @@
     &-mw-box {
         background-color: #171b28;
     }
-    &-error {
+    &-error, &-no, &-danger {
         background-color: $danger;
+    }
+    &-success, &-yes {
+        background-color: $success;
     }
     &-delegate {
         background-color: $delegate;
