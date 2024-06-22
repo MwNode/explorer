@@ -30,7 +30,9 @@
       border: 0px;
       padding: 8px 16px;
     //   margin: 1px;
-      background: transparent;
+        &:not(.bg-white-5) {
+            background: transparent;
+        }
     }
 
     &-gradient--outside {

@@ -45,10 +45,10 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
 
 </script>
 <template>
-  <div class="bg-white dark:bg-[#28334e] rounded text-sm">
+  <div class="text-sm">
     <table class="table-compact w-full table-fixed hidden lg:!table">
       <tbody>
-        <tr v-for="(item, index) in proposals?.proposals" :key="index">
+        <tr v-for="(item, index) in proposals?.proposals" :key="index" class="border-b !border-white-10">
           <td class="px-4 w-20">
             <label
               for="proposal-detail-modal"
@@ -62,13 +62,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             <div>
               <RouterLink
                 :to="`/${chain.chainName}/gov/${item?.proposal_id}`"
-                class="text-main text-base mb-1 block hover:text-primary truncate"
+                class="text-primary text-base mb-1 block hover:text-primary truncate"
               >
                 {{ item?.content?.title || item?.title || metaItem(item?.metadata)?.title }}
               </RouterLink>
               <div
                 v-if="item.content"
-                class="mr-2 mb-4 text-xs text-main bg-white-10 px-3 rounded-full py-1 w-fit"
+                class="mr-2 mb-2 text-xs text-main bg-white-10 px-3 rounded-full py-1 w-fit"
               >
                 {{ showType(item.content['@type']) }} 
               </div>

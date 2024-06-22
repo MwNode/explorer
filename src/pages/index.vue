@@ -112,7 +112,7 @@ const chainStore = useBlockchain()
     </div> -->
 
     <div
-      class="grid grid-cols-1 gap-4 lg:gap-20 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
+      class="grid grid-cols-1 gap-4 lg:gap-10 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
     >
       <ChainSummary
         v-for="(chain, index) in chains"

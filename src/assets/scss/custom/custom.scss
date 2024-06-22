@@ -31,17 +31,38 @@
         background-color: $delegate;
     }
 }
+.\!bg {
+    &-primary {
+        background-color: $primary !important;
+    }
+    &-white-5 {
+        background-color: var(--white-5) !important;
+    }
+    &-white-10 {
+        background-color: var(--white-10) !important;
+    }
+    &-white-30 {
+        background-color: var(--white-30) !important;
+    }
+    &-mw-base {
+        background-color: $background-dark !important;
+    }
+    &-mw-base-80 {
+        background-color: rgba($color: $background-dark, $alpha: 0.8) !important;
+    }
+    &-mw-box {
+        background-color: #171b28 !important;
+    }
+    &-error {
+        background-color: $danger !important;
+    }
+    &-delegate {
+        background-color: $delegate !important;
+    }
+}
 .hover\: {
     &bg-orange:hover {
         background-color: $orange;
-    }
-    &\!bg-primary {
-        &:hover {
-            background-color: $primary !important;
-        }
-        &-20:hover {
-            background-color: rgba($color: $primary, $alpha: 0.2) !important;
-        }
     }
     &bg-white-5:hover  {
         background-color: var(--white-5);
@@ -52,6 +73,33 @@
     &bg-white-30:hover  {
         background-color: var(--white-30);
     }
+    &\!bg {
+        &-white {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-5:hover {
+                background-color: var(--white-5) !important;
+            }
+            &-10:hover {
+                background-color: var(--white-10) !important;
+            }
+            &-30:hover {
+                background-color: var(--white-30) !important;
+            }
+        }
+        &-primary {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-20:hover {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
+            &-90:hover {
+                background-color: rgba($color: $primary, $alpha: 0.9) !important;
+            }
+        }
+    }  
 }
 .focus {
     &\: {
@@ -196,7 +244,7 @@
     }
 }
 .hover\:text {
-    &-primary {
+    &-primary:hover {
         color: $primary;
     }
 }
@@ -333,6 +381,19 @@
                 &-32 {
                     border-radius: 32px;
                 }
+            }
+        }
+    }
+}
+
+// ping-connect-wallet
+.ping-connect-wallet {
+    .modal-box {
+        ul.bg-gray-100.dark\:bg-gray-900 {
+            background-color: var(--white-10);
+
+            li:hover {
+                background-color: var(--white-30);
             }
         }
     }

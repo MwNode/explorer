@@ -83,7 +83,7 @@ const tipMsg = computed(() => {
     </div>
   </div>
   <Teleport to="body">
-    <ping-connect-wallet :chain-id="baseStore.currentChainId" :hd-path="chainStore.defaultHDPath"
+    <ping-connect-wallet class="ping-connect-wallet" :chain-id="baseStore.currentChainId" :hd-path="chainStore.defaultHDPath"
       :addr-prefix="chainStore.current?.bech32Prefix || 'cosmos'" @connect="walletStateChange"
       @keplr-config="walletStore.suggestChain()" />
   </Teleport>
