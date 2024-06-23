@@ -277,15 +277,15 @@ loadAvatars();
 
     <div class="bg-white-10 rounded-[20px] mt-5 shadow">
         <div class="flex items-center justify-between p-4">
-            <div class="tabs bg-transparent">
+            <div class="tabs gap-5 md:gap-10 bg-transparent">
                 <a
-                    class="tab mr-10"
+                    class="tab"
                     :class="{ 'tab-active': tab === 'featured' }"
                     @click="tab = 'featured'"
                     >{{ $t('staking.popular') }}</a
                 >
                 <a
-                    class="tab mr-10"
+                    class="tab"
                     :class="{ 'tab-active': tab === 'active' }"
                     @click="tab = 'active'"
                     >{{ $t('staking.active') }}</a

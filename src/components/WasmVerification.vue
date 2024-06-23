@@ -184,14 +184,14 @@ function callFunction(title: string, method: string, arg: Argument) {
 </script>
 <template>
     <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
-        <div role="tablist" class="tabs">
-          <a role="tab" class="tab mr-10 tooltip tooltip-right tooltip-success" data-tip="Powered By WELLDONE Studio">
+        <div role="tablist" class="tabs gap-5 md:gap-10">
+          <a role="tab" class="tab tooltip tooltip-right tooltip-success" data-tip="Powered By WELLDONE Studio">
             <div class="w-8 rounded">
               <img src="../assets/images/welldone-logo.svg"  alt="Powered By WELLDONE Studio"/>
             </div>
           </a>
-          <a role="tab" class="tab mr-10" :class="{'tab-active': tab==='verification'}" @click="selectTab('verification')">Verification</a>
-          <a role="tab" class="tab mr-10" :class="{'tab-active': tab==='executions'}" @click="selectTab('executions')">Functions</a> 
+          <a role="tab" class="tab" :class="{'tab-active': tab==='verification'}" @click="selectTab('verification')">Verification</a>
+          <a role="tab" class="tab" :class="{'tab-active': tab==='executions'}" @click="selectTab('executions')">Functions</a> 
           <a role="tab" class="tab" :class="{'tab-active': tab==='source_code'}" @click="selectTab('source_code')">Source Code</a>
         </div>
         <div class="">

@@ -19,8 +19,8 @@ const list = computed(() => {
 </script>
 <template>
     <div>
-        <div class="tabs bg-transparent mb-4">
-            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === 'blocks' }"
+        <div class="tabs gap-5 md:gap-10 bg-transparent mb-4">
+            <a class="tab capitalize" :class="{ 'tab-active': tab === 'blocks' }"
                 @click="tab = 'blocks'">{{ $t('block.recent') }}</a>
             <RouterLink class="tab capitalize" 
                 :to="`/${chain}/block/${Number(base.latest?.block?.header.height||0) + 10000}`"

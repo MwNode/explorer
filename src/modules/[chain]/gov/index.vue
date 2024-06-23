@@ -32,9 +32,9 @@ function page(p: number) {
 </script>
 <template>
     <div class="bg-white-5 rounded-[20px]">
-        <div class="tabs bg-white-10 p-4 text-center rounded-tl-[20px] rounded-tr-[20px]">
-            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{ $t('gov.voting') }}</a>
-            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{ $t('gov.passed') }}</a>
+        <div class="tabs gap-5 md:gap-10 bg-white-10 p-4 text-center rounded-tl-[20px] rounded-tr-[20px]">
+            <a class="tab capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{ $t('gov.voting') }}</a>
+            <a class="tab capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{ $t('gov.passed') }}</a>
             <a class="tab capitalize" :class="{ 'tab-active': tab === '4' }"
                 @click="changeTab('4')">{{ $t('gov.rejected') }}</a>
         </div>

@@ -649,11 +649,10 @@ function mapDelegators(messages: any[]) {
 
     <div class="mt-5 bg-white-10 shadow rounded p-4">
       <div class="text-lg mb-4 font-semibold">
-        <div class="tabs bg-transparent">
-                
-                <span class="mr-10">Voting Power Events: </span>
+        <div class="tabs gap-5 md:gap-10 bg-transparent">               
+                <span>Voting Power Events: </span>
                 <a
-                    class="tab mr-10"
+                    class="tab"
                     :class="{ 'tab-active': selectedEventType === EventType.Delegate }"
                     @click="loadPowerEvents(1, EventType.Delegate)"
                     >{{ $t('account.btn_delegate') }}</a

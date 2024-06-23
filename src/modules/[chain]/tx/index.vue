@@ -27,8 +27,8 @@ function search() {
 </script>
 <template>
     <div class="bg-white-10 rounded">
-        <div class="tabs bg-transparent p-4">
-            <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === 'recent' }"
+        <div class="tabs gap-5 md:gap-10 bg-transparent p-4">
+            <a class="tab capitalize" :class="{ 'tab-active': tab === 'recent' }"
                 @click="tab = 'recent'">{{ $t('block.recent') }}</a>
             <a class="tab capitalize" :class="{ 'tab-active': tab === 'search' }"
                 @click="tab = 'search'">Search</a>

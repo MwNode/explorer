@@ -33,9 +33,9 @@ function changeChart(type: string) {
 </script>
 
 <template>
-    <div class="tabs bg-transparent justify-end">
+    <div class="tabs gap-5 md:gap-10 bg-transparent justify-end">
         <a
-            class="tab text-xs mr-10 capitalize"
+            class="tab text-xs capitalize"
             :class="{ 'tab-active': kind === 'price' }"
             @click="changeChart('price')"
         >
