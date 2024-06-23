@@ -191,8 +191,8 @@ const processList = computed(() => {
     { name: 'Turnout', value: turnout.value, class: 'bg-info' },
     { name: 'Yes', value: yes.value, class: 'bg-success' },
     { name: 'No', value: no.value, class: 'bg-error' },
-    { name: 'No With Veto', value: veto.value, class: 'bg-red-800' },
-    { name: 'Abstain', value: abstain.value, class: 'bg-warning' },
+    { name: 'No With Veto', value: veto.value, class: 'bg-veto' },
+    { name: 'Abstain', value: abstain.value, class: 'bg-abstain' },
   ];
 });
 
@@ -226,13 +226,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
           {{ proposal_id }}. {{ proposal.title || proposal.content?.title || metaItem(proposal?.metadata)?.title  }}
         </p>
         <div
-          class="badge badge-ghost"
+          class="badge"
           :class="
             color === 'success'
-              ? 'text-yes'
+              ? 'bg-yes text-black'
               : color === 'error'
-              ? 'text-no'
-              : 'text-info'
+              ? 'bg-no text-white'
+              : 'text-info text-black'
           "
         >
           {{ status }}
@@ -259,18 +259,18 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
           <label class="block text-sm mb-1">{{ item.name }}</label>
           <div class="h-5 w-full relative">
             <div
-              class="absolute inset-x-0 inset-y-0 w-full opacity-10 rounded-sm"
+              class="absolute inset-x-0 inset-y-0 w-full opacity-10 rounded-full"
               :class="`${item.class}`"
             ></div>
             <div
-              class="absolute inset-x-0 inset-y-0 rounded-sm"
+              class="absolute inset-x-0 inset-y-0 rounded-full"
               :class="`${item.class}`"
               :style="`width: ${
                 item.value === '-' || item.value === 'NaN%' ? '0%' : item.value
               }`"
             ></div>
             <p
-              class="absolute inset-x-0 inset-y-0 text-center text-sm text-[#666] dark:text-[#eee] flex items-center justify-center"
+              class="absolute inset-x-0 inset-y-0 text-center text-sm text-gray flex items-center justify-center"
             >
               {{ item.value }}
             </p>
@@ -279,13 +279,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
         <div class="mt-6 grid grid-cols-2">
           <label
             for="vote"
-            class="btn btn-mw-primary float-right btn-sm mx-1"
+            class="btn btn-mw-primary float-right mx-1"
             @click="dialog.open('vote', { proposal_id })"
             >{{ $t('gov.btn_vote') }}</label
           >
           <label
             for="deposit"
-            class="btn btn-mw-primary float-right btn-sm mx-1"
+            class="btn btn-mw-primary-outline float-right mx-1"
             @click="dialog.open('deposit', { proposal_id })"
             >{{ $t('gov.btn_deposit') }}</label
           >
@@ -304,7 +304,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             <div class="text-sm">{{ shortTime(proposal.submit_time) }}</div>
           </div>
           <div class="flex items-center mb-4">
-            <div class="w-2 h-2 rounded-full bg-primary mr-3"></div>
+            <div class="w-2 h-2 rounded-full !bg-primary mr-3"></div>
             <div class="text-base flex-1 text-main">
               {{ $t('gov.deposited_at') }}:
               {{

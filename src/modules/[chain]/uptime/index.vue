@@ -8,6 +8,7 @@ import {
   useFormatter,
 } from '@/stores';
 import UptimeBar from '@/components/UptimeBar.vue';
+// import Countdown from '@/components/Countdown.vue';
 import type { SlashingParam, SigningInfo, Block } from '@/types';
 import { consensusPubkeyToHexAddress, valconsToBase64 } from '@/libs';
 
@@ -179,6 +180,7 @@ function fetchAllKeyRotation() {
 
 <template>
   <div class="bg-white-10 rounded">
+    <!-- <Countdown :time="300000000" /> -->
     <div class="tabs p-4">
       <!-- <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
         $t('uptime.overall') }}</a> -->

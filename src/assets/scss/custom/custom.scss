@@ -33,6 +33,12 @@
     &-delegate {
         background-color: $delegate;
     }
+    &-veto {
+        background-color: $veto;
+    }
+    &-abstain {
+        background-color: $abstain;
+    }
 }
 .\!bg {
     &-primary {
@@ -120,10 +126,15 @@
     }
 }
 .badge {
-    &-red {
+    &-red, &-no, &-danger {
         background-color: $red;
         border-color: $red;
         color: white;
+    }
+    &-yes, &-success, &-green {
+        background-color: $success;
+        border-color: $success;
+        color: black;
     }
 }
 
@@ -224,6 +235,9 @@
     }
     &-orange {
         color: $orange;
+    }
+    &-gray {
+        color: gray;
     }
     &-gray-1 {
         color: $gray-1;
