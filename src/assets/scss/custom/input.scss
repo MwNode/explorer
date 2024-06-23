@@ -35,9 +35,14 @@ input:not(.join>input)  {
     border: 1px solid var(--white-5);
 }
 
-input.input {
-    color: white;
+textarea, textarea.textarea {
     background-color: var(--white-10);
-    border-radius: 100px !important;
-    border: 1px solid var(--white-5);
+    border-color: var(--white-10);
 }
+
+// input.input {
+//     color: white;
+//     background-color: var(--white-10);
+//     border-radius: 100px !important;
+//     border: 1px solid var(--white-5);
+// }

@@ -160,18 +160,18 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
           >
         </div>
 
-        <div class="grid grid-cols-4 mt-2 mb-2">
+        <div class="grid grid-cols-4 mt-2 mb-2 flex justify-between">
           <div class="col-span-2">
             <div
               v-if="item.content"
-              class="bg-[#f6f2ff] text-[#9c6cff] dark:bg-gray-600 dark:text-gray-300 inline-block rounded-full px-2 py-[1px] text-xs mb-1"
+              class="mr-1 md:!mr-2 mb-1 md:!mb-2 text-xs text-main bg-white-10 px-3 rounded-full py-1 w-fit"
             >
               {{ showType(item.content['@type']) }}
             </div>
           </div>
 
           <div
-            class="truncate text-xs text-gray-500 dark:text-gray-400 flex items-center justify-end"
+            class="text-xs text-gray-3 text-right flex items-center justify-end"
           >
             {{ format.toDay(item.voting_end_time, 'from') }}
           </div>

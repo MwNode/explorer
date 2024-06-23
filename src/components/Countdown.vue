@@ -16,7 +16,7 @@ const s = ref(0)
     v-if="time"
     :time="time > 0 ? time : 0"
     v-slot="{ days, hours, minutes, seconds }"
-    class="countdown-container justify-items-center"
+    class="countdown-container justify-items-center text-main"
   >
     <span class="text-primary font-bold " :class="css">{{ days }}</span> days 
     <span class="text-primary font-bold" :class="css">{{ hours }}</span> hours 

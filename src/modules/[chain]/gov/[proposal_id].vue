@@ -385,7 +385,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
 
     <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
       <h2 class="card-title">{{ $t('gov.votes') }}</h2>
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto bg-white-5 mt-3 md:!mt-5">
         <table class="table w-full table-zebra">
           <tbody>
             <tr v-for="(item, index) of votes" :key="index">
@@ -395,7 +395,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
                 class="py-2 text-sm"
                 :class="{
                   'text-yes': item.option === 'VOTE_OPTION_YES',
-                  'text-gray-400': item.option === 'VOTE_OPTION_ABSTAIN',
+                  'text-abstain': item.option === 'VOTE_OPTION_ABSTAIN',
                 }"
               >
                 {{ String(item.option).replace('VOTE_OPTION_', '') }}

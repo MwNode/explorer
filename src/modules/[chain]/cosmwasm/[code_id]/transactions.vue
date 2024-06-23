@@ -182,8 +182,8 @@ const result = ref({});
 
         </div>
 
-        <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
-            <h2 class="card-title truncate w-full mt-4 mb-2">Transactions</h2>
+        <div class="bg-white-10 rounded mb-4 shadow">
+            <h2 class="card-title truncate w-full p-4">Transactions</h2>
             <table class="table text-white">
                 <thead class="bg-white-10 text-white">
                     <tr>
@@ -197,7 +197,7 @@ const result = ref({});
                     <tr v-for="resp in txs?.tx_responses">
                         <td>{{ resp.height }}</td>
                         <td>
-                            <div class="text-xs truncate text-primary dark:invert">
+                            <div class="text-xs truncate text-primary">
                                 <RouterLink :to="`/${chainStore.chainName}/tx/${resp.txhash}`">{{ resp.txhash }}
                                 </RouterLink>
                             </div>
@@ -266,8 +266,8 @@ const result = ref({});
                         <div class="px-3">
                             <div>
                                 <div class="grid grid-cols-2 gap-4 mb-4">
-                                    <div class="form-control border rounded px-4" v-for="(item, index) of radioContent"
-                                        :key="index" :class="{ 'pt-2': index === 0 }">
+                                    <div class="form-control border rounded-lg p-4 border-white-10 bg-white-10" v-for="(item, index) of radioContent"
+                                        :key="index">
                                         <label class="label cursor-pointer justify-start"
                                             @click="selectedRadio = item?.value">
                                             <input type="radio" name="radio-10" class="radio radio-sm radio-primary mr-4"

@@ -133,7 +133,7 @@ dayjs()
     <BackgroundEffect class="bg-mw-base h-dvh" />
     <!-- sidebar -->
     <div
-      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base lg:bg-white-5"
+      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base xl:bg-white-5 shadow"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }"
     >
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
@@ -395,7 +395,7 @@ dayjs()
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
           @click="sidebarShow = true"
         >
-          <Icon icon="mdi-menu" />
+          <Icon icon="mdi-menu" color="white" />
         </div>
 
         <!-- <ChainProfile /> -->

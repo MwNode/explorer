@@ -30,6 +30,9 @@
     &-success, &-yes {
         background-color: $success;
     }
+    &-success-20 {
+        background-color: rgba($color: $success, $alpha: 0.2);
+    }
     &-delegate {
         background-color: $delegate;
     }

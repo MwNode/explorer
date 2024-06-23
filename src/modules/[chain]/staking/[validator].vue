@@ -451,7 +451,7 @@ function mapDelegators(messages: any[]) {
           </div>
         </div>
       </div>
-      <div class="text-sm px-4 pt-3 border-t">{{ v.description?.details }}</div>
+      <div class="text-sm px-4 pt-3 border-t overflow-auto">{{ v.description?.details }}</div>
     </div>
 
     <div class="mt-3 grid grid-cols-1 md:!grid-cols-3 gap-4">
@@ -478,7 +478,7 @@ function mapDelegators(messages: any[]) {
             >
               {{ format.formatToken2(i) }}
             </div>
-            <div class="text-sm mb-2 mt-2 text-main">{{ $t('staking.outstanding') }} {{ $t('account.rewards') }}</div>
+            <div class="text-sm mb-2 mt-2">{{ $t('staking.outstanding') }} {{ $t('account.rewards') }}</div>
             <div
               v-for="(i, k) in rewards"
               :key="`reward-${k}`"
@@ -515,12 +515,14 @@ function mapDelegators(messages: any[]) {
                   @click="copyWebsite(addresses.account || '')"
                 />
               </div>
-            <RouterLink
-              class="text-base link link-primary"
-              :to="`/${chain}/account/${addresses.account}`"
-            >
-              {{ addresses.account }}
-            </RouterLink>
+            <div class="truncate text-primary">
+              <RouterLink
+                class="text-base link link-primary"
+                :to="`/${chain}/account/${addresses.account}`"
+              >
+                {{ addresses.account }}
+              </RouterLink>
+            </div>
           </div>
           <div class="mb-3">
             <div class="text-sm flex">{{ $t('staking.operator_addr') }}
@@ -601,9 +603,9 @@ function mapDelegators(messages: any[]) {
       </div>
     </div>
 
-    <div class="mt-5 bg-white-10 shadow rounded p-4">
-      <div class="text-lg mb-4 font-semibold">{{ $t('account.transactions') }}</div>
-      <div class="rounded overflow-auto">
+    <div class="mt-5 bg-white-10 shadow rounded">
+      <div class="text-lg mb-4 font-semibold text-main p-4">{{ $t('account.transactions') }}</div>
+      <div class="overflow-auto">
         <table class="table validatore-table w-full">
           <thead>
             <tr>
@@ -647,27 +649,27 @@ function mapDelegators(messages: any[]) {
       </div>
     </div>
 
-    <div class="mt-5 bg-white-10 shadow rounded p-4">
-      <div class="text-lg mb-4 font-semibold">
-        <div class="tabs gap-5 md:gap-10 bg-transparent">               
-                <span>Voting Power Events: </span>
-                <a
-                    class="tab"
-                    :class="{ 'tab-active': selectedEventType === EventType.Delegate }"
-                    @click="loadPowerEvents(1, EventType.Delegate)"
-                    >{{ $t('account.btn_delegate') }}</a
-                >
-                <a
-                    class="tab"
-                    :class="{ 'tab-active': selectedEventType === EventType.Unbond }"
-                    @click="loadPowerEvents(1, EventType.Unbond)"
-                    >{{ $t('account.btn_unbond') }}</a
-                >
-            </div>
+    <div class="mt-5 bg-white-10 shadow rounded">
+      <div class="text-lg mb-4 font-semibold text-main pt-4 px-4">
+        Voting Power Events:
+      </div>
+      <div class="tabs gap-5 md:gap-10 bg-transparent p-4">               
+          <a
+              class="tab"
+              :class="{ 'tab-active': selectedEventType === EventType.Delegate }"
+              @click="loadPowerEvents(1, EventType.Delegate)"
+              >{{ $t('account.btn_delegate') }}</a
+          >
+          <a
+              class="tab"
+              :class="{ 'tab-active': selectedEventType === EventType.Unbond }"
+              @click="loadPowerEvents(1, EventType.Unbond)"
+              >{{ $t('account.btn_unbond') }}</a
+          >
       </div>
       <div class="rounded overflow-auto">
         <table class="table validatore-table w-full">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="text-left pl-4">{{ $t('account.delegator') }}</th>
               <th class="text-left pl-4">{{ $t('account.amount') }}</th>

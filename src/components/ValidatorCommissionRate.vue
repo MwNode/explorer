@@ -42,21 +42,22 @@ const format = useFormatter();
 const chartConfig = computed(() => {
 
     const secondaryText = `hsl(var(--bc))`;
-    const primaryText = `hsl(var(--bc))`;
+    const primaryText = `white`;
 
     return {
         chart: {
             width: '200px',
             sparkline: { enabled: false },
         },
-        colors: ['rgba(109,120,141,0.2)', 'rgba(114,225,40,0.2)', 'rgba(114,225,40,1)', 'rgba(114,225,40,0.2)', 'rgba(109,120,141,0.2)'],
+        // rgba(109,120,141,0.2)'
+        colors: ['#fff', 'rgba(114,225,40,0.2)', 'var(--sucess)', 'var(--sucess-20)', '#fff'],
         legend: { show: false },
         tooltip: { enabled: false },
         dataLabels: { enabled: false },
         stroke: {
             width: 3,
             lineCap: 'round',
-            colors: ['hsl(var(--b1))'],
+            colors: ['rgba(255, 255, 255, 0.1)'],
         },
         labels: [
             'Available',
@@ -130,15 +131,15 @@ const chartConfig = computed(() => {
             <div class="flex items-center justify-center flex-wrap gap-x-3">
                 <div class="flex items-center gap-x-2">
                     <div class="bg-success w-[6px] h-[6px] rounded-full"></div>
-                    <span class="text-caption">Rate:{{ rate.toFixed(0) }}%</span>
+                    <span class="text-caption text-main">Rate:{{ rate.toFixed(0) }}%</span>
                 </div>
                 <div class="flex items-center gap-x-2">
                     <div class="bg-success w-[6px] h-[6px] rounded-full opacity-60"></div>
-                    <span class="text-caption">24h: ±{{ change }}%</span>
+                    <span class="text-caption text-main">24h: ±{{ change }}%</span>
                 </div>
                 <div class="flex items-center gap-x-2">
                     <div class="bg-secondary w-[6px] h-[6px] rounded-full"></div>
-                    <span class="text-caption">Max:{{ max }}%</span>
+                    <span class="text-caption text-main">Max:{{ max }}%</span>
                 </div>
             </div>
         </div>

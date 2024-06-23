@@ -50,8 +50,8 @@ function showInfo(address: string) {
 </script>
 <template>
   <div>
-    <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
-      <h2 class="card-title truncate w-full">
+    <div class="bg-white-10 rounded mb-4 shadow">
+      <h2 class="card-title truncate w-full p-4">
         {{ $t('cosmwasm.contract_list_code') }}: {{ props.code_id }}
       </h2>
       <div class="overflow-x-auto">

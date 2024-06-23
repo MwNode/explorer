@@ -53,7 +53,7 @@ const veto = computed(() =>
       {{ veto }}
     </div>
     <div
-      class="h-6 bg-abstain flex items-center text-white overflow-hidden"
+      class="h-6 bg-abstain flex items-center text-black overflow-hidden"
       :style="`width: ${abstain}; max-width: 100%;`"
       :title="abstain"
     >
