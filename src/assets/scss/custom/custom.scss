@@ -416,5 +416,13 @@
                 background-color: var(--white-30);
             }
         }
+        div:last-child {
+            label:first-child {
+                background-color: var(--white-10);
+            }
+        }
+    }
+    .ping-connect-confirm {
+        margin-left: 8px;
     }
 }

@@ -87,13 +87,13 @@ function suggest() {
 <template>
     <div class="bg-white-10 p-4 rounded text-center">
         <AdBanner id="keplr-banner-ad" unit="banner" width="970px" height="90px" />
-        <div class="flex">
-            <select v-model="selected" class="select select-bordered mx-5" @change="initParamsForKeplr">
+        <div class="flex flex-wrap gap gap-4">
+            <select v-model="selected" class="select select-bordered w-full md:!w-fit" @change="initParamsForKeplr">
                 <option v-for="c in dashboard.chains" :value="c">
                     {{ c.chainName }}
                 </option>
             </select>
-            <button class="btn !bg-yes !border-yes text-white px-10" @click="suggest">Add {{ selected.chainName }} TO Keplr Wallet</button>
+            <button class="btn btn-mw-primary w-full md:!w-fit" @click="suggest">Add {{ selected.chainName }} TO Keplr Wallet</button>
         </div>
         <div class="text-main mt-5">
             <textarea v-model="conf" class="textarea textarea-bordered w-full" rows="15"></textarea>

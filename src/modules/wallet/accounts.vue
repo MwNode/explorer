@@ -193,15 +193,15 @@ async function loadBalances(chainName: string, endpoint: string, address: string
 </script>
 <template>
   <div>
-    <div class="overflow-x-auto w-full rounded-md">
+    <div class="overflow-x-auto w-full rounded">
       <div class="flex flex-wrap justify-between bg-white-10 p-5">
         <div class="min-w-0">
-          <h2 class="text-2xl font-bold leading-7 sm:!truncate sm:!text-3xl sm:!tracking-tight">
+          <h2 class="text-2xl font-bold leading-7 text-white sm:!truncate sm:!text-3xl sm:!tracking-tight">
             Accounts
           </h2>
           <div class="mt-1 flex flex-col sm:!mt-0 sm:!flex-row sm:!flex-wrap sm:!space-x-6">
-            <div class="mt-2 items-center text-sm text-gray-500 hidden md:!flex">
-              <svg class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+            <div class="mt-2 items-center text-sm text-gray-3 hidden md:!flex">
+              <svg class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-3" viewBox="0 0 20 20" fill="currentColor"
                 aria-hidden="true">
                 <path fill-rule="evenodd"
                   d="M6 3.75A2.75 2.75 0 018.75 1h2.5A2.75 2.75 0 0114 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 016 4.193V3.75zm6.5 0v.325a41.622 41.622 0 00-5 0V3.75c0-.69.56-1.25 1.25-1.25h2.5c.69 0 1.25.56 1.25 1.25zM10 10a1 1 0 00-1 1v.01a1 1 0 001 1h.01a1 1 0 001-1V11a1 1 0 00-1-1H10z"
@@ -214,7 +214,7 @@ async function loadBalances(chainName: string, endpoint: string, address: string
           </div>
         </div>
         <div class="flex flex-col text-right">
-          <span>Total Value</span>
+          <span class="text-gray-3">Total Value</span>
           <span class="text-xl text-success font-bold">${{ format.formatNumber(totalValue, '0,0.[00]') }}</span>
           <span class="text-sm" :class="format.color(totalChange)">{{ format.formatNumber(totalChange, '+0,0.[00]')
           }}</span>
@@ -307,10 +307,10 @@ async function loadBalances(chainName: string, endpoint: string, address: string
         </div>
       </div>
 
-      <div class=" text-center bg-white-10 rounded-md my-4 p-4">
+      <div class="text-center my-4 p-4">
         <a href="#address-modal"
-          class="inline-flex items-center ml-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          class="inline-flex items-center ml-3 btn btn-mw-primary">
+          <svg class="-ml-0.5 mr-1.5 h-5 w-5 text-main" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path
               d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
             <path
@@ -324,11 +324,11 @@ async function loadBalances(chainName: string, endpoint: string, address: string
     <div class="modal" id="address-modal">
       <div class="modal-box">
         <a href="#" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</a>
-        <h3 class="font-bold text-lg mb-2">Derive Account From Address</h3>
+        <h3 class="font-bold text-lg mb-8">Derive Account From Address</h3>
         <div>
           <label class="my-2">
-            <input v-model="sourceAddress" class="input input-bordered w-full input-sm" placeholder="Input an address" @change="importStep = 'step2'" />
-            <input v-model="sourceHdPath" class="input input-bordered w-full input-sm" placeholder="m/44/118/0'/0/0" />
+            <input v-model="sourceAddress" class="input input-bordered w-full input-sm mb-4" placeholder="Input an address" @change="importStep = 'step2'" />
+            <input v-model="sourceHdPath" class="input input-bordered w-full input-sm mb-4" placeholder="m/44/118/0'/0/0" />
           </label>
         </div>
         <div v-show="importStep === 'step2'" class="py-4 max-h-72 overflow-y-auto">
@@ -364,7 +364,7 @@ async function loadBalances(chainName: string, endpoint: string, address: string
           </table>
         </div>
         <div class="modal-action mt-2 mb-0">
-          <a href="#" class="btn btn-mw-primary btn-sm" @click="importStep = 'step1'">Close</a>
+          <a href="#" class="btn btn-mw-primary-outline btn-sm" @click="importStep = 'step1'">Close</a>
         </div>
       </div>
     </div>
