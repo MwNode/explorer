@@ -103,6 +103,13 @@
     &:not(.rounded-none, .\!rounded-none) {
         border-radius: 999px !important;
     }
+    &[disabled], &:disabled, &.btn-disabled {
+        --tw-border-opacity: 0.8;
+        --tw-bg-opacity: 0.8;
+        --tw-text-opacity: 0.8;
+        background-color: currentColor;
+        color: currentColor;
+    }
 
     &.border {
         &-white-5 {

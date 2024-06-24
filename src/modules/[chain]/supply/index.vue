@@ -32,8 +32,9 @@ function pageload(p: number) {
 
 </script>
 <template>
-    <div class="overflow-auto bg-white-10 rounded-[20px]">
-        <table class="table table-compact text-white">
+    <div class="bg-white-10 rounded">
+        <div class="overflow-auto rounded-t-[20px]">
+          <table class="table table-compact text-white">
             <thead class="bg-white-10 text-white">
                 <tr>
                     <th>Token</th>
@@ -46,7 +47,8 @@ function pageload(p: number) {
                 <td>{{ item.amount  }}</td>
               </tr>
             </tbody>
-        </table>
+          </table>
+        </div>
         <PaginationBar :limit="pageRequest.limit" :total="pageResponse.total" :callback="pageload" />
     </div>
 </template>

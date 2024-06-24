@@ -50,7 +50,7 @@ const chartConfig = computed(() => {
             sparkline: { enabled: false },
         },
         // rgba(109,120,141,0.2)'
-        colors: ['#fff', 'rgba(114,225,40,0.2)', 'var(--sucess)', 'var(--sucess-20)', '#fff'],
+        colors: ['rgba(255,255,255,0.1)', 'rgba(231, 91, 31, 0.2)', 'rgba(231, 91, 31, 1)', 'rgba(231, 91, 31, 0.2)', 'rgba(255,255,255,0.1)'],
         legend: { show: false },
         tooltip: { enabled: false },
         dataLabels: { enabled: false },
@@ -121,7 +121,7 @@ const chartConfig = computed(() => {
 <template>
     <div class="bg-white-10 rounded shadow p-4">
         <div class="text-lg text-main font-semibold mb-1">Commission Rate</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">
+        <div class="text-sm text-gray-3">
             {{ `Updated at ${format.toDay(props.commission?.update_time, 'short')}` }}
         </div>
         <div class="w-80 m-auto">
@@ -130,15 +130,15 @@ const chartConfig = computed(() => {
         <div>
             <div class="flex items-center justify-center flex-wrap gap-x-3">
                 <div class="flex items-center gap-x-2">
-                    <div class="bg-success w-[6px] h-[6px] rounded-full"></div>
+                    <div class="bg-primary w-[6px] h-[6px] rounded-full"></div>
                     <span class="text-caption text-main">Rate:{{ rate.toFixed(0) }}%</span>
                 </div>
                 <div class="flex items-center gap-x-2">
-                    <div class="bg-success w-[6px] h-[6px] rounded-full opacity-60"></div>
+                    <div class="bg-primary-20 w-[6px] h-[6px] rounded-full opacity-60"></div>
                     <span class="text-caption text-main">24h: ±{{ change }}%</span>
                 </div>
                 <div class="flex items-center gap-x-2">
-                    <div class="bg-secondary w-[6px] h-[6px] rounded-full"></div>
+                    <div class="bg-white-10 w-[6px] h-[6px] rounded-full"></div>
                     <span class="text-caption text-main">Max:{{ max }}%</span>
                 </div>
             </div>

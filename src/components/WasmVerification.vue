@@ -210,7 +210,7 @@ function callFunction(title: string, method: string, arg: Argument) {
                           <span class="label-text">{{ name }}</span>
                           <span></span>
                       </label>
-                      <input :name="`${method}-${name}`" type="text" :placeholder="p.format" class="input input-sm border border-gray-300 dark:border-gray-600 w-full" />
+                      <input :name="`${method}-${name}`" type="text" :placeholder="p.format" class="input input-sm w-full" />
                     </div>
                     <div>
                       <label v-if="title==='ExecuteMsg'" for="wasm_execute_contract" class="btn btn-sm" @click="callFunction(title, method, props)">{{ method }}</label>
@@ -241,7 +241,7 @@ function callFunction(title: string, method: string, arg: Argument) {
 
         <!-- alert-info -->
         <div
-          class="text-[#00cfe8] bg-[rgba(0,207,232,0.12)] rounded shadow mt-4 alert-info"
+          class="text-primary bg-primary-20 rounded shadow mt-4 alert-info"
         >
           <div
             class="drop-shadow-md px-4 pt-2 pb-2"

@@ -224,7 +224,7 @@ loadAvatars();
 </script>
 <template>
 <div>
-    <div class="bg-white-10 rounded-[20px] grid grid-cols-1 md:grid-cols-4 gap-2 p-4" >    
+    <div class="bg-white-10 rounded-[20px] grid grid-cols-2 md:grid-cols-4 gap-4 p-4" >    
         <div class="flex items-center">
             <span>
                 <div class="relative w-9 h-9 rounded overflow-hidden flex items-center justify-center mr-2">
@@ -233,8 +233,8 @@ loadAvatars();
                 </div>
             </span>
             <span>
-                <div class="font-bold">{{ format.percent(mintStore.inflation) || "_" }}</div>
-                <div class="text-xs mt-auto">{{ $t('staking.inflation') }}</div>
+                <div class="font-bold text-main">{{ format.percent(mintStore.inflation) || "_" }}</div>
+                <div class="text-xs mt-auto text-gray-3">{{ $t('staking.inflation') }}</div>
             </span>
         </div>
         <div class="flex items-center">
@@ -245,8 +245,8 @@ loadAvatars();
                 </div>
             </span>
             <span>
-                <div class="font-bold">{{ formatSeconds(staking.params?.unbonding_time) || "_" }}</div>
-                <div class="text-xs mt-auto">{{ $t('staking.unbonding_time') }}</div>
+                <div class="font-bold text-main">{{ formatSeconds(staking.params?.unbonding_time) || "_" }}</div>
+                <div class="text-xs mt-auto text-gray-3">{{ $t('staking.unbonding_time') }}</div>
             </span>
         </div> 
         <div class="flex items-center">
@@ -257,8 +257,8 @@ loadAvatars();
                 </div>
             </span>
             <span>
-                <div class="font-bold">{{ format.percent(slashing.slash_fraction_double_sign) || "_" }}</div>
-                <div class="text-xs mt-auto">{{ $t('staking.double_sign_slashing') }}</div>
+                <div class="font-bold text-main">{{ format.percent(slashing.slash_fraction_double_sign) || "_" }}</div>
+                <div class="text-xs mt-auto text-gray-3">{{ $t('staking.double_sign_slashing') }}</div>
             </span>
         </div> 
         <div class="flex items-center">
@@ -269,8 +269,8 @@ loadAvatars();
                 </div>
             </span>
             <span>
-                <div class="font-bold">{{ format.percent(slashing.slash_fraction_downtime) || "_" }}</div>
-                <div class="text-xs mt-auto">{{ $t('staking.downtime_slashing') }}</div>
+                <div class="font-bold text-main">{{ format.percent(slashing.slash_fraction_downtime) || "_" }}</div>
+                <div class="text-xs mt-auto text-gray-3">{{ $t('staking.downtime_slashing') }}</div>
             </span>
         </div>  
     </div>
@@ -351,7 +351,7 @@ loadAvatars();
                                         class="avatar mr-4 relative w-8 h-8 rounded-full"
                                     >
                                         <div
-                                            class="w-8 h-8 rounded-full bg-gray-400 absolute opacity-10"
+                                            class="w-8 h-8 rounded-full bg-white-10 absolute opacity-10"
                                         ></div>
                                         <div class="w-8 h-8 rounded-full">
                                             <img

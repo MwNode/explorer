@@ -341,8 +341,8 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
 
     <!-- Delegations -->
     <div class="bg-white-10 rounded mb-4 shadow">
-      <div class="flex flex-col md:!flex-row justify-between">
-        <h2 class="card-title p-4">{{ $t('account.delegations') }}</h2>
+      <div class="flex flex-col md:!flex-row justify-between p-4">
+        <h2 class="card-title">{{ $t('account.delegations') }}</h2>
         <div class="flex justify-end mb-4">
           <label
             for="delegate"
@@ -360,7 +360,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
       </div>
       <div class="overflow-x-auto">
         <table class="table w-full text-sm table-zebra">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="py-3">{{ $t('account.validator') }}</th>
               <th class="py-3">{{ $t('account.delegation') }}</th>
@@ -452,7 +452,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
       <h2 class="card-title p-4">{{ $t('account.unbonding_delegations') }}</h2>
       <div class="overflow-x-auto">
         <table class="table text-sm w-full">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="py-3">{{ $t('account.creation_height') }}</th>
               <th class="py-3">{{ $t('account.initial_balance') }}</th>
@@ -511,7 +511,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
       <h2 class="card-title p-4">{{ $t('account.transactions') }}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full text-sm">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="py-3">{{ $t('account.height') }}</th>
               <th class="py-3">{{ $t('account.hash') }}</th>
@@ -555,7 +555,7 @@ function mapAmount(events:{type: string, attributes: {key: string, value: string
       <h2 class="card-title p-4">{{ $t('account.received') }}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full text-sm">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="py-3">{{ $t('account.height') }}</th>
               <th class="py-3">{{ $t('account.hash') }}</th>

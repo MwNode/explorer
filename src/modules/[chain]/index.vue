@@ -137,7 +137,7 @@ const amount = computed({
           </div>
           <div class="text-white  text-xs mt-2">
             {{ $t('index.rank') }}:
-            <div class="badge text-xs badge-error bg-[#fcebea] dark:bg-[#41384d] text-red-400">
+            <div class="badge text-xs badge-primary">
               #{{ coinInfo.market_cap_rank }}
             </div>
           </div>
@@ -154,12 +154,12 @@ const amount = computed({
             <div class="dropdown dropdown-hover w-full">
               <label>
                 <div
-                  class="bg-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-[20px] mb-1">
+                  class="bg-white-5 border border-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-[20px] mb-1">
                   <div>
                     <div class="font-semibold text-xl text-white ">
                       {{ ticker?.market?.name || '' }}
                     </div>
-                    <div class="text-info text-sm">
+                    <div class="text-primary text-sm">
                       {{ shortName(ticker?.base, ticker?.coin_id) }}/{{
                         shortName(ticker?.target, ticker?.target_coin_id)
                       }}

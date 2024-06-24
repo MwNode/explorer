@@ -297,7 +297,7 @@ function mapDelegators(messages: any[]) {
               >
             </div>
           </div>
-          <div class="m-4 text-sm">
+          <div class="my-4 mx-none md:!mx-4 text-sm">
             <p class="text-sm mb-3 font-medium">{{ $t('staking.about_us') }}</p>
             <div class="card-list text-main">
               <div class="flex items-center mb-2">
@@ -359,7 +359,7 @@ function mapDelegators(messages: any[]) {
           </div>
         </div>
         <div class="flex-1">
-          <div class="flex flex-col mt-10 gap-0 md:gap-2">
+          <div class="flex flex-col mt-10 gap-3">
             <div class="flex mb-2">
               <div
                 class="flex items-center justify-center rounded w-10 h-10"
@@ -451,7 +451,7 @@ function mapDelegators(messages: any[]) {
           </div>
         </div>
       </div>
-      <div class="text-sm px-4 pt-3 border-t overflow-auto">{{ v.description?.details }}</div>
+      <div class="text-sm px-none md:!px-4 pt-3 border-t overflow-auto">{{ v.description?.details }}</div>
     </div>
 
     <div class="mt-3 grid grid-cols-1 md:!grid-cols-3 gap-4">
@@ -604,10 +604,10 @@ function mapDelegators(messages: any[]) {
     </div>
 
     <div class="mt-5 bg-white-10 shadow rounded">
-      <div class="text-lg mb-4 font-semibold text-main p-4">{{ $t('account.transactions') }}</div>
+      <div class="text-lg font-semibold text-main p-4">{{ $t('account.transactions') }}</div>
       <div class="overflow-auto">
         <table class="table validatore-table w-full">
-          <thead>
+          <thead class="rounded-none">
             <tr>
               <th class="text-left pl-4" style="position: relative; z-index: 2">
                 {{ $t('account.height') }}
@@ -650,7 +650,7 @@ function mapDelegators(messages: any[]) {
     </div>
 
     <div class="mt-5 bg-white-10 shadow rounded">
-      <div class="text-lg mb-4 font-semibold text-main pt-4 px-4">
+      <div class="text-lg font-semibold text-main p-4">
         Voting Power Events:
       </div>
       <div class="tabs gap-5 md:gap-10 bg-transparent p-4">               
@@ -667,7 +667,7 @@ function mapDelegators(messages: any[]) {
               >{{ $t('account.btn_unbond') }}</a
           >
       </div>
-      <div class="rounded overflow-auto">
+      <div class="overflow-auto">
         <table class="table validatore-table w-full">
           <thead class="rounded-none">
             <tr>

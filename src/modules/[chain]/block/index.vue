@@ -36,14 +36,14 @@ const list = computed(() => {
                 class="flex flex-col justify-between rounded p-4 shadow bg-white-10"
                 :to="`/${chain}/block/${item.block.header.height}`">
                 <div class="flex justify-between">
-                    <h3 class="text-md font-bold sm:!text-lg">
+                    <h3 class="text-md font-bold sm:!text-lg text-main">
                         {{ item.block.header.height }}
                     </h3>
                     <span class="rounded text-xs whitespace-nowrap font-medium text-green-600">
                         {{ format.toDay(item.block?.header?.time, 'from') }}
                     </span>
                 </div>
-                <div class="flex justify-between tooltip" data-tip="Block Proposor">
+                <div class="flex justify-between tooltip text-main" data-tip="Block Proposor">
                     <div class="mt-2 hidden text-sm sm:!block truncate">
                         <span>{{ format.validator(item.block?.header?.proposer_address) }}</span>
                     </div>

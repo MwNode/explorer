@@ -9,11 +9,10 @@
 option {
     background-color: var(--slate-800);
     color: white;
+}
 
-    &[selected], &:focus, &:visited, &:focus-visible, &:focus-within, &:hover {
-        background-color: black;
-        color: red;
-    }
+a {
+    color: $primary;
 }
 
 .jv-container {

@@ -194,7 +194,7 @@ function fetchAllKeyRotation() {
     <div class="px-5 pt-5">
       <div class="flex items-center gap-x-4">
         <input type="text" v-model="keyword" placeholder="Keywords to filter validators"
-          class="input input-sm w-full flex-1 border border-gray-200 dark:border-gray-600" />
+          class="input input-sm w-full flex-1" />
         <button v-if="chainStore.isConsumerChain" class="btn btn-sm btn-mw-primary" @click="fetchAllKeyRotation">Load
           Rotated Keys</button>
       </div>
@@ -209,13 +209,13 @@ function fetchAllKeyRotation() {
           <div v-for="(unit, i) in grid" :key="i">
             <div class="flex justify-between py-0 w-[248px]">
               <label class="truncate text-sm">
-                <span class="ml-1 text-black dark:text-white">{{ i + 1 }}.{{ unit.moniker }}</span>
+                <span class="ml-1 text-main">{{ i + 1 }}.{{ unit.moniker }}</span>
               </label>
               <div v-if="Number(unit?.missed_blocks_counter || 0) > 10"
-                class="badge badge-sm bg-transparent border-0 text-red-500 font-bold">
+                class="badge badge-sm bg-transparent border-0 text-danger font-bold">
                 {{ unit?.missed_blocks_counter }}
               </div>
-              <div v-else class="badge badge-sm bg-transparent text-green-600 border-0 font-bold">
+              <div v-else class="badge badge-sm bg-transparent text-succes border-0 font-bold">
                 {{ unit?.missed_blocks_counter }}
               </div>
             </div>
@@ -224,9 +224,9 @@ function fetchAllKeyRotation() {
         </div>
         <div class="mt-5 text-xs flex justify-center gap-2">
           <span class=" font-bold">{{ $t('uptime.legend') }}: </span>
-          <span class="bg-green-500">&nbsp;</span> {{ $t('uptime.committed') }}
-          <span class="bg-yellow-500">&nbsp;</span> {{ $t('uptime.precommitted') }}
-          <span class="bg-red-500">&nbsp;</span> {{ $t('uptime.missed') }}
+          <span class="bg-success">&nbsp;</span> {{ $t('uptime.committed') }}
+          <span class="bg-warning">&nbsp;</span> {{ $t('uptime.precommitted') }}
+          <span class="bg-danger">&nbsp;</span> {{ $t('uptime.missed') }}
         </div>
       </div>
 
@@ -249,7 +249,7 @@ function fetchAllKeyRotation() {
               </div>
             </td>
             <td class="text-right">
-              <span :class="v.uptime && v.uptime > 0.95 ? 'text-green-500' : 'text-red-500'
+              <span :class="v.uptime && v.uptime > 0.95 ? 'text-success' : 'text-danger'
         ">
                 <div class="tooltip" :data-tip="`${v.missed_blocks_counter} missing blocks`">
                   {{ format.percent(v.uptime) }}
