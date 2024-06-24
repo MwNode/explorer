@@ -72,7 +72,7 @@ function showPubkey(v: any) {
                     <td>{{ showSequence(acc) }}</td>
                     <td>{{ showPubkey(acc) }}</td>
                 </tr>
-        </table>
+            </table>
         </div>
         <PaginationBar :limit="pageRequest.limit" :total="pageResponse.total" :callback="pageload" />
     </div>

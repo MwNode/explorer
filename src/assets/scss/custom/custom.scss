@@ -229,6 +229,9 @@
 
 
 // text
+.text-nowrap {
+    white-space: nowrap;
+}
 .text {
     &-main {
         color: white;
