@@ -66,6 +66,14 @@
             border-color: transparent;
             opacity: 0.8;
         }
+
+        &[disabled], &:disabled, &.btn-disabled {
+            color: $gray-4;
+            border: 1px solid $primary;
+            background-color: $primary;
+            background-image: linear-gradient(90deg, $red , $orange);
+            opacity: 0.6;
+        }
     }
 
     &-primary-outline.btn {
@@ -95,6 +103,14 @@
                 // background-color: rgba($color: $primary, $alpha: 0.8);
                 border-color: transparent !important;
             }
+
+            &[disabled], &:disabled, &.btn-disabled {
+                background-color: $primary !important;
+                background-image: linear-gradient(90deg, $red , $orange) !important;
+                color: white !important;
+                outline-color: white !important;
+                opacity: 0.6 !important;
+            }
         }
     }
 }
@@ -102,13 +118,6 @@
 .btn {
     &:not(.rounded-none, .\!rounded-none) {
         border-radius: 999px !important;
-    }
-    &[disabled], &:disabled, &.btn-disabled {
-        --tw-border-opacity: 0.8;
-        --tw-bg-opacity: 0.8;
-        --tw-text-opacity: 0.8;
-        background-color: currentColor;
-        color: currentColor;
     }
 
     &.border {
@@ -151,6 +160,14 @@
         &:hover {
             border-color: transparent;
             opacity: 0.8;
+        }
+
+        &[disabled], &:disabled, &.btn-disabled {
+            color: $gray-4;
+            border: 1px solid $primary;
+            background-color: $primary;
+            background-image: linear-gradient(90deg, $red , $orange);
+            opacity: 0.6;
         }
     }
     &.bg {

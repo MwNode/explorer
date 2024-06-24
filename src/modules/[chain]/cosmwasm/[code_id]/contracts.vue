@@ -73,12 +73,12 @@ function showInfo(address: string) {
                 <label
                   @click="showInfo(v)"
                   for="modal-contract-detail"
-                  class="btn btn-mw-primary btn-xs text-xs mr-2"
+                  class="btn btn-mw-primary btn-xs text-xs mr-2 text-nowrap mb-2 md:!mb-0"
                   >{{ $t('cosmwasm.btn_contract') }}</label
                 >
                 <RouterLink
                   :to="`transactions?contract=${v}`"
-                  class="btn btn-mw-primary btn-xs text-xs"
+                  class="btn btn-mw-primary btn-xs text-xs text-nowrap"
                 >
                 {{ $t('cosmwasm.btn_details') }}
                 </RouterLink>
@@ -92,18 +92,20 @@ function showInfo(address: string) {
             :total="response.pagination?.total"
             :callback="loadContract"
           />
-          <label
-            for="wasm_instantiate_contract"
-            class="btn btn-mw-primary my-5"
-            @click="
-              dialog.open('wasm_instantiate_contract', {
-                codeId: props.code_id,
-              })
-            "
-            >{{ $t('cosmwasm.instantiate_contract') }}</label
-          >
         </div>
       </div>
+    </div>
+    <div class="flex my-5">
+      <label
+        for="wasm_instantiate_contract"
+        class="btn btn-mw-primary mx-auto"
+        @click="
+          dialog.open('wasm_instantiate_contract', {
+            codeId: props.code_id,
+          })
+        "
+        >{{ $t('cosmwasm.instantiate_contract') }}</label
+      >
     </div>
 
     <input type="checkbox" id="modal-contract-detail" class="modal-toggle" />

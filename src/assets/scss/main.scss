@@ -11,27 +11,36 @@ option {
     color: white;
 }
 
-a {
+a, span a {
     color: $primary;
 }
 
+.radio {
+    border: var(--white-10);
+}
+.radio-primary:checked {
+    border-color: $primary;
+    background-color: $primary;
+}
+
 .jv-container {
-    &.boxed {
+    &.jv-code.boxed {
         border-radius: 20px 20px 0 0;
         border-color: var(--white-10);
         &:hover {
             border-color: var(--white-10);
             box-shadow:  2px 8px rgba(255,255,255,0.15)
         }
-    }
-    &.jv-code.boxed:not(:last-child) {
-        border-bottom: 1px solid var(--white-10);
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--white-10);
+        }
     }
 }
 
 #modal-contract-states {
     .jv-container {
-        &.boxed {
+        &.jv-code.boxed {
             border-bottom: 0;
         }
     }

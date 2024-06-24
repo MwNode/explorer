@@ -455,7 +455,7 @@ function mapDelegators(messages: any[]) {
     </div>
 
     <div class="mt-3 grid grid-cols-1 md:!grid-cols-3 gap-4">
-      <div>
+      <div class="mt-4">
         <CommissionRate :commission="v.commission"></CommissionRate>
       </div>
       <div class="bg-white-10 rounded shadow relative overflow-auto">
@@ -502,7 +502,7 @@ function mapDelegators(messages: any[]) {
         </div>
       </div>
       <div class="bg-white-10 rounded shadow overflow-x-auto">
-        <div class="px-4 pt-4 mb-2 text-main font-lg font-semibold">
+        <div class="px-4 pt-4 mb-2 text-main text-lg font-lg font-semibold">
           {{ $t('staking.addresses') }}
         </div>
         <div class="px-4 pb-4">
@@ -605,7 +605,7 @@ function mapDelegators(messages: any[]) {
 
     <div class="mt-5 bg-white-10 shadow rounded">
       <div class="text-lg font-semibold text-main p-4">{{ $t('account.transactions') }}</div>
-      <div class="overflow-auto">
+      <div class="overflow-auto rounded-b-[20px]">
         <table class="table validatore-table w-full">
           <thead class="rounded-none">
             <tr>

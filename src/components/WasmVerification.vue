@@ -245,7 +245,7 @@ function callFunction(title: string, method: string, arg: Argument) {
         >
           <div
             class="drop-shadow-md px-4 pt-2 pb-2"
-            style="box-shadow: rgba(0, 207, 232, 0.4) 0px 6px 15px -7px"
+            style="box-shadow: rgba(231, 91, 31, 0.4) 0px 6px 15px -7px"
           >
             <h2 class="text-base font-semibold">{{ $t('consensus.tips') }}</h2>
           </div>
