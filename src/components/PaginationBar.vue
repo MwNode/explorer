@@ -37,7 +37,7 @@ function gotoPage(pageNum: number) {
 
 </script>
 <template v-if="total && limit">
-    <div class="py-5 bg-white-5 text-center rounded-bl-[20px] rounded-br-[20px] pagination">
+    <div class="py-5 bg-white-5 text-center rounded-bl-[20px] rounded-br-[20px] pagination border border-transparent">
         <div class="btn-group">
             <button v-for="{ page, color } in pages" :key="page"
                 class="btn rounded-none bg-white-10 hover:!bg-white-30 !text-white border-none" :class="{
