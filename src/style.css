@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import './assets/scss/variable.scss';
 
 @tailwind base;
 @tailwind components;
@@ -23,16 +24,26 @@ body {
 }
 
 :root {
-  --text-main: #333;
+  /* --text-main: #333;
   --text-secondary: #4b525d;
-  --bg-active: #fbfbfc;
+  --bg-active: #fbfbfc; */
+  
+  /* MW */
+  --text-main: white;
+  --text-secondary: #A1A1A1;
+  --bg-active: rgba(255, 255, 255, 0.1);
 }
 
 html.dark,
 html[data-theme='dark'] {
-  --text-main: #f7f7f7;
+  /* --text-main: #f7f7f7;
   --text-secondary: #6f6e84;
-  --bg-active: #242b40;
+  --bg-active: #242b40; */
+
+  /* MW */
+  --text-main: white;
+  --text-secondary: #A1A1A1;
+  --bg-active: rgba(255, 255, 255, 0.1);
 }
 
 .table th:first-child {

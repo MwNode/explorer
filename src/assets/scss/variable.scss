@@ -24,7 +24,7 @@ $abstain: #D9D9D9;
 
 
 
-:root, [data-theme=dark], html.dark, html[data-theme=dark] {
+:root, [data-theme], [data-theme=dark], html.dark, html[data-theme=dark] {
     --primary: #E75B1F;
     --success: #00E517;
     --danger: #EF4136;
@@ -56,6 +56,6 @@ $abstain: #D9D9D9;
 
     --tooltip-text-color: white;
     --text-main: white;
-    --text-secondary: A1A1A1;
+    --text-secondary: #A1A1A1;
     --bg-active: rgba(255, 255, 255, 0.1);
 }
