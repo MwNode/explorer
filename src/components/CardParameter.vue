@@ -46,8 +46,8 @@ function formatTitle(v: string) {
         :key="index"
         class="px-4 py-2"
       >
-        <div class="text-xs mb-2 text-gray-3 capitalize" style="overflow-wrap: anywhere;">{{ formatTitle(item?.subtitle) }}</div>
-        <div class="text-base text-main">{{ calculateValue(item?.value) }}</div>
+        <div class="text-xs mb-2 text-gray-3 capitalize">{{ formatTitle(item?.subtitle) }}</div>
+        <div class="text-base text-main" style="overflow-wrap: anywhere;">{{ calculateValue(item?.value) }}</div>
       </div>
     </div>
   </div>
