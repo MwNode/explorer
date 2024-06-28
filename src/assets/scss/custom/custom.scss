@@ -157,6 +157,11 @@
         border-color: $success;
         color: black;
     }
+    &-primary {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+    }
 }
 
 
