@@ -52,7 +52,7 @@ function gotoHistory() {
                 <button class="join-item btn  btn-mw-primary" @click="myContracts()">{{ $t('cosmwasm.btn_query') }}</button>
             </div>
             <div>
-                <select v-model="togo" class="select select-primary py-[1px]" @change="gotoHistory()">
+                <select v-model="togo" class="select select-primary py-[1px] my-auto" @change="gotoHistory()">
                     <option value="">History</option>
                     <option v-for="(v, index) in history" :key="index" :value="v" >...{{ String(v).substring(45) }}</option>
                 </select>
