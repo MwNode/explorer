@@ -222,7 +222,7 @@ function fetchAllKeyRotation() {
             <UptimeBar :blocks="unit.blocks" />
           </div>
         </div>
-        <div class="mt-5 text-xs flex justify-center gap-2">
+        <div class="mt-5 text-xs flex justify-center gap-2 text-gray-3">
           <span class=" font-bold">{{ $t('uptime.legend') }}: </span>
           <span class="bg-success">&nbsp;</span> {{ $t('uptime.committed') }}
           <span class="bg-warning">&nbsp;</span> {{ $t('uptime.precommitted') }}

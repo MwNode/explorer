@@ -41,29 +41,29 @@ const tipMsg = computed(() => {
       <span class="ml-1 hidden md:!block">
         {{ walletStore.shortAddress || 'Connect Wallet' }}</span>
     </label>
-    <div tabindex="0" class="dropdown-content menu shadow p-2 bg-slate-900 border border-primary rounded w-52 md:!w-64 overflow-auto">
+    <div tabindex="0" class="dropdown-content menu shadow p-2 bg-slate-900 border border-primary rounded w-100 overflow-auto">
       <label v-if="!walletStore?.currentAddress" for="PingConnectWallet" class="btn btn-sm btn-mw-primary">
         <Icon icon="mdi:wallet" /><span class="ml-1 block">Connect Wallet</span>
       </label>
-      <div class="px-2 mb-1 text-gray-400 font-semibold">
+      <div class="px-2 mb-1 text-gray-3 font-semibold">
         {{ walletStore.connectedWallet?.wallet }}
       </div>
       <div>
         <a v-if="walletStore.currentAddress"
-          class="block py-2 px-2 hover:!bg-slate-800 rounded cursor-pointer"
+          class="block py-2 px-4 hover:!bg-slate-700 rounded cursor-pointer text-white"
           style="overflow-wrap: anywhere" @click="copyAdress(walletStore.currentAddress)">
           {{ walletStore.currentAddress }}
         </a>
         <div class="divider mt-1 mb-1"></div>
         <RouterLink to="/wallet/accounts">
-          <div class="block py-2 px-2 hover:!bg-slate-800 rounded cursor-pointer text-white">Accounts</div>
+          <div class="block py-2 px-4 hover:!bg-slate-700 rounded cursor-pointer text-white">Accounts</div>
         </RouterLink>
         <RouterLink to="/wallet/portfolio">
-          <div class="block py-2 px-2 hover:!bg-slate-800 rounded cursor-pointer text-white">Portfolio</div>
+          <div class="block py-2 px-4 hover:!bg-slate-700 rounded cursor-pointer text-white">Portfolio</div>
         </RouterLink>
         <div v-if="walletStore.currentAddress" class="divider mt-1 mb-1"></div>
         <a v-if="walletStore.currentAddress"
-          class="block py-2 px-2 hover:bg-slate-800 rounded cursor-pointer"
+          class="block py-2 px-4 hover:!bg-slate-700 rounded cursor-pointer text-white"
           @click="walletStore.disconnect()">Disconnect</a>
       </div>
     </div>

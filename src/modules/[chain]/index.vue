@@ -180,7 +180,7 @@ const amount = computed({
                 <div class="h-64 overflow-auto w-full shadow rounded">
                   <ul class="menu w-full rounded">
                     <li v-for="(item, index) in store.coinInfo.tickers" :key="index" @click="store.selectTicker(index)">
-                      <div class="flex items-center justify-between hover:!bg-slate-800">
+                      <div class="flex items-center justify-between hover:!bg-slate-700">
                         <div class="flex-1">
                           <div class="text-main text-sm" :class="trustColor(item.trust_score)">
                             {{ item?.market?.name }}

@@ -455,7 +455,7 @@ function mapDelegators(messages: any[]) {
     </div>
 
     <div class="mt-3 grid grid-cols-1 md:!grid-cols-3 gap-4">
-      <div class="mt-4">
+      <div>
         <CommissionRate :commission="v.commission"></CommissionRate>
       </div>
       <div class="bg-white-10 rounded shadow relative overflow-auto">

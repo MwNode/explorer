@@ -8,7 +8,7 @@ import Logo from './Logo.vue';
   <footer
     class="flex items-center md:h-12 mt-5 text-sm pt-2 z-10 w-full pb-10 md:pb-2"
   >
-    <div class="flex flex-1 flex-col md:!flex-row justify-center md:!justify-between items-center">
+    <div class="flex flex-1 flex-col md:!flex-row justify-center md:!justify-between items-center text-gray-3">
       <!-- <Logo /> -->
       <img class="logo md:hidden" src="../../assets/mw-logo.svg">
       &copy;&nbsp;

@@ -119,7 +119,7 @@ const chartConfig = computed(() => {
 </script>
 
 <template>
-    <div class="bg-white-10 rounded shadow p-4">
+    <div class="bg-white-10 rounded shadow px-4 pb-4 pt-8">
         <div class="text-lg text-main font-semibold mb-1">Commission Rate</div>
         <div class="text-sm text-gray-3">
             {{ `Updated at ${format.toDay(props.commission?.update_time, 'short')}` }}
