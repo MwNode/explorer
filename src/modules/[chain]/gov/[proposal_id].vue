@@ -271,7 +271,11 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
               }; max-width: 100%;`"
             ></div>
             <p
-              class="absolute inset-x-0 inset-y-0 text-center text-sm text-gray-3 flex items-center justify-center"
+              class="absolute inset-x-0 inset-y-0 text-center text-sm flex items-center justify-center"
+              :class="{
+                    'text-gray-3': item.value === 'NaN%' || item.value <= 0.52,
+                    'text-black': item.value > 0.52
+                  }"
             >
               {{ item.value }}
             </p>
