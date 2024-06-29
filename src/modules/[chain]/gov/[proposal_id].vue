@@ -257,7 +257,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
       <div class="bg-white-10 px-4 pt-3 pb-4 rounded shadow">
         <h2 class="card-title mb-1">{{ $t('gov.tally') }}</h2>
         <div class="mb-1" v-for="(item, index) of processList" :key="index">
-          <label class="block text-sm mb-1">{{ item.name }}</label>
+          <label class="block text-sm mb-1 text-main">{{ item.name }}</label>
           <div class="h-5 w-full relative">
             <div
               class="absolute inset-x-0 inset-y-0 w-full opacity-10 rounded-full"
@@ -265,7 +265,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             ></div>
             <div
               class="absolute inset-x-0 inset-y-0 rounded-full"
-              :class="`${item.class}`"
+              :class="`${item.class} text-main`"
               :style="`width: ${
                 item.value === '-' || item.value === 'NaN%' ? '0%' : item.value
               }; max-width: 100%;`"
