@@ -265,13 +265,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             ></div>
             <div
               class="absolute inset-x-0 inset-y-0 rounded-full"
-              :class="`${item.class} text-main`"
+              :class="`${item.class} text-gray-3`"
               :style="`width: ${
                 item.value === '-' || item.value === 'NaN%' ? '0%' : item.value
               }; max-width: 100%;`"
             ></div>
             <p
-              class="absolute inset-x-0 inset-y-0 text-center text-sm text-gray flex items-center justify-center"
+              class="absolute inset-x-0 inset-y-0 text-center text-sm text-gray-3 flex items-center justify-center"
             >
               {{ item.value }}
             </p>
