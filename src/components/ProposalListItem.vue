@@ -45,14 +45,14 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
 
 </script>
 <template>
-  <div class="bg-white dark:bg-[#28334e] rounded text-sm">
+  <div class="text-sm">
     <table class="table-compact w-full table-fixed hidden lg:!table">
       <tbody>
-        <tr v-for="(item, index) in proposals?.proposals" :key="index">
+        <tr v-for="(item, index) in proposals?.proposals" :key="index" class="border-b !border-white-10">
           <td class="px-4 w-20">
             <label
               for="proposal-detail-modal"
-              class="text-main text-base hover:text-indigo-400 cursor-pointer"
+              class="text-main text-base hover:text-primary cursor-pointer"
               @click="proposalInfo = item"
             >
               #{{ item?.proposal_id }}</label
@@ -62,13 +62,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             <div>
               <RouterLink
                 :to="`/${chain.chainName}/gov/${item?.proposal_id}`"
-                class="text-main text-base mb-1 block hover:text-indigo-400 truncate"
+                class="text-primary text-base mb-1 block hover:text-primary truncate"
               >
                 {{ item?.content?.title || item?.title || metaItem(item?.metadata)?.title }}
               </RouterLink>
               <div
                 v-if="item.content"
-                class="bg-[#f6f2ff] text-[#9c6cff] dark:bg-gray-600 text-gray-300 inline-block rounded-full px-2 py-[1px] text-xs mb-1"
+                class="mr-2 mb-2 text-xs text-main bg-white-10 px-3 rounded-full py-1 w-fit"
               >
                 {{ showType(item.content['@type']) }} 
               </div>
@@ -107,7 +107,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
                 </div>
               </div>
               <div
-                class="truncate col-span-2 md:!col-span-1 text-xs text-main text-right md:!flex md:!justify-start"
+                class="truncate col-span-2 md:!col-span-1 text-xs text-gray-3 text-right md:!flex md:!justify-start"
               >
                 {{ format.toDay(item.voting_end_time, 'from') }}
               </div>
@@ -144,7 +144,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
         class="px-4 py-4"
       >
         <div
-          class="text-main text-base mb-1 flex justify-between hover:text-indigo-400"
+          class="text-main text-base mb-1 flex justify-between hover:text-primary"
         >
           <RouterLink
             :to="`/${chain.chainName}/gov/${item?.proposal_id}`"
@@ -153,25 +153,25 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
           >
           <label
             for="proposal-detail-modal"
-            class="text-main text-base hover:text-indigo-400 cursor-pointer"
+            class="text-main text-base hover:text-primary cursor-pointer"
             @click="proposalInfo = item"
           >
             #{{ item?.proposal_id }}</label
           >
         </div>
 
-        <div class="grid grid-cols-4 mt-2 mb-2">
+        <div class="grid grid-cols-4 mt-2 mb-2 flex justify-between">
           <div class="col-span-2">
             <div
               v-if="item.content"
-              class="bg-[#f6f2ff] text-[#9c6cff] dark:bg-gray-600 text-gray-300 inline-block rounded-full px-2 py-[1px] text-xs mb-1"
+              class="mr-1 md:!mr-2 mb-1 md:!mb-2 text-xs text-main bg-white-10 px-3 rounded-full py-1 w-fit"
             >
               {{ showType(item.content['@type']) }}
             </div>
           </div>
 
           <div
-            class="truncate text-xs text-main flex items-center justify-end"
+            class="text-xs text-gray-3 text-right flex items-center justify-end"
           >
             {{ format.toDay(item.voting_end_time, 'from') }}
           </div>

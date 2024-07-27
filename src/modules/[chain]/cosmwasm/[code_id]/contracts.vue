@@ -50,13 +50,13 @@ function showInfo(address: string) {
 </script>
 <template>
   <div>
-    <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
-      <h2 class="card-title truncate w-full">
+    <div class="bg-white-10 rounded mb-4 shadow">
+      <h2 class="card-title truncate w-full p-4">
         {{ $t('cosmwasm.contract_list_code') }}: {{ props.code_id }}
       </h2>
       <div class="overflow-x-auto">
-        <table class="table table-compact w-full mt-4">
-          <thead class="bg-base-200">
+        <table class="table table-compact w-full text-white">
+          <thead class="bg-white-10 text-white rounded-none">
             <tr>
               <th style="position: relative; z-index: 2">{{ $t('cosmwasm.contract_list') }}</th>
               <th>{{ $t('account.action') }}</th>
@@ -73,12 +73,12 @@ function showInfo(address: string) {
                 <label
                   @click="showInfo(v)"
                   for="modal-contract-detail"
-                  class="btn btn-mw-primary btn-xs text-xs mr-2"
+                  class="btn btn-mw-primary btn-xs text-xs mr-2 text-nowrap mb-2 md:!mb-0"
                   >{{ $t('cosmwasm.btn_contract') }}</label
                 >
                 <RouterLink
                   :to="`transactions?contract=${v}`"
-                  class="btn btn-mw-primary btn-xs text-xs"
+                  class="btn btn-mw-primary btn-xs text-xs text-nowrap"
                 >
                 {{ $t('cosmwasm.btn_details') }}
                 </RouterLink>
@@ -92,18 +92,20 @@ function showInfo(address: string) {
             :total="response.pagination?.total"
             :callback="loadContract"
           />
-          <label
-            for="wasm_instantiate_contract"
-            class="btn btn-mw-primary my-5"
-            @click="
-              dialog.open('wasm_instantiate_contract', {
-                codeId: props.code_id,
-              })
-            "
-            >{{ $t('cosmwasm.instantiate_contract') }}</label
-          >
         </div>
       </div>
+    </div>
+    <div class="flex my-5">
+      <label
+        for="wasm_instantiate_contract"
+        class="btn btn-mw-primary mx-auto"
+        @click="
+          dialog.open('wasm_instantiate_contract', {
+            codeId: props.code_id,
+          })
+        "
+        >{{ $t('cosmwasm.instantiate_contract') }}</label
+      >
     </div>
 
     <input type="checkbox" id="modal-contract-detail" class="modal-toggle" />

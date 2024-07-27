@@ -1,0 +1,457 @@
+@import '../variable.scss';
+
+
+// background
+.bg {
+    &-primary {
+        background-color: $primary;
+    }
+    &-primary-20 {
+        background-color: rgba($color: $primary, $alpha: 0.2);
+    }
+    &-secondary {
+        background-color: var(--white-30);
+    }
+    &-white-5 {
+        background-color: var(--white-5);
+    }
+    &-white-10 {
+        background-color: var(--white-10);
+    }
+    &-white-30 {
+        background-color: var(--white-30);
+    }
+    &-mw-base {
+        background-color: $background-dark;
+    }
+    &-mw-base-80 {
+        background-color: rgba($color: $background-dark, $alpha: 0.8);
+    }
+    &-mw-box {
+        background-color: #171b28;
+    }
+    &-error, &-no, &-danger {
+        background-color: $danger;
+    }
+    &-success, &-yes {
+        background-color: $success;
+    }
+    &-success-20 {
+        background-color: rgba($color: $success, $alpha: 0.2);
+    }
+    &-delegate {
+        background-color: $delegate;
+    }
+    &-veto {
+        background-color: $veto;
+    }
+    &-abstain {
+        background-color: $abstain;
+    }
+}
+.\!bg {
+    &-primary {
+        background-color: $primary !important;
+    }
+    &-white-5 {
+        background-color: var(--white-5) !important;
+    }
+    &-white-10 {
+        background-color: var(--white-10) !important;
+    }
+    &-white-30 {
+        background-color: var(--white-30) !important;
+    }
+    &-mw-base {
+        background-color: $background-dark !important;
+    }
+    &-mw-base-80 {
+        background-color: rgba($color: $background-dark, $alpha: 0.8) !important;
+    }
+    &-mw-box {
+        background-color: #171b28 !important;
+    }
+    &-error {
+        background-color: $danger !important;
+    }
+    &-delegate {
+        background-color: $delegate !important;
+    }
+    &-gray-1 {
+        background-color: $gray-1 !important;
+    }
+    &-gray-2 {
+        background-color: $gray-2 !important;
+    }
+    &-gray-3 {
+        background-color: $gray-3 !important;
+    }
+    &-gray-4 {
+        background-color: $gray-4 !important;
+    }
+}
+.hover\: {
+    &bg-orange:hover {
+        background-color: $orange;
+    }
+    &bg-white-5:hover  {
+        background-color: var(--white-5);
+    }
+    &bg-white-10:hover  {
+        background-color: var(--white-10);
+    }
+    &bg-white-30:hover  {
+        background-color: var(--white-30);
+    }
+    &\!bg {
+        &-white {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-5:hover {
+                background-color: var(--white-5) !important;
+            }
+            &-10:hover {
+                background-color: var(--white-10) !important;
+            }
+            &-30:hover {
+                background-color: var(--white-30) !important;
+            }
+        }
+        &-primary {
+            &:hover {
+                background-color: $primary !important;
+            }
+            &-20:hover {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
+            &-90:hover {
+                background-color: rgba($color: $primary, $alpha: 0.9) !important;
+            }
+        }
+    }  
+}
+.focus {
+    &\: {
+        &bg-orange:focus {
+            background-color: $orange;
+        }
+        &\!bg-primary {
+            &:focus {
+                background-color: $primary !important;
+            }
+            &-20:focus {
+                background-color: rgba($color: $primary, $alpha: 0.2) !important;
+            }
+        }
+    }
+}
+.badge {
+    &-red, &-no, &-danger {
+        background-color: $red;
+        border-color: $red;
+        color: white;
+    }
+    &-yes, &-success, &-green {
+        background-color: $success;
+        border-color: $success;
+        color: black;
+    }
+    &-primary {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+    }
+}
+
+
+.default-layout {
+    background-image: url('../../assets/images/mw-background-2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:has(.mw-dashboard) {
+        background-image: url('../../assets/images/mw-background-1.svg');
+    }
+}
+
+
+// border
+.border-white-10 {
+    border-color: var(--white-10);
+}
+.\! {
+    &border {
+        &-white-5 {
+            border-color: var(--white-5) !important;
+        }
+        &-white-10 {
+            border-color: var(--white-10) !important;
+        }
+    }
+}
+.border {
+    &-primary {
+        border-color: $primary;
+    }
+}
+
+// border-radius
+.rounded {
+    border-radius: 20px !important;
+    &-32 {
+        border-radius: 32px;
+    }
+}
+
+
+//tab
+.tab {
+    padding-right: 0px;
+    padding-left: 0px;
+    --tab-color: var(--gray-3);
+    font-weight: bold;
+
+    &-active {
+        background-color: transparent;
+        border-bottom: 1px solid $primary !important;
+        color: $primary !important;
+    }
+
+    &:hover {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+        opacity: 0.8;
+    }
+}
+
+
+// gap
+.gap {
+    &-20 {
+        gap: 20px;
+    }
+    &-30 {
+        gap: 30px;
+    }
+}
+
+
+// link
+.link {
+    &-primary {
+        color: $primary;
+    }
+}
+
+
+// text
+.text-nowrap {
+    white-space: nowrap;
+}
+.text {
+    &-main {
+        color: white;
+    }
+    &-primary {
+        color: $primary;
+    }
+    &-success, &-yes {
+        color: $success;
+    }
+    &-danger, &-no {
+        color: $danger;
+    }
+    &-error {
+        color: $danger !important;
+    }
+    &-orange {
+        color: $orange;
+    }
+    &-gray {
+        color: gray;
+    }
+    &-gray-1 {
+        color: $gray-1;
+    }
+    &-gray-2 {
+        color: $gray-2;
+    }
+    &-gray-3 {
+        color: $gray-3;
+    }
+    &-gray-4 {
+        color: $gray-4;
+    }
+}
+.\!text {
+    &-primary {
+        color: $primary !important;
+    }
+    &-gray-3 {
+        color: $gray-3 !important;
+    }
+}
+.hover\:text {
+    &-primary:hover {
+        color: $primary;
+    }
+}
+.card-title {
+    color: white;
+}
+
+.dropdown .dropdown-content {
+    min-width: 300px;
+    z-index: 90;
+}
+.select {
+    background-color: var(--white-10) !important;
+    border: 1px solid var(--white-10);
+    border-radius: 100px !important;
+    background-size: 5px 6px !important;
+    color: white;
+}
+
+
+.modal, .modal:not(dialog:not(.modal-open)), .modal::backdrop {
+    background-color: rgba($color: black, $alpha: 0.3);
+}
+.modal-box {
+    background-color: $background-dark !important;
+    border: 1px solid var(--white-10);
+    color: white;
+    .btn.btn-circle {
+        background-color: rgba($color: white, $alpha: 0.2);
+    }
+}
+
+
+// RESPONSIVE
+.xl {
+    @media (min-width: 1280px) {
+        &\: {
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
+            }
+        }
+    }
+}
+.lg {
+    @media (min-width: 1024px) {
+        &\: {
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
+            }
+        }
+    }
+}
+
+.md {
+    @media (min-width: 768px) {
+        &\: {
+            &bg {
+                &-white-5 {
+                    background-color: var(--white-5);
+                }
+                &-white-10 {
+                    background-color: var(--white-10);
+                }
+                &-white-30 {
+                    background-color: var(--white-30);
+                }
+                &-mw-base {
+                    background-color: $background-dark;
+                }
+                &-mw-base-50 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.5);
+                }
+                &-mw-base-80 {
+                    background-color: rgba($color: $background-dark, $alpha: 0.8);
+                }
+                &-mw-box {
+                    background-color: #171b28;
+                }
+            }
+
+            &rounded {
+                &-32 {
+                    border-radius: 32px;
+                }
+            }
+        }
+    }
+}
+
+// ping-connect-wallet
+.ping-connect-wallet {
+    .modal-box {
+        ul.bg-gray-100.dark\:bg-gray-900 {
+            background-color: var(--white-10);
+
+            li:hover {
+                background-color: var(--white-30);
+            }
+        }
+        div:last-child {
+            label:first-child {
+                background-color: var(--white-10);
+            }
+        }
+    }
+    .ping-connect-confirm {
+        margin-left: 8px;
+    }
+}

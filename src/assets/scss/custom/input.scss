@@ -1,0 +1,48 @@
+@import '../variable.scss';
+
+.join {
+    border-radius: 100px !important;
+    background-color: var(--white-10);
+    border: 1px solid var(--white-5);
+    padding: 2px;
+
+    // prefix
+    .join-item.btn, select {
+        background-color: var(--white-30);
+        border: 0;
+        color: white;
+
+        &:first-child {
+            border-radius: 100px 0px 0px 100px !important;
+        }
+
+        &:last-child {
+            border-radius: 0px 100px 100px 0px !important;
+        }
+    }
+
+    input {
+        border: 0;
+        color: white;
+        background-color: var(--white-10);
+    }
+}
+
+input:not(.join>input)  {
+    color: white;
+    background-color: var(--white-10);
+    border-radius: 100px !important;
+    border: 1px solid var(--white-5);
+}
+
+textarea, textarea.textarea {
+    background-color: var(--white-10);
+    border-color: var(--white-10);
+}
+
+// input.input {
+//     color: white;
+//     background-color: var(--white-10);
+//     border-radius: 100px !important;
+//     border: 1px solid var(--white-5);
+// }

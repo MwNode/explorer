@@ -34,14 +34,14 @@ const messages = computed(() => {
 </script>
 <template>
     <div>
-        <div class="tabs bg-transparent mb-4">
-            <RouterLink class="tab text-gray-3 uppercase" 
+        <div class="tabs gap-5 md:gap-10 bg-transparent mb-4">
+            <RouterLink class="tab capitalize" 
                 :to="`/${chain}/tx/?tab=recent`"
                 >{{ $t('block.recent') }}</RouterLink>
-            <RouterLink class="tab text-gray-3 uppercase" 
+            <RouterLink class="tab capitalize" 
                 :to="`/${chain}/tx/?tab=search`"
                 >Search</RouterLink>
-            <a class="tab text-gray-3 uppercase tab-active">Transaction</a>
+            <a class="tab capitalize tab-active">Transaction</a>
         </div>
 
         <div v-if="tx.tx_response" class="bg-white-10 px-4 pt-3 pb-4 rounded shadow mb-4">
@@ -56,7 +56,7 @@ const messages = computed(() => {
                         <tr>
                             <td>{{ $t('account.height') }}</td>
                             <td>
-                                <RouterLink :to="`/${props.chain}/block/${tx.tx_response.height}`" class="text-primary dark:invert">{{ tx.tx_response.height
+                                <RouterLink :to="`/${props.chain}/block/${tx.tx_response.height}`" class="text-primary">{{ tx.tx_response.height
                                 }}
                                 </RouterLink>
                             </td>

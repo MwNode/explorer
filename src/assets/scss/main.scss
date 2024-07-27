@@ -1,3 +1,47 @@
-@import './general/custom.scss';
-@import './general/variable.scss';
-@import './general/general.scss';
+@import './variable.scss';
+@import './general.scss';
+@import './custom/custom.scss';
+@import './custom/apexchart.scss';
+@import './custom/button.scss';
+@import './custom/input.scss';
+@import './custom/table.scss';
+
+option {
+    background-color: var(--slate-900);
+    color: white;
+}
+
+a, span a {
+    color: $primary;
+}
+
+.radio {
+    border: var(--white-10);
+}
+.radio-primary:checked {
+    border-color: $primary;
+    background-color: $primary;
+}
+
+.jv-container {
+    &.boxed {
+        border-radius: 20px 20px 0 0 !important;
+        border-color: var(--white-10) !important;
+        &:hover {
+            border-color: var(--primary-50) !important;
+            box-shadow: none !important;
+        }
+
+        &:last-child {
+            border-radius: 20px !important;
+        }
+    }
+}
+
+#modal-contract-states {
+    .jv-container {
+        &.jv-code.boxed {
+            border-bottom: 0;
+        }
+    }
+}

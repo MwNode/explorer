@@ -1,0 +1,23 @@
+@import '../variable.scss';
+
+.apexcharts-text {
+    tspan, text {
+        font-family: 'DM Sans';
+        color: white;
+    } 
+}
+.apexcharts-menu.apexcharts-menu-open {
+    background-color: var(--slate-900);
+    border: 1px solid $primary;
+}
+.apexcharts-menu-item:hover {
+    background: var(--slate-700) !important;
+}
+.apexcharts-menu-icon, .apexcharts-pan-icon, .apexcharts-reset-icon, .apexcharts-selection-icon, .apexcharts-toolbar-custom-icon, .apexcharts-zoom-icon, .apexcharts-zoomin-icon, .apexcharts-zoomout-icon {
+    &:hover svg {
+        fill: white !important;
+    }
+}
+.apexcharts-toolbar {
+    z-index: 9 !important;
+}

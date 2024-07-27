@@ -10,7 +10,7 @@ const changeTab = (val: string) => {
 </script>
 <template>
   <div>
-    <div class="tabs">
+    <div class="tabs gap-5 md:gap-10">
       <a
         class="tab tab-bordered text-gray-3 capitalize"
         v-for="(item, index) of value"

@@ -19,10 +19,10 @@ const list = computed(() => {
 </script>
 <template>
     <div>
-        <div class="tabs bg-transparent mb-4">
-            <a class="tab text-gray-3 uppercase" :class="{ 'tab-active': tab === 'blocks' }"
+        <div class="tabs gap-5 md:gap-10 bg-transparent mb-4">
+            <a class="tab capitalize" :class="{ 'tab-active': tab === 'blocks' }"
                 @click="tab = 'blocks'">{{ $t('block.recent') }}</a>
-            <RouterLink class="tab text-gray-3 uppercase" 
+            <RouterLink class="tab capitalize" 
                 :to="`/${chain}/block/${Number(base.latest?.block?.header.height||0) + 10000}`"
                 >{{ $t('block.future') }}</RouterLink>
         </div>
@@ -36,14 +36,14 @@ const list = computed(() => {
                 class="flex flex-col justify-between rounded p-4 shadow bg-white-10"
                 :to="`/${chain}/block/${item.block.header.height}`">
                 <div class="flex justify-between">
-                    <h3 class="text-md font-bold sm:!text-lg">
+                    <h3 class="text-md font-bold sm:!text-lg text-main">
                         {{ item.block.header.height }}
                     </h3>
                     <span class="rounded text-xs whitespace-nowrap font-medium text-green-600">
                         {{ format.toDay(item.block?.header?.time, 'from') }}
                     </span>
                 </div>
-                <div class="flex justify-between tooltip" data-tip="Block Proposor">
+                <div class="flex justify-between tooltip text-main" data-tip="Block Proposor">
                     <div class="mt-2 hidden text-sm sm:!block truncate">
                         <span>{{ format.validator(item.block?.header?.proposer_address) }}</span>
                     </div>

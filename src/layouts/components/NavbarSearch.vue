@@ -62,7 +62,7 @@ function confirm() {
 <template>
   <div>
     <button
-      class="btn btn-ghost btn-circle btn-sm mx-1"
+      class="btn btn-ghost btn-circle mx-1 hover:!bg-white-10 hover:!border-white-10"
       @click="openSearchModal"
     >
       <Icon
@@ -98,7 +98,7 @@ function confirm() {
           >
             <Icon
               icon="zondicons:close-outline"
-              class="text-2xl text-main"
+              class="text-2xl text-gray-3"
             />
           </label>
         </div>

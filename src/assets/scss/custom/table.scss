@@ -1,0 +1,110 @@
+// table
+.table {
+    tr.hover:hover {
+        background-color: rgba($color: $background-dark, $alpha: 0.5);
+    }
+    color: white;
+    thead {
+        &:not([class~=bg]) {
+            background-color: var(--white-10);
+        }
+        tr {
+            border: 0;
+            th {
+                color: $gray-3;
+                padding-top: 16px;
+                padding-bottom: 16px;
+
+                &:first-child {
+                    padding-left: 24px;
+                }
+
+                &:last-child {
+                    padding-right: 24px;
+                }
+            }
+        }
+        &:not(.rounded-none) tr th {
+            &:first-child {
+                border-top-left-radius: 20px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 20px;
+            }
+        }
+    }
+    tbody tr {
+        border-bottom-color: var(--white-10);
+        td {
+            &:first-child {
+                padding-left: 24px;
+            }
+
+            &:last-child {
+                padding-right: 24px;
+            }
+        }
+    }
+    &.table-xs {
+        thead {
+            tr {
+                &:not([class~=bg]) {
+                    background-color: gray;
+                }
+                th {
+                    color: $gray-3;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+    
+                    &:first-child {
+                        padding-left: 16px;
+                    }
+    
+                    &:last-child {
+                        padding-right: 16px;
+                    }
+                }
+            }
+            &:not(.rounded-none) tr th {
+                &:first-child {
+                    border-top-left-radius: 10px;
+                }
+    
+                &:last-child {
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+        tbody tr {
+            border-bottom-color: var(--white-10);
+            td {
+                &:first-child {
+                    padding-left: 16px;
+                }
+    
+                &:last-child {
+                    padding-right: 16px;
+                }
+            }
+        }
+    }
+
+    &.staking-table, &.validatore-table {
+        thead tr {
+            border: 0;
+        }
+        th {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            &:last-child {
+                padding-right: 8px;
+            }
+        }
+        td {
+            &:last-child {
+                padding-right: 8px;
+            }
+        }
+    }
+}

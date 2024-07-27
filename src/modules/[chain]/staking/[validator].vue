@@ -260,9 +260,9 @@ function mapDelegators(messages: any[]) {
       <div class="flex flex-col lg:!flex-row pt-2 pb-1">
         <div class="flex-1">
           <div class="flex">
-            <div class="avatar mr-4 relative w-24 rounded-lg overflow-hidden">
-              <div class="w-24 rounded-lg absolute opacity-10"></div>
-              <div class="w-24 rounded-lg">
+            <div class="avatar mr-4 relative w-24 rounded-[20px] overflow-hidden">
+              <div class="w-24 rounded-[20px] absolute opacity-10"></div>
+              <div class="w-24 rounded-[20px]">
                 <img
                   v-if="identity && avatars[identity] !== 'undefined'"
                   v-lazy="logo(identity)"
@@ -280,7 +280,7 @@ function mapDelegators(messages: any[]) {
                 />
               </div>
             </div>
-            <div class="mx-2">
+            <div class="mx-2 text-main">
               <h4>{{ v.description?.moniker }}</h4>
               <div class="text-sm mb-4">
                 {{ v.description?.identity || '-' }}
@@ -297,9 +297,9 @@ function mapDelegators(messages: any[]) {
               >
             </div>
           </div>
-          <div class="m-4 text-sm">
+          <div class="my-4 mx-none md:!mx-4 text-sm">
             <p class="text-sm mb-3 font-medium">{{ $t('staking.about_us') }}</p>
-            <div class="card-list">
+            <div class="card-list text-main">
               <div class="flex items-center mb-2">
                 <Icon icon="mdi-web" class="text-xl mr-1" />
                 <span class="font-bold mr-2">{{ $t('staking.website') }}: </span>
@@ -327,7 +327,7 @@ function mapDelegators(messages: any[]) {
               </div>
             </div>
             <p class="text-sm mt-4 mb-3 font-medium">{{ $t('staking.validator_status') }}</p>
-            <div class="card-list">
+            <div class="card-list text-main">
               <div class="flex items-center mb-2">
                 <Icon icon="mdi-shield-account-outline" class="text-xl mr-1" />
                 <span class="font-bold mr-2">{{ $t('staking.status') }}: </span
@@ -342,7 +342,7 @@ function mapDelegators(messages: any[]) {
               </div>
             </div>
             <p class="text-sm mt-4 mb-3 font-medium">{{ $t('staking.liquid_staking') }}</p>
-            <div class="card-list">
+            <div class="card-list text-main">
               <div class="flex items-center mb-2">
                 <Icon icon="mdi-lock" class="text-xl mr-1" />
                 <span class="font-bold mr-2">{{ $t('staking.validator_bond_share') }}: </span>
@@ -359,7 +359,7 @@ function mapDelegators(messages: any[]) {
           </div>
         </div>
         <div class="flex-1">
-          <div class="flex flex-col mt-10">
+          <div class="flex flex-col mt-10 gap-3">
             <div class="flex mb-2">
               <div
                 class="flex items-center justify-center rounded w-10 h-10"
@@ -368,7 +368,7 @@ function mapDelegators(messages: any[]) {
                 <Icon icon="mdi-coin" class="text-3xl" />
               </div>
               <div class="ml-3 flex flex-col justify-center">
-                <h4>
+                <h4 class="text-main">
                   {{
                     format.formatToken2({
                       amount: v.tokens,
@@ -387,7 +387,7 @@ function mapDelegators(messages: any[]) {
                 <Icon icon="mdi-percent" class="text-3xl" />
               </div>
               <div class="ml-3 flex flex-col justify-center">
-                <h4>
+                <h4 class="text-main">
                   {{ format.formatToken(selfBonded.balance) }} ({{ selfRate }})
                 </h4>
                 <span class="text-sm">{{ $t('staking.self_bonded') }}</span>
@@ -403,7 +403,7 @@ function mapDelegators(messages: any[]) {
               </div>
 
               <div class="ml-3 flex flex-col">
-                <h4>
+                <h4 class="text-main">
                   {{ v.min_self_delegation }} {{ staking.params.bond_denom }}
                 </h4>
                 <span class="text-sm">{{ $t('staking.min_self') }}</span>
@@ -417,7 +417,7 @@ function mapDelegators(messages: any[]) {
                 <Icon icon="mdi-finance" class="text-3xl" />
               </div>
               <div class="ml-3 flex flex-col justify-center">
-                <h4>{{ apr }}</h4>
+                <h4 class="text-main">{{ apr }}</h4>
                 <span class="text-sm">{{ $t('staking.annual_profit') }}</span>
               </div>
             </div>
@@ -430,7 +430,7 @@ function mapDelegators(messages: any[]) {
                 <Icon icon="mdi:arrow-down-bold-circle-outline" class="text-3xl" />
               </div>
               <div class="ml-3 flex flex-col justify-center">
-                <h4>{{ v.unbonding_height }}</h4>
+                <h4 class="text-main">{{ v.unbonding_height }}</h4>
                 <span class="text-sm">{{ $t('staking.unbonding_height') }}</span>
               </div>
             </div>
@@ -443,15 +443,15 @@ function mapDelegators(messages: any[]) {
                 <Icon icon="mdi-clock" class="text-3xl" />
               </div>
               <div class="ml-3 flex flex-col justify-center">
-                <h4 v-if="v.unbonding_time && !v.unbonding_time.startsWith('1970')">{{ format.toDay(v.unbonding_time, 'from') }}</h4>
-                <h4 v-else>-</h4>
+                <h4 v-if="v.unbonding_time && !v.unbonding_time.startsWith('1970')" class="text-main">{{ format.toDay(v.unbonding_time, 'from') }}</h4>
+                <h4 v-else class="text-main">-</h4>
                 <span class="text-sm">{{ $t('staking.unbonding_time') }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-sm px-4 pt-3 border-t">{{ v.description?.details }}</div>
+      <div class="text-sm px-none md:!px-4 pt-3 border-t overflow-auto">{{ v.description?.details }}</div>
     </div>
 
     <div class="mt-3 grid grid-cols-1 md:!grid-cols-3 gap-4">
@@ -474,7 +474,7 @@ function mapDelegators(messages: any[]) {
               color="info"
               label
               variant="outlined"
-              class="mr-1 mb-1 badge text-xs"
+              class="mr-1 mb-1 badge bg-white-10 border-white-10 text-xs"
             >
               {{ format.formatToken2(i) }}
             </div>
@@ -482,12 +482,12 @@ function mapDelegators(messages: any[]) {
             <div
               v-for="(i, k) in rewards"
               :key="`reward-${k}`"
-              class="mr-1 mb-1 badge text-xs"
+              class="mr-1 mb-1 badge bg-white-10 border-white-10 text-xs"
             >
               {{ format.formatToken2(i) }}
             </div>
           </div>
-          <div class="">
+          <div class="pt-6">
             <label
               for="withdraw_commission"
               class="btn btn-mw-primary w-full"
@@ -502,7 +502,7 @@ function mapDelegators(messages: any[]) {
         </div>
       </div>
       <div class="bg-white-10 rounded shadow overflow-x-auto">
-        <div class="px-4 pt-4 mb-2 text-main font-lg font-semibold">
+        <div class="px-4 pt-4 mb-2 text-main text-lg font-lg font-semibold">
           {{ $t('staking.addresses') }}
         </div>
         <div class="px-4 pb-4">
@@ -515,12 +515,14 @@ function mapDelegators(messages: any[]) {
                   @click="copyWebsite(addresses.account || '')"
                 />
               </div>
-            <RouterLink
-              class="text-xs text-primary"
-              :to="`/${chain}/account/${addresses.account}`"
-            >
-              {{ addresses.account }}
-            </RouterLink>
+            <div class="truncate text-primary">
+              <RouterLink
+                class="text-base link link-primary"
+                :to="`/${chain}/account/${addresses.account}`"
+              >
+                {{ addresses.account }}
+              </RouterLink>
+            </div>
           </div>
           <div class="mb-3">
             <div class="text-sm flex">{{ $t('staking.operator_addr') }}
@@ -530,7 +532,7 @@ function mapDelegators(messages: any[]) {
                   v-show="v.operator_address"
                   @click="copyWebsite(v.operator_address || '')"
                 /></div>
-            <div class="text-xs">
+            <div class="text-base text-main truncate">
               {{ v.operator_address }}
             </div>
           </div>
@@ -543,7 +545,7 @@ function mapDelegators(messages: any[]) {
                   @click="copyWebsite(addresses.hex || '')"
                 />
               </div>
-            <div class="text-xs">{{ addresses.hex }}</div>
+            <div class="text-base text-main truncate">{{ addresses.hex }}</div>
           </div>
           <div class="mb-3">
             <div class="text-sm flex">{{ $t('staking.signer_addr') }}
@@ -554,7 +556,7 @@ function mapDelegators(messages: any[]) {
                   @click="copyWebsite(addresses.valCons || '')"
                 />
               </div>
-            <div class="text-xs">{{ addresses.valCons }}</div>
+            <div class="text-base text-main truncate">{{ addresses.valCons }}</div>
           </div>
           <div>
             <div class="text-sm flex">{{ $t('staking.consensus_pub_key') }}
@@ -565,7 +567,7 @@ function mapDelegators(messages: any[]) {
                   @click="copyWebsite(JSON.stringify(v.consensus_pubkey) || '')"
                 />
               </div>
-            <div class="text-xs">{{ v.consensus_pubkey }}</div>
+            <div class="text-base text-main truncate">{{ v.consensus_pubkey }}</div>
           </div>
         </div>
       </div>
@@ -578,10 +580,12 @@ function mapDelegators(messages: any[]) {
       <div class="rounded overflow-auto">
         <table class="table validatore-table w-full">
           <thead>
-            <th class="text-left pl-4" style="position: relative; z-index: 2">
-              {{ $t('account.delegator') }}
-            </th>
-            <th class="text-left pl-4">{{ $t('account.delegation') }}</th>
+            <tr>
+              <th class="text-left pl-4" style="position: relative; z-index: 2">
+                {{ $t('account.delegator') }}
+              </th>
+              <th class="text-left pl-4">{{ $t('account.delegation') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="{balance, delegation} in delegations.delegation_responses">
@@ -599,17 +603,19 @@ function mapDelegators(messages: any[]) {
       </div>
     </div>
 
-    <div class="mt-5 bg-white-10 shadow rounded p-4">
-      <div class="text-lg mb-4 font-semibold">{{ $t('account.transactions') }}</div>
-      <div class="rounded overflow-auto">
+    <div class="mt-5 bg-white-10 shadow rounded">
+      <div class="text-lg font-semibold text-main p-4">{{ $t('account.transactions') }}</div>
+      <div class="overflow-auto rounded-b-[20px]">
         <table class="table validatore-table w-full">
-          <thead>
-            <th class="text-left pl-4" style="position: relative; z-index: 2">
-              {{ $t('account.height') }}
-            </th>
-            <th class="text-left pl-4">{{ $t('account.hash') }}</th>
-            <th class="text-left pl-4" width="40%">{{ $t('account.messages') }}</th>
-            <th class="text-left pl-4">{{ $t('account.time') }}</th>
+          <thead class="rounded-none">
+            <tr>
+              <th class="text-left pl-4" style="position: relative; z-index: 2">
+                {{ $t('account.height') }}
+              </th>
+              <th class="text-left pl-4">{{ $t('account.hash') }}</th>
+              <th class="text-left pl-4" width="40%">{{ $t('account.messages') }}</th>
+              <th class="text-left pl-4">{{ $t('account.time') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="(item, i) in txs.tx_responses">
@@ -643,31 +649,32 @@ function mapDelegators(messages: any[]) {
       </div>
     </div>
 
-    <div class="mt-5 bg-white-10 shadow rounded p-4">
-      <div class="text-lg mb-4 font-semibold">
-        <div class="tabs bg-transparent">
-                
-                <span class="mr-10">Voting Power Events: </span>
-                <a
-                    class="tab text-gray-3"
-                    :class="{ 'tab-active': selectedEventType === EventType.Delegate }"
-                    @click="loadPowerEvents(1, EventType.Delegate)"
-                    >{{ $t('account.btn_delegate') }}</a
-                >
-                <a
-                    class="tab text-gray-3"
-                    :class="{ 'tab-active': selectedEventType === EventType.Unbond }"
-                    @click="loadPowerEvents(1, EventType.Unbond)"
-                    >{{ $t('account.btn_unbond') }}</a
-                >
-            </div>
+    <div class="mt-5 bg-white-10 shadow rounded">
+      <div class="text-lg font-semibold text-main p-4">
+        Voting Power Events:
       </div>
-      <div class="rounded overflow-auto">
+      <div class="tabs gap-5 md:gap-10 bg-transparent p-4">               
+          <a
+              class="tab"
+              :class="{ 'tab-active': selectedEventType === EventType.Delegate }"
+              @click="loadPowerEvents(1, EventType.Delegate)"
+              >{{ $t('account.btn_delegate') }}</a
+          >
+          <a
+              class="tab"
+              :class="{ 'tab-active': selectedEventType === EventType.Unbond }"
+              @click="loadPowerEvents(1, EventType.Unbond)"
+              >{{ $t('account.btn_unbond') }}</a
+          >
+      </div>
+      <div class="overflow-auto">
         <table class="table validatore-table w-full">
-          <thead>
-            <th class="text-left pl-4">{{ $t('account.delegator') }}</th>
-            <th class="text-left pl-4">{{ $t('account.amount') }}</th>
-            <th class="text-left pl-4">{{ $t('account.height') }} / {{ $t('account.time') }}</th>
+          <thead class="rounded-none">
+            <tr>
+              <th class="text-left pl-4">{{ $t('account.delegator') }}</th>
+              <th class="text-left pl-4">{{ $t('account.amount') }}</th>
+              <th class="text-left pl-4">{{ $t('account.height') }} / {{ $t('account.time') }}</th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="(item, i) in events.tx_responses">

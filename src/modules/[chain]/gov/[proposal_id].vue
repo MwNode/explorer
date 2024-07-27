@@ -150,6 +150,7 @@ const total = computed(() => {
 const turnout = computed(() => {
   if (total.value > 0) {
     const bonded = stakingStore.pool?.bonded_tokens || '1';
+    console.log('bonded: ', bonded, stakingStore);
     return format.percent(total.value / Number(bonded));
   }
   return 0;
@@ -191,8 +192,8 @@ const processList = computed(() => {
     { name: 'Turnout', value: turnout.value, class: 'bg-info' },
     { name: 'Yes', value: yes.value, class: 'bg-success' },
     { name: 'No', value: no.value, class: 'bg-error' },
-    { name: 'No With Veto', value: veto.value, class: 'bg-red-800' },
-    { name: 'Abstain', value: abstain.value, class: 'bg-warning' },
+    { name: 'No With Veto', value: veto.value, class: 'bg-veto' },
+    { name: 'Abstain', value: abstain.value, class: 'bg-abstain' },
   ];
 });
 
@@ -226,13 +227,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
           {{ proposal_id }}. {{ proposal.title || proposal.content?.title || metaItem(proposal?.metadata)?.title  }}
         </p>
         <div
-          class="badge badge-ghost"
+          class="badge"
           :class="
             color === 'success'
-              ? 'text-yes'
+              ? 'bg-yes text-black'
               : color === 'error'
-              ? 'text-no'
-              : 'text-info'
+              ? 'bg-no text-white'
+              : 'text-info text-black'
           "
         >
           {{ status }}
@@ -256,21 +257,25 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
       <div class="bg-white-10 px-4 pt-3 pb-4 rounded shadow">
         <h2 class="card-title mb-1">{{ $t('gov.tally') }}</h2>
         <div class="mb-1" v-for="(item, index) of processList" :key="index">
-          <label class="block text-sm mb-1">{{ item.name }}</label>
+          <label class="block text-sm mb-1 text-main">{{ item.name }}</label>
           <div class="h-5 w-full relative">
             <div
-              class="absolute inset-x-0 inset-y-0 w-full opacity-10 rounded-sm"
+              class="absolute inset-x-0 inset-y-0 w-full opacity-10 rounded-full"
               :class="`${item.class}`"
             ></div>
             <div
-              class="absolute inset-x-0 inset-y-0 rounded-sm"
-              :class="`${item.class}`"
+              class="absolute inset-x-0 inset-y-0 rounded-full"
+              :class="`${item.class} text-gray-3`"
               :style="`width: ${
                 item.value === '-' || item.value === 'NaN%' ? '0%' : item.value
-              }`"
+              }; max-width: 100%;`"
             ></div>
             <p
-              class="absolute inset-x-0 inset-y-0 text-center text-sm text-[#666] dark:text-[#eee] flex items-center justify-center"
+              class="absolute inset-x-0 inset-y-0 text-center text-sm flex items-center justify-center"
+              :class="{
+                    'text-gray-3': item.value === 'NaN%' || item.value <= '52%',
+                    'text-black': item.value > '52%'
+                  }"
             >
               {{ item.value }}
             </p>
@@ -279,13 +284,13 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
         <div class="mt-6 grid grid-cols-2">
           <label
             for="vote"
-            class="btn btn-mw-primary float-right btn-sm mx-1"
+            class="btn btn-mw-primary float-right mx-1"
             @click="dialog.open('vote', { proposal_id })"
             >{{ $t('gov.btn_vote') }}</label
           >
           <label
             for="deposit"
-            class="btn btn-mw-primary float-right btn-sm mx-1"
+            class="btn btn-mw-primary-outline float-right mx-1"
             @click="dialog.open('deposit', { proposal_id })"
             >{{ $t('gov.btn_deposit') }}</label
           >
@@ -304,7 +309,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
             <div class="text-sm">{{ shortTime(proposal.submit_time) }}</div>
           </div>
           <div class="flex items-center mb-4">
-            <div class="w-2 h-2 rounded-full bg-primary mr-3"></div>
+            <div class="w-2 h-2 rounded-full !bg-primary mr-3"></div>
             <div class="text-base flex-1 text-main">
               {{ $t('gov.deposited_at') }}:
               {{
@@ -385,7 +390,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
 
     <div class="bg-white-10 px-4 pt-3 pb-4 rounded mb-4 shadow">
       <h2 class="card-title">{{ $t('gov.votes') }}</h2>
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto bg-white-5 mt-3 md:!mt-5 rounded">
         <table class="table w-full table-zebra">
           <tbody>
             <tr v-for="(item, index) of votes" :key="index">
@@ -395,7 +400,7 @@ function metaItem(metadata: string|undefined): { title: string; summary: string 
                 class="py-2 text-sm"
                 :class="{
                   'text-yes': item.option === 'VOTE_OPTION_YES',
-                  'text-gray-400': item.option === 'VOTE_OPTION_ABSTAIN',
+                  'text-abstain': item.option === 'VOTE_OPTION_ABSTAIN',
                 }"
               >
                 {{ String(item.option).replace('VOTE_OPTION_', '') }}

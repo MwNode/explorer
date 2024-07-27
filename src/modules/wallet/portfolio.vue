@@ -216,16 +216,16 @@ const currencySign = computed(() => {
 })
 </script>
 <template>
-  <div class="overflow-x-auto w-full rounded-md">
+  <div class="overflow-x-auto w-full rounded">
 
     <div class="flex flex-wrap justify-between bg-white-10 p-5">
       <div class="min-w-0">
-        <h2 class="text-2xl font-bold leading-7 sm:!truncate sm:!text-3xl sm:!tracking-tight">
+        <h2 class="text-2xl font-bold leading-7 text-main sm:!truncate sm:!text-3xl sm:!tracking-tight mb-5">
           Portfolio
         </h2>
         <div>
-          <div class="flex items-center text-sm">
-            Currency: <select v-model="currency" @change="loadPrice" class="ml-1 uppercase">
+          <div class="flex items-center text-sm mr-2">
+            Currency: <select v-model="currency" @change="loadPrice" class="select ml-1 uppercase">
               <option>usd</option>
               <option>cny</option>
               <option>eur</option>
@@ -240,7 +240,7 @@ const currencySign = computed(() => {
         </div>
       </div>
       <div class="text-right">
-        <div>Total Value</div>
+        <div class="text-gray-3">Total Value</div>
         <div class="text-success font-bold">{{ currencySign }} {{ format.formatNumber(totalValue, '0,0.[00]') }}</div>
         <div class="text-xs" :class="{ 'text-success': totalChangeIn24 > 0, 'text-error': totalChangeIn24 < 0 }">
           {{ format.formatNumber(totalChangeIn24, '+0,0.[00]') }}
@@ -258,9 +258,9 @@ const currencySign = computed(() => {
         </div>
       </div>
       <div class="overflow-x-auto mt-4">
-      <AdBanner class="bg-base-200" id="portfolio-banner-ad" unit="banner" width="970px" height="90px" />
-        <table class="table w-full">
-          <thead class="bg-base-200">
+      <AdBanner class="bg-white-10" id="portfolio-banner-ad" unit="banner" width="970px" height="90px" />
+        <table class="table w-full text-white">
+          <thead class="bg-white-10 text-white rounded-none">
             <tr>
               <th>Token</th>
               <th class="text-right">Value</th>
@@ -291,8 +291,8 @@ const currencySign = computed(() => {
         No Data
       </div>
     </div>
-    <div class="text-center my-5 bg-base-200">
-      <RouterLink to="./accounts" class="btn btn-link">Add More Asset</RouterLink>
-    </div>
+  </div>
+  <div class="text-center my-10">
+    <RouterLink to="./accounts" class="btn btn-mw-primary">Add More Asset</RouterLink>
   </div>
 </template>

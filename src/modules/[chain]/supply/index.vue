@@ -32,19 +32,23 @@ function pageload(p: number) {
 
 </script>
 <template>
-    <div class="overflow-auto bg-white-10">
-        <table class="table table-compact">
-            <thead class=" bg-base-200">
+    <div class="bg-white-10 rounded">
+        <div class="overflow-auto rounded-t-[20px]">
+          <table class="table table-compact text-white">
+            <thead class="bg-white-10 text-white">
                 <tr>
-                    <td>Token</td>
-                    <td>Amount</td>
+                    <th>Token</th>
+                    <th>Amount</th>
                 </tr>
             </thead>
-            <tr v-for="item in list" class="hover">
+            <tbody>
+              <tr v-for="item in list" class="hover">
                 <td>{{ item.denom  }}</td>
                 <td>{{ item.amount  }}</td>
-            </tr>
-        </table>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <PaginationBar :limit="pageRequest.limit" :total="pageResponse.total" :callback="pageload" />
     </div>
 </template>

@@ -46,7 +46,7 @@ const chainStore = useBlockchain()
           viewBox="0 0 150.000000 132.000000"
           preserveAspectRatio="xMidYMid meet">
           <g transform="translate(0.000000,132.000000) scale(0.100000,-0.100000)"
-          :fill="chainStore.current?.themeColor||'#666CFF'" class=" dark:invert" stroke="none">
+          :fill="chainStore.current?.themeColor||'#666CFF'" class="" stroke="none">
             <path d="M500 1310 l-125 -5 -182 -315 c-100 -173 -182 -321 -182 -329 -1 -7
             81 -159 181 -337 l183 -324 372 0 371 0 186 325 c102 179 186 330 186 337 0 7
             -82 157 -182 335 l-183 323 -250 -2 c-137 -1 -306 -5 -375 -8z m588 -454 c61
@@ -62,7 +62,7 @@ const chainStore = useBlockchain()
           </g>
         </svg>
       </div>
-      <h1 class="text-main text-3xl font-bold leading-normal flex flex-col md:!flex-row items-center">
+      <h1 class="text-white text-3xl font-bold leading-normal flex flex-col md:!flex-row items-center">
         <!-- {{ $t('pages.title') }} -->
         <div class="relative">
           <span>MW NODE</span>
@@ -73,7 +73,7 @@ const chainStore = useBlockchain()
         <span class="md:ml-5">Blockchain Explorer</span>
       </h1>
     </div>
-    <div class="text-center text-main">
+    <div class="text-center text-white">
       <p class="mb-1 md:text-lg leading-normal">
         {{ $t('pages.slogan') }}
       </p>
@@ -105,14 +105,14 @@ const chainStore = useBlockchain()
       <h2 class="mb-6">{{ $t('pages.description') }}</h2>
     </div>
 
-    <div class="flex items-center rounded-lg bg-white-5 border border-white-10 dark:border-gray-700 mt-10">
+    <div class="flex items-center rounded-[20px] bg-white-5 border border-white-10 dark:border-gray-700 mt-10">
       <Icon icon="mdi:magnify" class="text-2xl text-gray-400 ml-3"/>
       <input :placeholder="$t('pages.search_placeholder')" class="px-4 h-10 bg-transparent flex-1 outline-none text-base" v-model="keywords" />
       <div class="px-4 text-base hidden md:!block">{{ chains.length }}/{{ dashboard.length }}</div>
     </div> -->
 
     <div
-      class="grid grid-cols-1 gap-4 lg:gap-20 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
+      class="grid grid-cols-1 gap-4 lg:gap-10 mt-6 md:!grid-cols-3 lg:!grid-cols-4"
     >
       <ChainSummary
         v-for="(chain, index) in chains"

@@ -103,7 +103,7 @@ function color(v: string) {
               <div class="order-first text-3xl font-semibold tracking-tight text-main mb-1">
                 {{ baseStore.latest?.block?.header?.chain_id }}
               </div>
-              <div class="text-sm text-main">
+              <div class="text-sm text-gray-3">
                 {{ conn.client_id }} {{ props.connection_id }}
               </div>
             </div>
@@ -120,7 +120,7 @@ function color(v: string) {
             <div class="order-first text-3xl font-semibold tracking-tight text-main mb-2">
               {{ clientState.client_state?.chain_id }}
             </div>
-            <div class="text-sm text-main">
+            <div class="text-sm text-gray-3">
               {{ conn.counterparty?.connection_id }} {{ clientState.client_id }}
             </div>
           </div>
@@ -132,8 +132,8 @@ function color(v: string) {
       <h2 class="card-title mb-4 overflow-hidden">{{ $t('ibc.title_2') }}<span class="ml-2 text-sm">{{
         clientState.client_state?.['@type'] }}</span></h2>
       <div class="overflow-x-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-        <table class="table table-sm capitalize">
-          <thead class="bg-base-200">
+        <table class="table table-sm capitalize text-white">
+          <thead class="bg-white-10 text-white">
             <tr>
               <td colspan="3">{{ $t('ibc.trust_parameters') }}</td>
             </tr>
@@ -169,8 +169,8 @@ function color(v: string) {
             </tr>
           </tbody>
         </table>
-        <table class="table table-sm text-sm w-full capitalize">
-          <thead class="bg-base-200">
+        <table class="table table-sm text-sm w-full capitalize text-white">
+          <thead class="bg-white-10 text-white">
             <tr>
               <td colspan="2">{{ $t('ibc.upgrade_parameters') }}</td>
             </tr>
@@ -289,7 +289,7 @@ function color(v: string) {
           <tr v-for="resp in txs?.tx_responses">
             <td>{{ resp.height }}</td>
             <td>
-              <div class="text-xs truncate text-primary dark:invert">
+              <div class="text-xs truncate text-primary">
                 <RouterLink :to="`/${chainStore.chainName}/tx/${resp.txhash}`">{{ resp.txhash }}</RouterLink>
               </div>
             </td>

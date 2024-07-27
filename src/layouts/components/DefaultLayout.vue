@@ -9,7 +9,7 @@ import NavbarSearch from './NavbarSearch.vue';
 import ChainProfile from './ChainProfile.vue';
 import Logo from './Logo.vue';
 import BackgroundEffect from './BackgroundEffect.vue';
-import chainhome from './testChainIndex.vue';
+// import chainhome from './testChainIndex.vue';
 
 import { useDashboard } from '../../stores/useDashboard';
 import { useBaseStore, useBlockchain } from '../../stores';
@@ -133,14 +133,14 @@ dayjs()
     <BackgroundEffect class="bg-mw-base h-dvh" />
     <!-- sidebar -->
     <div
-      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base md:bg-white-5"
+      class="sidebar w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-mw-base xl:bg-white-5 shadow"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }"
     >
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
         <RouterLink to="/" class="flex items-center">
           <Logo />
           <!-- <img class="w-10 h-10" src="../../assets/logo.svg" />
-          <h1 class="flex-1 ml-3 text-2xl font-semibold text-main">
+          <h1 class="flex-1 ml-3 text-2xl font-semibold dark:text-white">
             Ping.pub
           </h1> -->
         </RouterLink>
@@ -196,7 +196,7 @@ dayjs()
             </div>
             <div
               v-if="item?.badgeContent"
-              class="mr-6 badge badge-sm text-main border-none"
+              class="mr-6 badge badge-sm text-white border-none"
               :class="item?.badgeClass"
             >
               {{ item?.badgeContent }}
@@ -219,7 +219,7 @@ dayjs()
                   icon="mdi:chevron-right"
                   class="mr-2 ml-3"
                   :class="{
-                    'text-main':
+                    'text-white':
                       $route.path === el?.to?.path &&
                       item?.title !== 'Favorite',
                   }"
@@ -234,7 +234,7 @@ dayjs()
                 <div
                   class="text-gray-200 text-base capitalize"
                   :class="{
-                    '!text-main': selected($route, el),
+                    '!text-white': selected($route, el),
                   }"
                 >
                   {{ item?.title === 'Favorite' ? el?.title : $t(el?.title) }}
@@ -248,7 +248,7 @@ dayjs()
           v-if="isNavLink(item)"
           :to="item?.to"
           @click="sidebarShow = false"
-          class="cursor-pointer rounded-lg px-4 flex items-center py-2 hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="cursor-pointer rounded-[20px] px-4 flex items-center py-2 hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon
             v-if="item?.icon?.icon"
@@ -271,7 +271,7 @@ dayjs()
           </div>
           <div
             v-if="item?.badgeContent"
-            class="badge badge-sm text-main border-none" 
+            class="badge badge-sm text-white border-none" 
             :class="item?.badgeClass"
           >
             {{ item?.badgeContent }}
@@ -289,11 +289,11 @@ dayjs()
             Tools
           </div>
           <RouterLink to="/wallet/suggest"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
           >
             <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
             <div
-              class="text-base capitalize flex-1 text-main"
+              class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
             >
               Wallet Helper
             </div>
@@ -304,14 +304,14 @@ dayjs()
         <a
           href="https://osmosis.zone"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://ping.pub/logos/osmosis.jpg"
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-main"
+            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             Osmosis
           </div>
@@ -319,14 +319,14 @@ dayjs()
         <a
           href="https://celestia.org"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://ping.pub/logos/celestia.png"
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-main"
+            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             Celestia
           </div>
@@ -334,14 +334,14 @@ dayjs()
         <a
           href="https://becole.com"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <img
             src="https://becole.com/static/logo/logo_becole.png"
             class="w-6 h-6 rounded-full mr-3"
           />
           <div
-            class="text-sm capitalize flex-1 text-main"
+            class="text-sm capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             Becole
           </div>
@@ -350,11 +350,11 @@ dayjs()
         <a
           href="https://twitter.com/ping_pub"
           target="_blank"
-          class="py-2 px-4 flex items-center cursor-pointer rounded-lg hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center cursor-pointer rounded-[20px] hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:twitter" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-main"
+            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             Twitter
           </div>
@@ -363,11 +363,11 @@ dayjs()
           v-if="showDiscord"
           href="https://discord.com/invite/CmjYVSr6GW"
           target="_blank"
-          class="py-2 px-4 flex items-center rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center rounded-[20px] cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:discord" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-main"
+            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             Discord
           </div>
@@ -375,11 +375,11 @@ dayjs()
         <a
           href="https://github.com/ping-pub/explorer/discussions"
           target="_blank"
-          class="py-2 px-4 flex items-center rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
+          class="py-2 px-4 flex items-center rounded-[20px] cursor-pointer hover:bg-gray-100 dark:hover:bg-[#373f59]"
         >
           <Icon icon="mdi:frequently-asked-questions" class="text-xl mr-2" />
           <div
-            class="text-base capitalize flex-1 text-main"
+            class="text-base capitalize flex-1 text-gray-600 dark:text-gray-200"
           >
             FAQ
           </div>
@@ -389,13 +389,13 @@ dayjs()
     <div class="xl:!ml-64">
       <!-- header -->
       <div
-        class="header flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
+        class="flex items-center py-3 mb-4 px-4 sticky top-0 z-10 bg-mw-base md:bg-mw-base-80 shadow"
       >
         <div
           class="text-2xl pr-3 cursor-pointer xl:!hidden"
           @click="sidebarShow = true"
         >
-          <Icon icon="mdi-menu" />
+          <Icon icon="mdi-menu" color="white" />
         </div>
 
         <!-- <ChainProfile /> -->
@@ -410,7 +410,7 @@ dayjs()
       </div>
 
       <!-- 👉 Pages -->
-      <div class="px-3 py-4 body-container" style="min-height: calc(100vh - 180px);">
+      <div class="px-3 pt-4" style="min-height: calc(100vh - 164px);">
         <div v-if="behind" class="alert alert-error mb-4">
             <div class="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -429,7 +429,7 @@ dayjs()
         <!-- <chainhome /> -->
       </div>
 
-      <newFooter class="px-3" />
+      <newFooter class="px-3 pt-4" />
     </div>
   </div>
 </template>

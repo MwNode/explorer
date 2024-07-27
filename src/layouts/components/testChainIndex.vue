@@ -158,7 +158,7 @@ const amount = computed({
             <div class="dropdown dropdown-hover w-full">
               <label>
                 <div
-                  class="bg-white-10 border border-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-lg">
+                  class="bg-white-10 border border-white-10 flex items-center justify-between px-4 py-2 cursor-pointer rounded-[20px]">
                   <div>
                     <div class="font-semibold text-xl text-main">
                       {{ ticker?.market?.name || '' }}
@@ -332,7 +332,7 @@ const amount = computed({
       </div>
 
       <div v-if="walletStore.delegations.length > 0" class="px-4 pb-4 overflow-auto">
-        <table class="table table-compact w-full table-zebra">
+        <table class="table table-compact w-full table-zebra text-white">
           <thead>
             <tr>
               <th>{{ $t('account.validator') }}</th>
@@ -357,7 +357,7 @@ const amount = computed({
                 {{
                   format.formatTokens(
                     walletStore?.rewards?.rewards?.find(
-                      (el) =>
+                      (el: any) =>
                         el?.validator_address ===
                         item?.delegation?.validator_address
                     )?.reward)

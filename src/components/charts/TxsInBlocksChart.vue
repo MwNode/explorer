@@ -9,7 +9,8 @@ const options = computed(() => {
     return {
         chart: {
             type: 'bar',
-            height: 150
+            height: 150,
+            foreColor: 'white',
         },
         plotOptions: {
             bar: {
@@ -20,7 +21,7 @@ const options = computed(() => {
         dataLabels: {
           enabled: false
         },
-        colors: ['#5A67D8'],
+        colors: ['#E75B1F'],
         xaxis: {
             labels: {
                 show: false,

@@ -8,6 +8,7 @@ import {
   useFormatter,
 } from '@/stores';
 import UptimeBar from '@/components/UptimeBar.vue';
+// import Countdown from '@/components/Countdown.vue';
 import type { SlashingParam, SigningInfo, Block } from '@/types';
 import { consensusPubkeyToHexAddress, valconsToBase64 } from '@/libs';
 
@@ -178,20 +179,22 @@ function fetchAllKeyRotation() {
 </script>
 
 <template>
-  <div>
-    <div class="tabs bg-transparent mb-4">
-      <a class="tab text-gray-3 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
-        $t('uptime.overall') }}</a>
-      <a class="tab text-gray-3 capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{
+  <div class="bg-white-10 rounded">
+    <!-- <Countdown :time="300000000" /> -->
+    
+    <div class="tabs gap-5 md:gap-10 p-4">
+      <!-- <a class="tab mr-10 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
+        $t('uptime.overall') }}</a> -->
+      <a class="tab capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{
         $t('module.blocks') }}</a>
-      <RouterLink :to="`/${chain}/uptime/customize`">
-        <a class="tab text-gray-3 capitalize">{{ $t('uptime.customize') }}</a>
-      </RouterLink>
+      <!-- <RouterLink :to="`/${chain}/uptime/customize`">
+        <a class="tab capitalize">{{ $t('uptime.customize') }}</a>
+      </RouterLink> -->
     </div>
-    <div class="bg-white-10 px-5 pt-5">
+    <div class="px-5 pt-5">
       <div class="flex items-center gap-x-4">
         <input type="text" v-model="keyword" placeholder="Keywords to filter validators"
-          class="input input-sm w-full flex-1 border border-gray-200 dark:border-gray-600" />
+          class="input input-sm w-full flex-1" />
         <button v-if="chainStore.isConsumerChain" class="btn btn-sm btn-mw-primary" @click="fetchAllKeyRotation">Load
           Rotated Keys</button>
       </div>
@@ -209,27 +212,27 @@ function fetchAllKeyRotation() {
                 <span class="ml-1 text-main">{{ i + 1 }}.{{ unit.moniker }}</span>
               </label>
               <div v-if="Number(unit?.missed_blocks_counter || 0) > 10"
-                class="badge badge-sm bg-transparent border-0 text-red-500 font-bold">
+                class="badge badge-sm bg-transparent border-0 text-danger font-bold">
                 {{ unit?.missed_blocks_counter }}
               </div>
-              <div v-else class="badge badge-sm bg-transparent text-green-600 border-0 font-bold">
+              <div v-else class="badge badge-sm bg-transparent text-succes border-0 font-bold">
                 {{ unit?.missed_blocks_counter }}
               </div>
             </div>
             <UptimeBar :blocks="unit.blocks" />
           </div>
         </div>
-        <div class="mt-5 text-xs flex justify-center gap-2">
+        <div class="mt-5 text-xs flex justify-center gap-2 text-gray-3">
           <span class=" font-bold">{{ $t('uptime.legend') }}: </span>
-          <span class="bg-green-500">&nbsp;</span> {{ $t('uptime.committed') }}
-          <span class="bg-yellow-500">&nbsp;</span> {{ $t('uptime.precommitted') }}
-          <span class="bg-red-500">&nbsp;</span> {{ $t('uptime.missed') }}
+          <span class="bg-success">&nbsp;</span> {{ $t('uptime.committed') }}
+          <span class="bg-warning">&nbsp;</span> {{ $t('uptime.precommitted') }}
+          <span class="bg-danger">&nbsp;</span> {{ $t('uptime.missed') }}
         </div>
       </div>
 
       <div :class="tab === '3' ? '' : 'hidden'" class="overflow-x-auto">
-        <table class="table table-compact w-full mt-5">
-          <thead class="capitalize bg-base-200">
+        <table class="table table-compact w-full mt-5 text-white">
+          <thead class="capitalize bg-white-10 text-white">
             <tr>
               <td>{{ $t('account.validator') }}</td>
               <td class="text-right">{{ $t('module.uptime') }}</td>
@@ -246,7 +249,7 @@ function fetchAllKeyRotation() {
               </div>
             </td>
             <td class="text-right">
-              <span :class="v.uptime && v.uptime > 0.95 ? 'text-green-500' : 'text-red-500'
+              <span :class="v.uptime && v.uptime > 0.95 ? 'text-success' : 'text-danger'
         ">
                 <div class="tooltip" :data-tip="`${v.missed_blocks_counter} missing blocks`">
                   {{ format.percent(v.uptime) }}

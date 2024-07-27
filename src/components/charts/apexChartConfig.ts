@@ -13,14 +13,14 @@ const themeColors = (theme: string) => {
         'surface-variant': '#424242',
         'on-surface-variant': '#EEEEEE',
         // primary: chainStore.current?.themeColor || '#666CFF',
-        primary: '#E75B1F',
+        primary: 'var(--primary)',
         'primary-darken-1': '#3700B3',
         secondary: '#6D788D',
         'secondary-darken-1': '#018786',
-        error: '#FF4D49',
-        info: '#26C6F9',
-        success: '#72E128',
-        warning: '#FDB528',
+        error: 'var(--red)',
+        info: 'var(--reward)',
+        success: 'var(--delegate)',
+        warning: 'var(--unbounding)',
         'on-primary': '#fff',
         'on-secondary': '#fff',
         'on-success': '#fff',
@@ -169,17 +169,23 @@ const themeColors = (theme: string) => {
 };
 // 👉 Colors variables
 export const colorVariables = (theme: string) => {
-  if (theme === 'light') {
-    return {
-      themeSecondaryTextColor: 'rgba(76,78,100,0.6)',
-      themeDisabledTextColor: 'rgba(76,78,100,0.38)',
-      themeBorderColor: 'rgba(76,78,100,0.12)',
-      themePrimaryTextColor: 'rgba(76,78,100,0.87)',
-    };
-  }
+  // if (theme === 'light') {
+  //   return {
+  //     themeSecondaryTextColor: 'rgba(76,78,100,0.6)',
+  //     themeDisabledTextColor: 'rgba(76,78,100,0.38)',
+  //     themeBorderColor: 'rgba(76,78,100,0.12)',
+  //     themePrimaryTextColor: 'rgba(76,78,100,0.87)',
+  //   };
+  // }
+  // return {
+  //   themeSecondaryTextColor: 'rgba(234,234,255,0.6)',
+  //   themeDisabledTextColor: 'rgba(234,234,255,0.38)',
+  //   themeBorderColor: 'rgba(234,234,255,0.12)',
+  //   themePrimaryTextColor: 'rgba(234,234,255,0.87)',
+  // };
   return {
     themeSecondaryTextColor: 'rgba(234,234,255,0.6)',
-    themeDisabledTextColor: 'rgba(234,234,255,0.38)',
+    themeDisabledTextColor: '#fff',
     themeBorderColor: 'rgba(234,234,255,0.12)',
     themePrimaryTextColor: 'rgba(234,234,255,0.87)',
   };
